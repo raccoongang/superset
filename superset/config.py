@@ -593,18 +593,18 @@ EXTRA_CATEGORICAL_COLOR_SCHEMES: list[dict[str, Any]] = []
 # THEME_OVERRIDES is used for adding custom theme to superset
 # example code for "My theme" custom scheme
 THEME_OVERRIDES = {
-  "colors": {
-    "primary": {
-      "base": '#e62050',
-      "dark1": '#c1163f',
-      "dark2": '#991132',
-      "light1": '#f1839e',
-      "light2": '#f7b4c4',
-      "light3": '#fce7ec',
-      "light4": '#fce7ec',
-      "light5": '#fce7ec',
+    "colors": {
+        "primary": {
+            "base": '#e62050',
+            "dark1": '#c1163f',
+            "dark2": '#991132',
+            "light1": '#f1839e',
+            "light2": '#f7b4c4',
+            "light3": '#fce7ec',
+            "light4": '#fce7ec',
+            "light5": '#fce7ec',
+        }
     }
-  }
 }
 
 # THEME_OVERRIDES: dict[str, Any] = {}

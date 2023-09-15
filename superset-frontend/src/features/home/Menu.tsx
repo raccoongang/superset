@@ -64,6 +64,7 @@ const StyledHeader = styled.header`
           ${theme.gridUnit}px
           ${theme.gridUnit * 4}px;
         max-width: ${theme.gridUnit * theme.brandIconMaxWidth}px;
+        margin-top: ${theme.gridUnit / 2}px;
         img {
           height: 100%;
           object-fit: contain;

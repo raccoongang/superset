@@ -76,9 +76,9 @@ const config: ControlPanelConfig = {
   ],
   controlOverrides: {
     entity: {
-      label: t('ISO 3166-2 Codes'),
+      label: t('Regions'),
       description: t(
-        'Column containing ISO 3166-2 codes of region/province/department in your table.',
+        'Column containing names of region/province/department in your table.',
       ),
     },
     metric: {

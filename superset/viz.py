@@ -1544,13 +1544,23 @@ class CountryMapViz(BaseViz):
     def get_data(self, df: pd.DataFrame) -> VizData:
         if df.empty:
             return None
+
+        # pylint: disable=import-outside-toplevel
+        from superset.examples import subdivisions
+
         cols = get_column_names([self.form_data.get("entity")])  # type: ignore
         metric = self.metric_labels[0]
         cols += [metric]
         ndf = df[cols]
         df = ndf
         df.columns = ["country_id", "metric"]
-        return df.to_dict(orient="records")
+        data = df.to_dict(orient="records")
+        for row in data:
+            row["country_id"] = subdivisions.get_region_iso(
+                country=self.form_data["select_country"],
+                region_name=row["country_id"],
+            )
+        return data
 
 
 class WorldMapViz(BaseViz):

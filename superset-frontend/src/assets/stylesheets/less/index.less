@@ -45,3 +45,17 @@ header {
   display: flex;
   flex-direction: column;
 }
+
+@media print {
+  a[href]::after {
+    content: none !important;
+  }
+
+  .header-controls {
+    display: none !important;
+  }
+
+  .grid-row--empty > div {
+    color: transparent !important;
+  }
+}

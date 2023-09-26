@@ -17,6 +17,7 @@
  * under the License.
  */
 
+import { t } from '@superset-ui/core';
 import austria from './countries/austria.geojson';
 import argentina from './countries/argentina.geojson';
 import australia from './countries/australia.geojson';
@@ -203,14 +204,19 @@ export const countries = {
   vietnam,
 };
 
-export const countryOptions = Object.keys(countries).map(x => {
-  if (x === 'uk' || x === 'usa') {
-    return [x, x.toUpperCase()];
+export const countryOptions = Object.keys(countries).map(countryId => {
+  let countryRepr;
+  if (countryId === 'uk' || countryId === 'usa') {
+    countryRepr = countryId.toUpperCase();
+  } else if (countryId === 'italy_regions') {
+    countryRepr = 'Italy (regions)';
+  } else {
+    countryRepr = countryId
+      .split('_')
+      .map(x => x.charAt(0).toUpperCase() + x.slice(1))
+      .join(' ');
   }
-  if (x === 'italy_regions') {
-    return [x, 'Italy (regions)'];
-  }
-  return [x, x[0].toUpperCase() + x.slice(1)];
+  return [countryId, t(countryRepr)];
 });
 
 export default countries;

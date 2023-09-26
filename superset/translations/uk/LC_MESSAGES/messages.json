@@ -6731,7 +6731,7 @@
       "Jersey": ["Джерсі"],
       "Faroe Islands": ["Фарерські острови"],
       "Guatemala": ["Гватемала"],
-      "Denmark": ["Denmark"],
+      "Denmark": ["Данія"],
       "Isle of Man": ["Острів Мен"],
       "Australia": ["Австралія"],
       "Austria": ["Австрія"],
@@ -6833,6 +6833,7 @@
       "Kyiv City": ["м.Київ"],
       "Crimea": ["Крим"],
       "Regions": ["Регіони"],
+      "Region": ["Область"],
       "Column containing names of region/province/department in your table.": [
         "Стовпець, що містить назви областей, провінцій або департаментів у таблиці."
       ],
@@ -6860,7 +6861,13 @@
       "Zaporizhzhia": ["Запорізька"],
       "Mykolaiv": ["Миколаївська"],
       "Khmelnytskyi": ["Хмельницька"],
-      "Dnipropetrovsk": ["Дніпропетровська"]
+      "Dnipropetrovsk": ["Дніпропетровська"],
+      "Ternopil": ["Тернопільска"],
+      "Italy (regions)": ["Італія (регіони)"],
+      "Srilanka": ["Шрі Ланка"],
+      "Timorleste": ["Східний Тимор"],
+      "USA": ["Сполучені Штати Америки"],
+      "UK": ["Об'єднане Королівство"]
     }
   }
 }

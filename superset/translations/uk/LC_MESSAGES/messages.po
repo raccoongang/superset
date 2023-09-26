@@ -20436,6 +20436,10 @@ msgstr "Науру"
 msgid "Cuba"
 msgstr "Куба"
 
+#: superset/examples/countries.py
+msgid "Denmark"
+msgstr "Данія"
+
 msgid "Chernihiv"
 msgstr "Чернігівська"
 
@@ -20519,6 +20523,10 @@ msgid "Regions"
 msgstr "Регіони"
 
 # superset-frontend/plugins/legacy-plugin-chart-country-map/src/controlPanel.ts
+msgid "Region"
+msgstr "Область"
+
+# superset-frontend/plugins/legacy-plugin-chart-country-map/src/controlPanel.ts
 msgid "Column containing names of region/province/department in your table."
 msgstr "Стовпець, що містить назви областей, провінцій або департаментів у таблиці."
 
@@ -20584,3 +20592,26 @@ msgstr "Хмельницька"
 
 msgid "Dnipropetrovsk"
 msgstr "Дніпропетровська"
+
+msgid "Ternopil"
+msgstr "Тернопільска"
+
+#: superset-frontend/plugins/legacy-plugin-chart-country-map/src/countries.ts
+msgid "Italy (regions)"
+msgstr "Італія (регіони)"
+
+#: superset-frontend/plugins/legacy-plugin-chart-country-map/src/countries.ts
+msgid "Srilanka"
+msgstr "Шрі Ланка"
+
+#: superset-frontend/plugins/legacy-plugin-chart-country-map/src/countries.ts
+msgid "Timorleste"
+msgstr "Східний Тимор"
+
+#: superset-frontend/plugins/legacy-plugin-chart-country-map/src/countries.ts
+msgid "USA"
+msgstr "Сполучені Штати Америки"
+
+#: superset-frontend/plugins/legacy-plugin-chart-country-map/src/countries.ts
+msgid "UK"
+msgstr "Об'єднане Королівство"

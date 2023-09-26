@@ -72,12 +72,12 @@ export const regions = {
   zhytomyr,
 };
 
-export const regionOptions = Object.keys(regions).map(region => {
-  const reprName = region
+export const regionOptions = Object.keys(regions).map(regionId => {
+  const regionRepr = regionId
     .split('_')
     .map(x => x.charAt(0).toUpperCase() + x.slice(1))
     .join('-');
-  return [region, t(reprName)];
+  return [regionId, t(regionRepr)];
 });
 
 export default regions;

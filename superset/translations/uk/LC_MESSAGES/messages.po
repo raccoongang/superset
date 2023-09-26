@@ -16967,7 +16967,7 @@ msgid ""
 "subdivisions (states, provinces, etc) on a choropleth map. Each "
 "subdivision's value is elevated when you hover over the corresponding "
 "geographic boundary."
-msgstr "Візуалізує, як окрема метрика змінюється між основними підрозділами країни (штатами, провінціями тощо) на хороплетній карті. Значення кожного підрозділу збільшується, коли ви наводите курсор на відповідну географічну межу."
+msgstr "Візуалізує, як окрема метрика змінюється між основними підрозділами країни (штатами, провінціями тощо) на карті. Значення кожного підрозділу збільшується, коли ви наводите курсор на відповідну географічну межу."
 
 #: superset-frontend/plugins/legacy-preset-chart-nvd3/src/Compare/index.js:28
 msgid ""
@@ -20494,7 +20494,7 @@ msgid "Poltava"
 msgstr "Полтавська"
 
 msgid "Khmel'nyts'kyy"
-msgstr "Кременчуцька"
+msgstr "Хмельницька"
 
 msgid "Ternopil'"
 msgstr "Тернопільска"
@@ -20521,3 +20521,66 @@ msgstr "Регіони"
 # superset-frontend/plugins/legacy-plugin-chart-country-map/src/controlPanel.ts
 msgid "Column containing names of region/province/department in your table."
 msgstr "Стовпець, що містить назви областей, провінцій або департаментів у таблиці."
+
+# superset-frontend/plugins/plugin-chart-region-map/src/controlPanel.ts
+msgid "Область"
+msgstr "Регіон"
+
+# superset-frontend/plugins/plugin-chart-region-map/src/controlPanel.ts
+msgid "Districts"
+msgstr "Райони"
+
+# superset-frontend/plugins/plugin-chart-region-map/src/controlPanel.ts
+msgid "Which region to plot the map for?"
+msgstr "Для якого регіону побудувати карту?"
+
+# superset-frontend/plugins/plugin-chart-region-map/src/controlPanel.ts
+msgid "Column containing district names in your table."
+msgstr "Стовпець, що містить назви районів у таблиці."
+
+# superset-frontend/plugins/plugin-chart-region-map/src/index.js
+msgid "Visualizes how a single metric varies across a country's secondary subdivisions (districts, etc) on a choropleth map. Each subdivision's value is elevated when you hover over the corresponding geographic boundary."
+msgstr "Візуалізує, як окрема метрика змінюється залежно від другорядних підрозділів країни (районів тощо) на карті. Значення кожного підрозділу збільшується, коли ви наводите курсор на відповідну географічну межу."
+
+# superset-frontend/plugins/plugin-chart-region-map/src/index.js
+msgid "Region Map"
+msgstr "Карта Регіону"
+
+msgid "Сhernihiv"
+msgstr "Чернігівська"
+
+msgid "Kyiv"
+msgstr "Київська"
+
+msgid "Zakarpattia"
+msgstr "Закарпатська"
+
+msgid "Ivano-Frankivsk"
+msgstr "Івано-Франківська"
+
+msgid "Odesa"
+msgstr "Одеська"
+
+msgid "Vinnytsia"
+msgstr "Вінницька"
+
+msgid "Lviv"
+msgstr "Львівська"
+
+msgid "Luhansk"
+msgstr "Луганська"
+
+msgid "Donetsk"
+msgstr "Донецька"
+
+msgid "Zaporizhzhia"
+msgstr "Запорізька"
+
+msgid "Mykolaiv"
+msgstr "Миколаївська"
+
+msgid "Khmelnytskyi"
+msgstr "Хмельницька"
+
+msgid "Dnipropetrovsk"
+msgstr "Дніпропетровська"

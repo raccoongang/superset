@@ -5704,7 +5704,7 @@
         "Візуалізує, як метрика змінилася протягом певного часу, використовуючи колірну шкалу та перегляд календаря. Значення сірого кольору використовуються для позначення відсутніх значень, а лінійна колірна схема використовується для кодування величини значення кожного дня."
       ],
       "Visualizes how a single metric varies across a country's principal subdivisions (states, provinces, etc) on a choropleth map. Each subdivision's value is elevated when you hover over the corresponding geographic boundary.": [
-        "Візуалізує, як окрема метрика змінюється між основними підрозділами країни (штатами, провінціями тощо) на хороплетній карті. Значення кожного підрозділу збільшується, коли ви наводите курсор на відповідну географічну межу."
+        "Візуалізує, як окрема метрика змінюється між основними підрозділами країни (штатами, провінціями тощо) на карті. Значення кожного підрозділу збільшується, коли ви наводите курсор на відповідну географічну межу."
       ],
       "Visualizes many different time-series objects in a single chart. This chart is being deprecated and we recommend using the Time-series Chart instead.": [
         "Візуалізує багато різних об’єктів часового ряду на одній діаграмі. Ця діаграма припиняється, тому ми рекомендуємо замість неї використовувати діаграму часових рядів."
@@ -6825,7 +6825,7 @@
       "Zaporizhzhya": ["Запорізька"],
       "Mykolayiv": ["Миколаївська"],
       "Poltava": ["Полтавська"],
-      "Khmel'nyts'kyy": ["Кременчуцька"],
+      "Khmel'nyts'kyy": ["Хмельницька"],
       "Ternopil'": ["Тернопільска"],
       "Dnipropetrovs'k": ["Дніпропетровська"],
       "Cherkasy": ["Черкаська"],
@@ -6835,7 +6835,32 @@
       "Regions": ["Регіони"],
       "Column containing names of region/province/department in your table.": [
         "Стовпець, що містить назви областей, провінцій або департаментів у таблиці."
-      ]
+      ],
+      "Область": ["Регіон"],
+      "Districts": ["Райони"],
+      "Which region to plot the map for?": [
+        "Для якого регіону побудувати карту?"
+      ],
+      "Column containing district names in your table.": [
+        "Стовпець, що містить назви районів у таблиці."
+      ],
+      "Visualizes how a single metric varies across a country's secondary subdivisions (districts, etc) on a choropleth map. Each subdivision's value is elevated when you hover over the corresponding geographic boundary.": [
+        "Візуалізує, як окрема метрика змінюється залежно від другорядних підрозділів країни (районів тощо) на карті. Значення кожного підрозділу збільшується, коли ви наводите курсор на відповідну географічну межу."
+      ],
+      "Region Map": ["Карта Регіону"],
+      "Сhernihiv": ["Чернігівська"],
+      "Kyiv": ["Київська"],
+      "Zakarpattia": ["Закарпатська"],
+      "Ivano-Frankivsk": ["Івано-Франківська"],
+      "Odesa": ["Одеська"],
+      "Vinnytsia": ["Вінницька"],
+      "Lviv": ["Львівська"],
+      "Luhansk": ["Луганська"],
+      "Donetsk": ["Донецька"],
+      "Zaporizhzhia": ["Запорізька"],
+      "Mykolaiv": ["Миколаївська"],
+      "Khmelnytskyi": ["Хмельницька"],
+      "Dnipropetrovsk": ["Дніпропетровська"]
     }
   }
 }

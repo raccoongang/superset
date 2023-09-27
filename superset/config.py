@@ -287,7 +287,7 @@ AUTH_RATE_LIMIT = "5 per second"
 APP_NAME = "Superset"
 
 # Specify the App icon
-APP_ICON = "/static/assets/images/superset-logo-horiz.png"
+APP_ICON = "/static/assets/images/superset-logo-horiz.svg"
 
 # Specify where clicking the logo would take the user
 # e.g. setting it to '/' would take the user to '/superset/welcome/'
@@ -364,6 +364,7 @@ LANGUAGES = {
     "sk": {"flag": "sk", "name": "Slovak"},
     "sl": {"flag": "si", "name": "Slovenian"},
     "nl": {"flag": "nl", "name": "Dutch"},
+    "uk": {"flag": "uk", "name": "Ukranian"},
 }
 # Turning off i18n by default as translation in most languages are
 # incomplete and not well maintained.
@@ -592,22 +593,22 @@ EXTRA_CATEGORICAL_COLOR_SCHEMES: list[dict[str, Any]] = []
 
 # THEME_OVERRIDES is used for adding custom theme to superset
 # example code for "My theme" custom scheme
-# THEME_OVERRIDES = {
-#   "borderRadius": 4,
-#   "colors": {
-#     "primary": {
-#       "base": 'red',
-#     },
-#     "secondary": {
-#       "base": 'green',
-#     },
-#     "grayscale": {
-#       "base": 'orange',
-#     }
-#   }
-# }
+THEME_OVERRIDES = {
+    "colors": {
+        "primary": {
+            "base": "#e62050",
+            "dark1": "#c1163f",
+            "dark2": "#991132",
+            "light1": "#f1839e",
+            "light2": "#f7b4c4",
+            "light3": "#fce7ec",
+            "light4": "#fce7ec",
+            "light5": "#fce7ec",
+        }
+    }
+}
 
-THEME_OVERRIDES: dict[str, Any] = {}
+# THEME_OVERRIDES: dict[str, Any] = {}
 
 # EXTRA_SEQUENTIAL_COLOR_SCHEMES is used for adding custom sequential color schemes
 # EXTRA_SEQUENTIAL_COLOR_SCHEMES =  [

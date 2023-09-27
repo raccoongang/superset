@@ -64,7 +64,8 @@ class DashboardDataRestApi(DashboardRestApi):
             and retutns pdf or msword file.
           requestBody:
             description: >-
-              A query context consists of a datasource from which to generate file objects.
+              Query context consists of datasource from which
+              to generate file objects.
             required: true
             content:
               application/json:
@@ -92,7 +93,11 @@ class DashboardDataRestApi(DashboardRestApi):
         if json_body is None:
             return self.response_400(message=_("Request is not JSON"))
 
-        command = self.dispatch_export_command(json_body["id"], json_body["landscape"], json_body["result_format"])
+        command = self.dispatch_export_command(
+            json_body["id"],
+            json_body["landscape"],
+            json_body["result_format"],
+        )
 
         try:
             exported_file = command.run()
@@ -105,10 +110,16 @@ class DashboardDataRestApi(DashboardRestApi):
             FileWrapper(BytesIO(exported_file.content)),
             mimetype=f"application/{json_body['result_format']}",
             direct_passthrough=True,
-            headers=generate_download_headers(json_body["result_format"], exported_file.name)
+            headers=generate_download_headers(
+                json_body["result_format"],
+                exported_file.name,
+            )
         )
 
-    def dispatch_export_command(self, dashboard_id: int, landscape: bool, format_type: str) -> PDFExportCommand:
+    @staticmethod
+    def dispatch_export_command(
+        dashboard_id: int, landscape: bool, format_type: str
+    ) -> PDFExportCommand:
         """
         Report generation Command entry point.
 

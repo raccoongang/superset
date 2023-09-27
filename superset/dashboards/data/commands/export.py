@@ -1,7 +1,7 @@
 import tempfile
 from typing import NamedTuple, Optional
 
-import pdf2docx
+# import pdf2docx
 
 from superset.commands.base import BaseCommand
 from superset.daos.dashboard import DashboardDAO
@@ -31,7 +31,11 @@ class PDFExportCommand(BaseCommand):
         dashboard_url = get_url_path(
             "Superset.dashboard", dashboard_id_or_slug=self._model.id
         )
-        screenshot = PDFDashboardScreenshot(dashboard_url, self.landscape, self._model.digest)
+        screenshot = PDFDashboardScreenshot(
+            dashboard_url,
+            self.landscape,
+            self._model.digest,
+        )
         current_user = get_current_user()
         try:
             document = screenshot.get_screenshot(user=current_user)
@@ -52,7 +56,7 @@ class DocExportCommand(PDFExportCommand):
             pdf_file.write(exported_file.content)
             pdf_file.seek(0)
             with tempfile.NamedTemporaryFile(suffix=".doc") as doc_file:
-                pdf2docx.parse(pdf_file.name, doc_file.name)
+                # pdf2docx.parse(pdf_file.name, doc_file.name)
                 with open(doc_file.name, mode='rb') as file_content:
                     document_content = file_content.read()
         return ExportedFile(name=exported_file.name, content=document_content)

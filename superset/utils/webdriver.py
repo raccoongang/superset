@@ -17,7 +17,6 @@
 
 from __future__ import annotations
 
-import io
 import json
 import logging
 from urllib import request
@@ -25,7 +24,6 @@ from urllib.error import URLError
 from enum import Enum
 from time import sleep
 from typing import Any, TYPE_CHECKING
-from PIL import Image
 
 from flask import current_app
 from selenium.common.exceptions import (
@@ -263,38 +261,39 @@ class WebDriverProxy:
         return img
 
 
-class PDFDriver:
-    def get_screenshot(self, url: str, landscape: bool, element_name: str, user: User) -> bytes | None:
-        user = security_manager.get_user_by_username(user or app.config["THUMBNAIL_SELENIUM_USER"])
-        cookies = MachineAuthProvider.get_auth_cookies(user)
-        headers = {
-            "Cookie": f"session={cookies.get('session', '')}",
-            "Content-Type": "application/json",
-        }
-        payload = {"location": url, "landscape": landscape}
-        data = bytes(json.dumps(payload), "utf-8")
-        baseurl = app.config["PDF_GENERATOR_BASEURL"]
-        url = f"{baseurl}api/v1/reports/generate"
-        logger.info("Fetching %s with payload %s", url, payload)
-        try:
-            req = request.Request(url, data=data, headers=headers, method="POST")
-            response = request.urlopen(req)
+def get_pdf_screenshot(url: str, landscape: bool, user: User) -> bytes | None:
+    user = security_manager.get_user_by_username(
+        user or app.config["THUMBNAIL_SELENIUM_USER"]
+    )
+    cookies = MachineAuthProvider.get_auth_cookies(user)
+    headers = {
+        "Cookie": f"session={cookies.get('session', '')}",
+        "Content-Type": "application/json",
+    }
+    payload = {"location": url, "landscape": landscape}
+    data = bytes(json.dumps(payload), "utf-8")
+    baseurl = app.config["PDF_GENERATOR_BASEURL"]
+    url = f"{baseurl}api/v1/reports/generate"
+    logger.info("Fetching %s with payload %s", url, payload)
+    try:
+        req = request.Request(url, data=data, headers=headers, method="POST")
+        with request.urlopen(req) as f:
             logger.info(
-                "Fetched %s with payload %s, status code: %s", url, data, response.code
+                "Fetched %s with payload %s, status code: %s", url, data, f.code
             )
-            if response.code == 201:
-                result = {"success": data, "image": response.read()}
-                return result["image"]
+            if f.code == 201:
+                result = {"success": data, "image": f.read()}
+                result = result["image"]
             else:
-                result = {"error": data, "status_code": response.code}
+                result = {"error": data, "status_code": f.code}
                 logger.error(
                     "Error fetching %s with payload %s, status code: %s",
                     url,
                     data,
-                    response.code,
+                    f.code,
                 )
-        except URLError:
-            logger.exception("PDF generation error.")
-            raise
-        else:
-            return result
+    except URLError:
+        logger.exception("PDF generation error.")
+        raise
+    else:
+        return result

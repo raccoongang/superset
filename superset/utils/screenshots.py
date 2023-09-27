@@ -27,7 +27,7 @@ from superset.utils.urls import modify_url_query
 from superset.utils.webdriver import (
     ChartStandaloneMode,
     DashboardStandaloneMode,
-    PDFDriver,
+    get_pdf_screenshot,
     WebDriverProxy,
     WindowSize,
 )
@@ -264,12 +264,8 @@ class PDFDashboardScreenshot(BaseScreenshot):
         super().__init__(url, digest)
         self.landscape = landscape
 
-    def driver(self, window_size: WindowSize | None = None) -> PDFDriver:
-        return PDFDriver()
-
     def get_screenshot(
         self, user: User, window_size: WindowSize | None = None
     ) -> bytes | None:
-        driver = self.driver(window_size)
-        self.screenshot = driver.get_screenshot(self.url, self.landscape, self.element, user)
+        self.screenshot = get_pdf_screenshot(self.url, self.landscape, user)
         return self.screenshot

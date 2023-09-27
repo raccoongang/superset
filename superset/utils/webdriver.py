@@ -295,5 +295,4 @@ def get_pdf_screenshot(url: str, landscape: bool, user: User) -> bytes | None:
     except URLError:
         logger.exception("PDF generation error.")
         raise
-    else:
-        return result
+    return result

@@ -112,7 +112,8 @@ test('should render', () => {
 test('should render the dropdown button', () => {
   const mockedProps = createProps();
   setup(mockedProps);
-  expect(screen.getByRole('button')).toBeInTheDocument();
+  const dropdownButtons = screen.getAllByRole('button');
+  expect(dropdownButtons[0]).toBeInTheDocument();
 });
 
 test('should render the menu items', async () => {
@@ -121,7 +122,7 @@ test('should render the menu items', async () => {
   expect(screen.getAllByRole('menuitem')).toHaveLength(4);
   expect(screen.getByText('Refresh dashboard')).toBeInTheDocument();
   expect(screen.getByText('Set auto-refresh interval')).toBeInTheDocument();
-  expect(screen.getByText('Download as image')).toBeInTheDocument();
+  expect(screen.getByText('Download')).toBeInTheDocument();
   expect(screen.getByText('Enter fullscreen')).toBeInTheDocument();
 });
 

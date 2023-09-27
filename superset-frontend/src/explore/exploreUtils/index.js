@@ -270,13 +270,17 @@ export const exportChart = ({
   SupersetClient.postForm(url, { form_data: safeStringify(payload) });
 };
 
-export const exportDashboard = ({ formData, resultFormat = 'pdf', landscape=false }) => {
+export const exportDashboard = ({
+  formData,
+  resultFormat = 'pdf',
+  landscape = false,
+}) => {
   const url = '/api/v1/dashboard/data';
 
   const payload = {
     ...formData,
     result_format: resultFormat,
-    landscape: landscape,
+    landscape,
   };
 
   SupersetClient.postForm(url, { form_data: safeStringify(payload) });

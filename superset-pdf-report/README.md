@@ -27,7 +27,7 @@ npm run start:dev
 
 Running in production:
 ```
-npm ci 
+npm ci
 ```
 
 ## Health check

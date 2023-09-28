@@ -42,6 +42,8 @@ repos:
     rev: v5.0.0
     hooks:
       - id: check-docstring-first
+      - id: check-added-large-files
+        exclude: ^.*\.(geojson)$|^docs/static/img/screenshots/.*|^superset/translations/
       - id: check-yaml
         exclude: ^helm/superset/templates/
       - id: debug-statements

@@ -64,6 +64,7 @@ click==8.2.1
     #   click-repl
     #   flask
     #   flask-appbuilder
+clickhouse-connect==0.6.8
 click-didyoumean==0.3.1
     # via celery
 click-option-group==0.5.7

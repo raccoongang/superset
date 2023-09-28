@@ -59,21 +59,22 @@ class DashboardDataRestApi(DashboardRestApi):
         and retutns pdf or msword file.
         ---
         post:
-          description: >-
-            Takes a query context constructed in the client
-            and retutns pdf or msword file.
+          summary: Create a new pdf or msword dashboard report
           requestBody:
-            description: >-
-              Query context consists of datasource from which
-              to generate file objects.
+            description: Query context of datasource from which to generate file
             required: true
             content:
               application/json:
+                schema:
+                  $ref: '#/components/schemas/{{self.__class__.__name__}}.post'
           responses:
             200:
               description: Generated report result
               content:
-                application/pdf
+                application/pdf:
+                  schema:
+                    type: string
+                    format: binary
             400:
               $ref: '#/components/responses/400'
             401:

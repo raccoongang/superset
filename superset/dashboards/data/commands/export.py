@@ -1,8 +1,7 @@
 import tempfile
 from typing import NamedTuple, Optional
 
-# import pdf2docx
-
+import pdf2docx
 from superset.commands.base import BaseCommand
 from superset.daos.dashboard import DashboardDAO
 from superset.dashboards.commands.exceptions import DashboardNotFoundError
@@ -56,7 +55,7 @@ class DocExportCommand(PDFExportCommand):
             pdf_file.write(exported_file.content)
             pdf_file.seek(0)
             with tempfile.NamedTemporaryFile(suffix=".doc") as doc_file:
-                # pdf2docx.parse(pdf_file.name, doc_file.name)
-                with open(doc_file.name, mode='rb') as file_content:
+                pdf2docx.parse(pdf_file.name, doc_file.name)
+                with open(doc_file.name, mode="rb") as file_content:
                     document_content = file_content.read()
         return ExportedFile(name=exported_file.name, content=document_content)

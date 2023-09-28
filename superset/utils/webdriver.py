@@ -23,7 +23,7 @@ from urllib import request
 from urllib.error import URLError
 from enum import Enum
 from time import sleep
-from typing import Any, TYPE_CHECKING
+from typing import Any, Dict, TYPE_CHECKING, Union
 
 from flask import current_app
 from selenium.common.exceptions import (
@@ -261,7 +261,7 @@ class WebDriverProxy:
         return img
 
 
-def get_pdf_screenshot(url: str, landscape: bool, user: User) -> bytes | None:
+def get_pdf_screenshot(url: str, landscape: bool, user: User) -> Union[bytes, Dict[str, str]]:
     user = security_manager.get_user_by_username(
         user or app.config["THUMBNAIL_SELENIUM_USER"]
     )

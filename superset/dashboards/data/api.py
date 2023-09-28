@@ -101,7 +101,7 @@ class DashboardDataRestApi(DashboardRestApi):
         )
 
         try:
-            exported_file = command.run()
+            exported_file = command.run()  # type: ignore
         except DashboardNotFoundError:
             return self.response_404()
         except PDFGenerationFailedError as exp:
@@ -114,13 +114,13 @@ class DashboardDataRestApi(DashboardRestApi):
             headers=generate_download_headers(
                 json_body["result_format"],
                 exported_file.name,
-            )
+            ),
         )
 
     @staticmethod
     def dispatch_export_command(
         dashboard_id: int, landscape: bool, format_type: str
-    ) -> PDFExportCommand:
+    ) -> PDFExportCommand | None:
         """
         Report generation Command entry point.
 

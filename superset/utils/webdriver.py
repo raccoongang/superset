@@ -261,7 +261,9 @@ class WebDriverProxy:
         return img
 
 
-def get_pdf_screenshot(url: str, landscape: bool, user: User) -> Union[bytes, Dict[str, str]]:
+def get_pdf_screenshot(
+    url: str, landscape: bool, user: User
+) -> Union[bytes, Dict[str, str]]:
     user = security_manager.get_user_by_username(
         user or app.config["THUMBNAIL_SELENIUM_USER"]
     )

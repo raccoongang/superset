@@ -267,5 +267,9 @@ class PDFDashboardScreenshot(BaseScreenshot):
     def get_screenshot(
         self, user: User, window_size: WindowSize | None = None
     ) -> bytes:
-        self.screenshot = get_pdf_screenshot(self.url, self.landscape, user)  # type: ignore
+        self.screenshot = get_pdf_screenshot(
+            self.url,
+            self.landscape,
+            user,
+        )  # type: ignore
         return self.screenshot  # type: ignore

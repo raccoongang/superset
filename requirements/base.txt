@@ -263,7 +263,9 @@ paramiko==3.5.1
     #   apache-superset (pyproject.toml)
     #   sshtunnel
 parsedatetime==2.6
-    # via apache-superset (pyproject.toml)
+    # via apache-superset
+pdf2docx==0.5.6
+    # via apache-superset
 pgsanity==0.2.9
     # via apache-superset (pyproject.toml)
 pillow==11.3.0

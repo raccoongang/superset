@@ -20,6 +20,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty } from 'lodash';
 import {
+  css,
   isFeatureEnabled,
   FeatureFlag,
   SupersetClient,
@@ -29,6 +30,7 @@ import { Menu } from 'src/components/Menu';
 import { URL_PARAMS } from 'src/constants';
 import ShareMenuItems from 'src/dashboard/components/menu/ShareMenuItems';
 import CssEditor from 'src/dashboard/components/CssEditor';
+import Icons from 'src/components/Icons';
 import RefreshIntervalModal from 'src/dashboard/components/RefreshIntervalModal';
 import SaveModal from 'src/dashboard/components/SaveModal';
 import HeaderReportDropdown from 'src/features/reports/ReportModal/HeaderReportDropdown';
@@ -40,6 +42,7 @@ import getDashboardUrl from 'src/dashboard/util/getDashboardUrl';
 import { getActiveFilters } from 'src/dashboard/util/activeDashboardFilters';
 import { getUrlParam } from 'src/utils/urlUtils';
 import { LOG_ACTIONS_DASHBOARD_DOWNLOAD_AS_IMAGE } from 'src/logger/LogUtils';
+import { exportDashboard } from 'src/explore/exploreUtils';
 
 const propTypes = {
   addSuccessToast: PropTypes.func.isRequired,
@@ -91,12 +94,23 @@ const MENU_KEYS = {
   EDIT_PROPERTIES: 'edit-properties',
   EDIT_CSS: 'edit-css',
   DOWNLOAD_AS_IMAGE: 'download-as-image',
+  DOWNLOAD_AS_PDF_PORTRAIT: 'download-as-pdf-portrait',
+  DOWNLOAD_AS_PDF_LANDSCAPE: 'download-as-pdf-landscape',
+  DOWNLOAD_AS_DOC_PORTRAIT: 'download-as-doc-portrait',
+  DOWNLOAD_AS_DOC_LANDSCAPE: 'download-as-doc-landscape',
   TOGGLE_FULLSCREEN: 'toggle-fullscreen',
   MANAGE_EMBEDDED: 'manage-embedded',
   MANAGE_EMAIL_REPORT: 'manage-email-report',
 };
 
 const SCREENSHOT_NODE_SELECTOR = '.dashboard';
+
+const iconReset = css`
+  .ant-dropdown-menu-item > & > .anticon:first-child {
+    margin-right: 0;
+    vertical-align: 0;
+  }
+`;
 
 class HeaderActionsDropdown extends React.PureComponent {
   static discardChanges() {
@@ -167,6 +181,38 @@ class HeaderActionsDropdown extends React.PureComponent {
       case MENU_KEYS.EDIT_PROPERTIES:
         this.props.showPropertiesModal();
         break;
+      case MENU_KEYS.DOWNLOAD_AS_PDF_PORTRAIT: {
+        exportDashboard({
+          formData: { id: this.props.dashboardId },
+          resultFormat: 'pdf',
+          landscape: false,
+        });
+        break;
+      }
+      case MENU_KEYS.DOWNLOAD_AS_PDF_LANDSCAPE: {
+        exportDashboard({
+          formData: { id: this.props.dashboardId },
+          resultFormat: 'pdf',
+          landscape: true,
+        });
+        break;
+      }
+      case MENU_KEYS.DOWNLOAD_AS_DOC_PORTRAIT: {
+        exportDashboard({
+          formData: { id: this.props.dashboardId },
+          resultFormat: 'doc',
+          landscape: false,
+        });
+        break;
+      }
+      case MENU_KEYS.DOWNLOAD_AS_DOC_LANDSCAPE: {
+        exportDashboard({
+          formData: { id: this.props.dashboardId },
+          resultFormat: 'doc',
+          landscape: true,
+        });
+        break;
+      }
       case MENU_KEYS.DOWNLOAD_AS_IMAGE: {
         // menu closes with a delay, we need to hide it manually,
         // so that we don't capture it on the screenshot
@@ -312,12 +358,53 @@ class HeaderActionsDropdown extends React.PureComponent {
           </Menu.Item>
         )}
         {!editMode && (
-          <Menu.Item
-            key={MENU_KEYS.DOWNLOAD_AS_IMAGE}
-            onClick={this.handleMenuClick}
-          >
-            {t('Download as image')}
-          </Menu.Item>
+          <Menu.SubMenu title={t('Download')} key={MENU_KEYS.DOWNLOAD_SUBMENU}>
+            <Menu.SubMenu
+              title={t('Download as PDF')}
+              key={MENU_KEYS.DOWNLOAD_SUBMENU}
+            >
+              <Menu.Item
+                key={MENU_KEYS.DOWNLOAD_AS_PDF_PORTRAIT}
+                icon={<Icons.FilePdfOutlined css={iconReset} />}
+                onClick={this.handleMenuClick}
+              >
+                {t('Portrait')}
+              </Menu.Item>
+              <Menu.Item
+                key={MENU_KEYS.DOWNLOAD_AS_PDF_LANDSCAPE}
+                icon={<Icons.FilePdfOutlined css={iconReset} />}
+                onClick={this.handleMenuClick}
+              >
+                {t('Landscape')}
+              </Menu.Item>
+            </Menu.SubMenu>
+            <Menu.SubMenu
+              title={t('Download as Doc')}
+              key={MENU_KEYS.DOWNLOAD_SUBMENU}
+            >
+              <Menu.Item
+                key={MENU_KEYS.DOWNLOAD_AS_DOC_PORTRAIT}
+                icon={<Icons.FileWordOutlined css={iconReset} />}
+                onClick={this.handleMenuClick}
+              >
+                {t('Portrait')}
+              </Menu.Item>
+              <Menu.Item
+                key={MENU_KEYS.DOWNLOAD_AS_DOC_LANDSCAPE}
+                icon={<Icons.FileWordOutlined css={iconReset} />}
+                onClick={this.handleMenuClick}
+              >
+                {t('Landscape')}
+              </Menu.Item>
+            </Menu.SubMenu>
+            <Menu.Item
+              key={MENU_KEYS.DOWNLOAD_AS_IMAGE}
+              icon={<Icons.FileOutlined css={iconReset} />}
+              onClick={this.handleMenuClick}
+            >
+              {t('Download as image')}
+            </Menu.Item>
+          </Menu.SubMenu>
         )}
         {userCanShare && (
           <Menu.SubMenu

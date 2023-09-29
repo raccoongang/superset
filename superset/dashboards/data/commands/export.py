@@ -4,7 +4,7 @@ from typing import NamedTuple, Optional
 import pdf2docx
 from superset.commands.base import BaseCommand
 from superset.daos.dashboard import DashboardDAO
-from superset.dashboards.commands.exceptions import DashboardNotFoundError
+from superset.commands.dashboard.exceptions import DashboardNotFoundError
 from superset.dashboards.data.commands.exceptions import PDFGenerationFailedError
 from superset.models.dashboard import Dashboard
 from superset.tasks.utils import get_current_user

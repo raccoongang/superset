@@ -17,11 +17,14 @@
 
 from __future__ import annotations
 
+import json
 import logging
 from abc import ABC, abstractmethod
 from enum import Enum
 from time import sleep
 from typing import Any, TYPE_CHECKING
+from urllib import request
+from urllib.error import URLError
 
 from flask import current_app
 from selenium.common.exceptions import (
@@ -35,8 +38,10 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
+from superset import app, security_manager
 from superset import feature_flag_manager
 from superset.extensions import machine_auth_provider_factory
+from superset.utils.machine_auth import MachineAuthProvider
 from superset.utils.retries import retry_call
 
 WindowSize = tuple[int, int]
@@ -436,3 +441,40 @@ class WebDriverSelenium(WebDriverProxy):
         finally:
             self.destroy(driver, current_app.config["SCREENSHOT_SELENIUM_RETRIES"])
         return img
+
+
+def get_pdf_screenshot(url: str, landscape: bool, user: User) -> bytes | dict[str, str]:
+    user = security_manager.get_user_by_username(
+        user or app.config["THUMBNAIL_SELENIUM_USER"]
+    )
+    cookies = MachineAuthProvider.get_auth_cookies(user)
+    headers = {
+        "Cookie": f"session={cookies.get('session', '')}",
+        "Content-Type": "application/json",
+    }
+    payload = {"location": url, "landscape": landscape}
+    data = bytes(json.dumps(payload), "utf-8")
+    baseurl = app.config["PDF_GENERATOR_BASEURL"]
+    url = f"{baseurl}api/v1/reports/generate"
+    logger.info("Fetching %s with payload %s", url, payload)
+    try:
+        req = request.Request(url, data=data, headers=headers, method="POST")
+        with request.urlopen(req) as f:
+            logger.info(
+                "Fetched %s with payload %s, status code: %s", url, data, f.code
+            )
+            if f.code == 201:
+                result = {"success": data, "image": f.read()}
+                result = result["image"]
+            else:
+                result = {"error": data, "status_code": f.code}
+                logger.error(
+                    "Error fetching %s with payload %s, status code: %s",
+                    url,
+                    data,
+                    f.code,
+                )
+    except URLError:
+        logger.exception("PDF generation error.")
+        raise
+    return result

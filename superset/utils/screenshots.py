@@ -29,6 +29,7 @@ from superset.utils.urls import modify_url_query
 from superset.utils.webdriver import (
     ChartStandaloneMode,
     DashboardStandaloneMode,
+    get_pdf_screenshot,
     WebDriver,
     WebDriverPlaywright,
     WebDriverSelenium,
@@ -272,3 +273,28 @@ class DashboardScreenshot(BaseScreenshot):
             "dashboard_state": dashboard_state,
         }
         return md5_sha_from_dict(args)
+
+
+class PDFDashboardScreenshot(BaseScreenshot):
+    def __init__(
+        self,
+        url: str,
+        landscape: bool,
+        digest: str,
+    ):
+        url = modify_url_query(
+            url,
+            standalone=DashboardStandaloneMode.REPORT.value,
+        )
+        super().__init__(url, digest)
+        self.landscape = landscape
+
+    def get_screenshot(
+        self, user: User, window_size: WindowSize | None = None
+    ) -> bytes:
+        self.screenshot = get_pdf_screenshot(
+            self.url,
+            self.landscape,
+            user,
+        )  # type: ignore
+        return self.screenshot  # type: ignore

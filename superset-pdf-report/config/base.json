@@ -1,0 +1,7 @@
+{
+  "logger": {
+    "format": "common"
+  },
+  "port": 8899,
+  "templates": "./templates"
+}

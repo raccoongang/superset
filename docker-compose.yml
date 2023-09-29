@@ -128,6 +128,27 @@ services:
       - REDIS_PORT=6379
       - REDIS_SSL=false
 
+  superset-pdf-report:
+    container_name: superset_pdf_report
+    build:
+      target: development_build
+      context: .
+      dockerfile: ./superset-pdf-report/Dockerfile
+      args:
+        NODE_ENV: development
+    image: superset-pdf-report
+    ports:
+      - 8890:8890
+    depends_on: *superset-depends-on
+    volumes:
+      - ./superset-pdf-report:/app
+      - /app/node_modules
+    command: npm run start:dev
+    environment:
+      - PORT=8890
+    stdin_open: true
+    tty: true
+
   superset-init:
     build:
       <<: *common-build

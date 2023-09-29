@@ -116,7 +116,8 @@ test('should render', () => {
 test('should render the Download dropdown button when not in edit mode', () => {
   const mockedProps = createProps();
   setup(mockedProps);
-  expect(screen.getByRole('button', { name: 'Download' })).toBeInTheDocument();
+  const dropdownButtons = screen.getAllByRole('button', { name: 'Download' });
+  expect(dropdownButtons[0]).toBeInTheDocument();
 });
 
 test('should render the menu items', async () => {

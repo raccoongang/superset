@@ -20,7 +20,8 @@ class PDFGenerationError extends Error {
 }
 
 NotImplementedError.prototype.name = 'NotImplementedError';
-TriedOptionsAndFailed.name = 'TriedOptionsAndFailed';
+PDFGenerationError.prototype.name = 'PDFGenerationError';
+TriedOptionsAndFailed.prototype.name = 'TriedOptionsAndFailed';
 
 module.exports = {
     NotImplementedError: NotImplementedError,

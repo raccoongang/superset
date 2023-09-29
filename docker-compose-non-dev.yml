@@ -127,10 +127,25 @@ services:
     healthcheck:
       disable: true
 
+  clickhouse:
+    image: clickhouse/clickhouse-server:22.3
+    user: "101:101"
+    env_file: docker/.env-non-dev
+    container_name: superset_clickhouse
+    hostname: clickhouse
+    restart: unless-stopped
+    volumes:
+      - clickhouse:/var/lib/clickhouse
+    ports:
+      - "127.0.0.1:8123:8123"
+      - "127.0.0.1:9000:9000"
+
 volumes:
   superset_home:
     external: false
   db_home:
     external: false
   redis:
+    external: false
+  clickhouse:
     external: false

@@ -24,7 +24,6 @@ import { css, t } from '@superset-ui/core';
 import { Menu } from 'src/components/Menu';
 import { URL_PARAMS } from 'src/constants';
 import ShareMenuItems from 'src/dashboard/components/menu/ShareMenuItems';
-import DownloadMenuItems from 'src/dashboard/components/menu/DownloadMenuItems';
 import CssEditor from 'src/dashboard/components/CssEditor';
 import Icons from 'src/components/Icons';
 import RefreshIntervalModal from 'src/dashboard/components/RefreshIntervalModal';
@@ -308,7 +307,7 @@ export class HeaderActionsDropdown extends PureComponent {
           </Menu.Item>
         )}
         {!editMode && (
-          <Menu.SubMenu title={t('Download')} key={MENU_KEYS.DOWNLOAD_SUBMENU}>
+          <Menu.SubMenu title={t('Download')} key={MenuKeys.DownloadSubmenu}>
             <Menu.SubMenu
               title={t('Download as PDF')}
               key={MenuKeys.DownloadSubmenu}

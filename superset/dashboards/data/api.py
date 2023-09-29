@@ -28,7 +28,7 @@ from flask_babel import gettext as _
 from werkzeug.wsgi import FileWrapper
 
 from superset.dashboards.api import DashboardRestApi
-from superset.dashboards.commands.exceptions import DashboardNotFoundError
+from superset.commands.dashboard.exceptions import DashboardNotFoundError
 from superset.dashboards.data.commands.exceptions import PDFGenerationFailedError
 from superset.dashboards.data.commands.export import DocExportCommand, PDFExportCommand
 from superset.extensions import event_logger

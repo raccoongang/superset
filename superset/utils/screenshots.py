@@ -29,9 +29,8 @@ from superset.utils.urls import modify_url_query
 from superset.utils.webdriver import (
     ChartStandaloneMode,
     DashboardStandaloneMode,
-    WebDriver,
-    WebDriverPlaywright,
-    WebDriverSelenium,
+    get_pdf_screenshot,
+    WebDriverProxy,
     WindowSize,
 )
 
@@ -255,20 +254,27 @@ class DashboardScreenshot(BaseScreenshot):
         self.window_size = window_size or DEFAULT_DASHBOARD_WINDOW_SIZE
         self.thumb_size = thumb_size or DEFAULT_DASHBOARD_THUMBNAIL_SIZE
 
-    def cache_key(
+
+class PDFDashboardScreenshot(BaseScreenshot):
+    def __init__(
         self,
-        window_size: bool | WindowSize | None = None,
-        thumb_size: bool | WindowSize | None = None,
-        dashboard_state: DashboardPermalinkState | None = None,
-    ) -> str:
-        window_size = window_size or self.window_size
-        thumb_size = thumb_size or self.thumb_size
-        args = {
-            "thumbnail_type": self.thumbnail_type,
-            "digest": self.digest,
-            "type": "thumb",
-            "window_size": window_size,
-            "thumb_size": thumb_size,
-            "dashboard_state": dashboard_state,
-        }
-        return md5_sha_from_dict(args)
+        url: str,
+        landscape: bool,
+        digest: str,
+    ):
+        url = modify_url_query(
+            url,
+            standalone=DashboardStandaloneMode.REPORT.value,
+        )
+        super().__init__(url, digest)
+        self.landscape = landscape
+
+    def get_screenshot(
+        self, user: User, window_size: WindowSize | None = None
+    ) -> bytes:
+        self.screenshot = get_pdf_screenshot(
+            self.url,
+            self.landscape,
+            user,
+        )  # type: ignore
+        return self.screenshot  # type: ignore

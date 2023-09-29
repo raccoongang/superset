@@ -19,13 +19,19 @@
 import { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty } from 'lodash';
-import { connect } from 'react-redux';
-import { t } from '@superset-ui/core';
+import {
+  css,
+  isFeatureEnabled,
+  FeatureFlag,
+  SupersetClient,
+  t,
+} from '@superset-ui/core';
 import { Menu } from 'src/components/Menu';
 import { URL_PARAMS } from 'src/constants';
 import ShareMenuItems from 'src/dashboard/components/menu/ShareMenuItems';
 import DownloadMenuItems from 'src/dashboard/components/menu/DownloadMenuItems';
 import CssEditor from 'src/dashboard/components/CssEditor';
+import Icons from 'src/components/Icons';
 import RefreshIntervalModal from 'src/dashboard/components/RefreshIntervalModal';
 import SaveModal from 'src/dashboard/components/SaveModal';
 import HeaderReportDropdown from 'src/features/reports/ReportModal/HeaderReportDropdown';
@@ -35,7 +41,8 @@ import FilterScopeModal from 'src/dashboard/components/filterscope/FilterScopeMo
 import getDashboardUrl from 'src/dashboard/util/getDashboardUrl';
 import { getActiveFilters } from 'src/dashboard/util/activeDashboardFilters';
 import { getUrlParam } from 'src/utils/urlUtils';
-import { MenuKeys } from 'src/dashboard/types';
+import { LOG_ACTIONS_DASHBOARD_DOWNLOAD_AS_IMAGE } from 'src/logger/LogUtils';
+import { exportDashboard } from 'src/explore/exploreUtils';
 
 const propTypes = {
   addSuccessToast: PropTypes.func.isRequired,
@@ -79,11 +86,34 @@ const defaultProps = {
   refreshWarning: null,
 };
 
-const mapStateToProps = state => ({
-  directPathToChild: state.dashboardState.directPathToChild,
-});
+const MENU_KEYS = {
+  SAVE_MODAL: 'save-modal',
+  SHARE_DASHBOARD: 'share-dashboard',
+  REFRESH_DASHBOARD: 'refresh-dashboard',
+  AUTOREFRESH_MODAL: 'autorefresh-modal',
+  SET_FILTER_MAPPING: 'set-filter-mapping',
+  EDIT_PROPERTIES: 'edit-properties',
+  EDIT_CSS: 'edit-css',
+  DOWNLOAD_AS_IMAGE: 'download-as-image',
+  DOWNLOAD_AS_PDF_PORTRAIT: 'download-as-pdf-portrait',
+  DOWNLOAD_AS_PDF_LANDSCAPE: 'download-as-pdf-landscape',
+  DOWNLOAD_AS_DOC_PORTRAIT: 'download-as-doc-portrait',
+  DOWNLOAD_AS_DOC_LANDSCAPE: 'download-as-doc-landscape',
+  TOGGLE_FULLSCREEN: 'toggle-fullscreen',
+  MANAGE_EMBEDDED: 'manage-embedded',
+  MANAGE_EMAIL_REPORT: 'manage-email-report',
+};
 
-export class HeaderActionsDropdown extends PureComponent {
+const SCREENSHOT_NODE_SELECTOR = '.dashboard';
+
+const iconReset = css`
+  .ant-dropdown-menu-item > & > .anticon:first-child {
+    margin-right: 0;
+    vertical-align: 0;
+  }
+`;
+
+class HeaderActionsDropdown extends React.PureComponent {
   static discardChanges() {
     window.location.reload();
   }
@@ -134,7 +164,56 @@ export class HeaderActionsDropdown extends PureComponent {
       case MenuKeys.EditProperties:
         this.props.showPropertiesModal();
         break;
-      case MenuKeys.ToggleFullscreen: {
+      case MENU_KEYS.DOWNLOAD_AS_PDF_PORTRAIT: {
+        exportDashboard({
+          formData: { id: this.props.dashboardId },
+          resultFormat: 'pdf',
+          landscape: false,
+        });
+        break;
+      }
+      case MENU_KEYS.DOWNLOAD_AS_PDF_LANDSCAPE: {
+        exportDashboard({
+          formData: { id: this.props.dashboardId },
+          resultFormat: 'pdf',
+          landscape: true,
+        });
+        break;
+      }
+      case MENU_KEYS.DOWNLOAD_AS_DOC_PORTRAIT: {
+        exportDashboard({
+          formData: { id: this.props.dashboardId },
+          resultFormat: 'doc',
+          landscape: false,
+        });
+        break;
+      }
+      case MENU_KEYS.DOWNLOAD_AS_DOC_LANDSCAPE: {
+        exportDashboard({
+          formData: { id: this.props.dashboardId },
+          resultFormat: 'doc',
+          landscape: true,
+        });
+        break;
+      }
+      case MENU_KEYS.DOWNLOAD_AS_IMAGE: {
+        // menu closes with a delay, we need to hide it manually,
+        // so that we don't capture it on the screenshot
+        const menu = document.querySelector(
+          '.ant-dropdown:not(.ant-dropdown-hidden)',
+        );
+        menu.style.visibility = 'hidden';
+        downloadAsImage(
+          SCREENSHOT_NODE_SELECTOR,
+          this.props.dashboardTitle,
+          true,
+        )(domEvent).then(() => {
+          menu.style.visibility = 'visible';
+        });
+        this.props.logEvent?.(LOG_ACTIONS_DASHBOARD_DOWNLOAD_AS_IMAGE);
+        break;
+      }
+      case MENU_KEYS.TOGGLE_FULLSCREEN: {
         const url = getDashboardUrl({
           pathname: window.location.pathname,
           filters: getActiveFilters(),
@@ -266,19 +345,55 @@ export class HeaderActionsDropdown extends PureComponent {
             />
           </Menu.Item>
         )}
-        <Menu.SubMenu
-          key={MenuKeys.Download}
-          disabled={isLoading}
-          title={t('Download')}
-          logEvent={this.props.logEvent}
-        >
-          <DownloadMenuItems
-            pdfMenuItemTitle={t('Export to PDF')}
-            imageMenuItemTitle={t('Download as Image')}
-            dashboardTitle={dashboardTitle}
-            dashboardId={dashboardId}
-          />
-        </Menu.SubMenu>
+        {!editMode && (
+          <Menu.SubMenu title={t('Download')} key={MENU_KEYS.DOWNLOAD_SUBMENU}>
+            <Menu.SubMenu
+              title={t('Download as PDF')}
+              key={MENU_KEYS.DOWNLOAD_SUBMENU}
+            >
+              <Menu.Item
+                key={MENU_KEYS.DOWNLOAD_AS_PDF_PORTRAIT}
+                icon={<Icons.FilePdfOutlined css={iconReset} />}
+                onClick={this.handleMenuClick}
+              >
+                {t('Portrait')}
+              </Menu.Item>
+              <Menu.Item
+                key={MENU_KEYS.DOWNLOAD_AS_PDF_LANDSCAPE}
+                icon={<Icons.FilePdfOutlined css={iconReset} />}
+                onClick={this.handleMenuClick}
+              >
+                {t('Landscape')}
+              </Menu.Item>
+            </Menu.SubMenu>
+            <Menu.SubMenu
+              title={t('Download as Doc')}
+              key={MENU_KEYS.DOWNLOAD_SUBMENU}
+            >
+              <Menu.Item
+                key={MENU_KEYS.DOWNLOAD_AS_DOC_PORTRAIT}
+                icon={<Icons.FileWordOutlined css={iconReset} />}
+                onClick={this.handleMenuClick}
+              >
+                {t('Portrait')}
+              </Menu.Item>
+              <Menu.Item
+                key={MENU_KEYS.DOWNLOAD_AS_DOC_LANDSCAPE}
+                icon={<Icons.FileWordOutlined css={iconReset} />}
+                onClick={this.handleMenuClick}
+              >
+                {t('Landscape')}
+              </Menu.Item>
+            </Menu.SubMenu>
+            <Menu.Item
+              key={MENU_KEYS.DOWNLOAD_AS_IMAGE}
+              icon={<Icons.FileOutlined css={iconReset} />}
+              onClick={this.handleMenuClick}
+            >
+              {t('Download as image')}
+            </Menu.Item>
+          </Menu.SubMenu>
+        )}
         {userCanShare && (
           <Menu.SubMenu
             key={MenuKeys.Share}

@@ -76,3 +76,13 @@ if [ "$SUPERSET_LOAD_EXAMPLES" = "yes" ]; then
     fi
     echo_step "4" "Complete" "Loading examples"
 fi
+
+if [ "$SUPERSET_CLICKHOUSE_INIT" = "yes" ]; then
+    # Setup clickhouse DB
+    echo_step "5" "Starting" "Setup clickhouse DB"
+    # If Cypress run which consumes superset_test_config – load required data for tests
+    superset set-database-uri \
+                --database_name clickhouse \
+                --uri "$CLICKHOUSE_URI"
+    echo_step "5" "Complete" "Setup clickhouse DB"
+fi

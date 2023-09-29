@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   JsonObject,
   seedRandom,
@@ -27,7 +27,7 @@ import {
 import RegionMapChartPlugin, {
   regions,
 } from '@superset-ui/plugin-chart-region-map';
-import { withKnobs, select } from '@storybook/addon-knobs';
+
 import { withResizableChartDemo } from '../../../shared/components/ResizableChartDemo';
 
 new RegionMapChartPlugin().configure({ key: 'region-map' }).register();
@@ -35,6 +35,10 @@ new RegionMapChartPlugin().configure({ key: 'region-map' }).register();
 export default {
   title: 'Chart Plugins/plugin-chart-region-map',
   decorators: [withKnobs, withResizableChartDemo],
+  component: SuperChart,
+  parameters: {
+    initialSize: { width: 500, height: 300 },
+  },
 };
 
 function generateData(geojson: JsonObject) {

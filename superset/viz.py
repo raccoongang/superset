@@ -1565,7 +1565,9 @@ class CountryMapViz(BaseViz):
 
 class RegionMapViz(BaseViz):
 
-    """A region centric"""
+    """
+    Region map chart to visualize how single metric varies across region districts.
+    """
 
     viz_type = "region_map"
     verbose_name = _("Region Map")

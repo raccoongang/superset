@@ -16983,7 +16983,7 @@ msgid ""
 "subdivisions (states, provinces, etc) on a choropleth map. Each "
 "subdivision's value is elevated when you hover over the corresponding "
 "geographic boundary."
-msgstr "Візуалізує, як окрема метрика змінюється між основними підрозділами країни (штатами, провінціями тощо) на хороплетній карті. Значення кожного підрозділу збільшується, коли ви наводите курсор на відповідну географічну межу."
+msgstr "Візуалізує, як окрема метрика змінюється між основними підрозділами країни (штатами, провінціями тощо) на карті. Значення кожного підрозділу збільшується, коли ви наводите курсор на відповідну географічну межу."
 
 #: superset-frontend/plugins/legacy-preset-chart-nvd3/src/Compare/index.js:28
 msgid ""
@@ -19463,3 +19463,1171 @@ msgstr "Редагувати Інформацію про Користувача"
 
 msgid "How do you prefer to work?"
 msgstr "Як вам подобається працювати?"
+
+#: superset/examples/countries.py
+msgid "Angola"
+msgstr "Ангола"
+
+#: superset/examples/countries.py
+msgid "Algeria"
+msgstr "Алжир"
+
+#: superset/examples/countries.py
+msgid "Egypt"
+msgstr "Єгипет"
+
+#: superset/examples/countries.py
+msgid "Bangladesh"
+msgstr "Бангладеш"
+
+#: superset/examples/countries.py
+msgid "Niger"
+msgstr "Нігер"
+
+#: superset/examples/countries.py
+msgid "Liechtenstein"
+msgstr "Ліхтенштейн"
+
+#: superset/examples/countries.py
+msgid "Namibia"
+msgstr "Намібія"
+
+#: superset/examples/countries.py
+msgid "Bulgaria"
+msgstr "Болгарія"
+
+#: superset/examples/countries.py
+msgid "Bolivia"
+msgstr "Болівія"
+
+#: superset/examples/countries.py
+msgid "Ghana"
+msgstr "Гана"
+
+#: superset/examples/countries.py
+msgid "Cocos (Keeling) Islands"
+msgstr "Кокосові (Кілінгові) острови"
+
+#: superset/examples/countries.py
+msgid "Pakistan"
+msgstr "Пакістан"
+
+#: superset/examples/countries.py
+msgid "Cape Verde"
+msgstr "Кабо-Верде"
+
+#: superset/examples/countries.py
+msgid "Jordan"
+msgstr "Йорданія"
+
+#: superset/examples/countries.py
+msgid "Liberia"
+msgstr "Ліберія"
+
+#: superset/examples/countries.py
+msgid "Libya"
+msgstr "Лівія"
+
+#: superset/examples/countries.py
+msgid "Malaysia"
+msgstr "Малайзія"
+
+#: superset/examples/countries.py
+msgid "Dominican Republic"
+msgstr "Домініканська республіка"
+
+#: superset/examples/countries.py
+msgid "Puerto Rico"
+msgstr "Пуерто Ріко"
+
+#: superset/examples/countries.py
+msgid "Mayotte"
+msgstr "Майотта"
+
+#: superset/examples/countries.py
+msgid "North Korea"
+msgstr "Північна Корея"
+
+#: superset/examples/countries.py
+msgid "Palestine"
+msgstr "Палестина"
+
+#: superset/examples/countries.py
+msgid "Tanzania"
+msgstr "Танзанія"
+
+#: superset/examples/countries.py
+msgid "Botswana"
+msgstr "Ботсвана"
+
+#: superset/examples/countries.py
+msgid "Cambodia"
+msgstr "Камбоджа"
+
+#: superset/examples/countries.py
+msgid "Nicaragua"
+msgstr "Нікарагуа"
+
+#: superset/examples/countries.py
+msgid "Trinidad and Tobago"
+msgstr "Тринідад і Тобаго"
+
+#: superset/examples/countries.py
+msgid "Ethiopia"
+msgstr "Ефіопія"
+
+#: superset/examples/countries.py
+msgid "Paraguay"
+msgstr "Парагвай"
+
+#: superset/examples/countries.py
+msgid "Hong Kong"
+msgstr "Гонконг"
+
+#: superset/examples/countries.py
+msgid "Saudi Arabia"
+msgstr "Саудівська Аравія"
+
+#: superset/examples/countries.py
+msgid "Lebanon"
+msgstr "Ліван"
+
+#: superset/examples/countries.py
+msgid "Slovenia"
+msgstr "Словенія"
+
+#: superset/examples/countries.py
+msgid "Burkina Faso"
+msgstr "Буркіна Фасо"
+
+#: superset/examples/countries.py
+msgid "Switzerland"
+msgstr "Швейцарія"
+
+#: superset/examples/countries.py
+msgid "Mauritania"
+msgstr "Мавританія"
+
+#: superset/examples/countries.py
+msgid "Croatia"
+msgstr "Хорватія"
+
+#: superset/examples/countries.py
+msgid "Chile"
+msgstr "Чілі"
+
+#: superset/examples/countries.py
+msgid "China"
+msgstr "Китай"
+
+#: superset/examples/countries.py
+msgid "Saint Kitts and Nevis"
+msgstr "Сент-Кітс і Невіс"
+
+#: superset/examples/countries.py
+msgid "Sierra Leone"
+msgstr "Сьєрра-Леоне"
+
+#: superset/examples/countries.py
+msgid "Jamaica"
+msgstr "Ямайка"
+
+#: superset/examples/countries.py
+msgid "San Marino"
+msgstr "Сан-Марино"
+
+#: superset/examples/countries.py
+msgid "Gibraltar"
+msgstr "Гібралтар"
+
+#: superset/examples/countries.py
+msgid "Djibouti"
+msgstr "Джібуті"
+
+#: superset/examples/countries.py
+msgid "Guinea"
+msgstr "Гвінея"
+
+#: superset/examples/countries.py
+msgid "Finland"
+msgstr "Фінляндія"
+
+#: superset/examples/countries.py
+msgid "Uruguay"
+msgstr "Уругвай"
+
+#: superset/examples/countries.py
+msgid "Thailand"
+msgstr "Таїланд"
+
+#: superset/examples/countries.py
+msgid "Sao Tome and Principe"
+msgstr "Сан-Томе і Принсіпі"
+
+#: superset/examples/countries.py
+msgid "Seychelles"
+msgstr "Сейшельські острови"
+
+#: superset/examples/countries.py
+msgid "Nepal"
+msgstr "Непал"
+
+#: superset/examples/countries.py
+msgid "Christmas Island"
+msgstr "Острів Різдва"
+
+#: superset/examples/countries.py
+msgid "Laos"
+msgstr "Лаос"
+
+#: superset/examples/countries.py
+msgid "Yemen"
+msgstr "Ємен"
+
+#: superset/examples/countries.py
+msgid "Bouvet Island"
+msgstr "Острів Буве"
+
+#: superset/examples/countries.py
+msgid "South Africa"
+msgstr "Південна Африка"
+
+#: superset/examples/countries.py
+msgid "Kiribati"
+msgstr "Кірібаті"
+
+#: superset/examples/countries.py
+msgid "Philippines"
+msgstr "Філіппіни"
+
+#: superset/examples/countries.py
+msgid "Sint Maarten"
+msgstr "Святий Мартін"
+
+#: superset/examples/countries.py
+msgid "Romania"
+msgstr "Румунія"
+
+#: superset/examples/countries.py
+msgid "United States Virgin Islands"
+msgstr "Віргінські острови США"
+
+#: superset/examples/countries.py
+msgid "Syria"
+msgstr "Сирія"
+
+#: superset/examples/countries.py
+msgid "Macau"
+msgstr "Макао"
+
+#: superset/examples/countries.py
+msgid "Saint Martin"
+msgstr "Святий Мартін"
+
+#: superset/examples/countries.py
+msgid "Malta"
+msgstr "Мальта"
+
+#: superset/examples/countries.py
+msgid "Kazakhstan"
+msgstr "Казахстан"
+
+#: superset/examples/countries.py
+msgid "Turks and Caicos Islands"
+msgstr "Острови Теркс і Кайкос"
+
+#: superset/examples/countries.py
+msgid "French Polynesia"
+msgstr "Французька Полінезія"
+
+#: superset/examples/countries.py
+msgid "Niue"
+msgstr "Ніуе"
+
+#: superset/examples/countries.py
+msgid "Dominica"
+msgstr "Домініка"
+
+#: superset/examples/countries.py
+msgid "Benin"
+msgstr "Бенін"
+
+#: superset/examples/countries.py
+msgid "French Guiana"
+msgstr "Французька Гвіана"
+
+#: superset/examples/countries.py
+msgid "Belgium"
+msgstr "Бельгія"
+
+#: superset/examples/countries.py
+msgid "Montserrat"
+msgstr "Монсеррат"
+
+#: superset/examples/countries.py
+msgid "Togo"
+msgstr "Того"
+
+#: superset/examples/countries.py
+msgid "Germany"
+msgstr "Німеччина"
+
+#: superset/examples/countries.py
+msgid "Guam"
+msgstr "Гуам"
+
+#: superset/examples/countries.py
+msgid "Sri Lanka"
+msgstr "Шрі Ланка"
+
+#: superset/examples/countries.py
+msgid "South Sudan"
+msgstr "Південний Судан"
+
+#: superset/examples/countries.py
+msgid "Falkland Islands"
+msgstr "Фолклендські острови"
+
+#: superset/examples/countries.py
+msgid "United Kingdom"
+msgstr "Об'єднане Королівство"
+
+#: superset/examples/countries.py
+msgid "Guyana"
+msgstr "Гаяна"
+
+#: superset/examples/countries.py
+msgid "Costa Rica"
+msgstr "Коста-Ріка"
+
+#: superset/examples/countries.py
+msgid "Cameroon"
+msgstr "Камерун"
+
+#: superset/examples/countries.py
+msgid "Morocco"
+msgstr "Марокко"
+
+#: superset/examples/countries.py
+msgid "Northern Mariana Islands"
+msgstr "Північні Маріанські острови"
+
+#: superset/examples/countries.py
+msgid "Lesotho"
+msgstr "Лесото"
+
+#: superset/examples/countries.py
+msgid "Hungary"
+msgstr "Угорщина"
+
+#: superset/examples/countries.py
+msgid "Turkmenistan"
+msgstr "Туркменістан"
+
+#: superset/examples/countries.py
+msgid "Suriname"
+msgstr "Сурінам"
+
+#: superset/examples/countries.py
+msgid "Netherlands"
+msgstr "Нідерланди"
+
+#: superset/examples/countries.py
+msgid "Bermuda"
+msgstr "Бермудські острови"
+
+#: superset/examples/countries.py
+msgid "Heard Island and McDonald Islands"
+msgstr "Острів Херд і Макдональд"
+
+#: superset/examples/countries.py
+msgid "Chad"
+msgstr "Чад"
+
+#: superset/examples/countries.py
+msgid "Georgia"
+msgstr "Грузія"
+
+#: superset/examples/countries.py
+msgid "Montenegro"
+msgstr "Чорногорія"
+
+#: superset/examples/countries.py
+msgid "Mongolia"
+msgstr "Монголія"
+
+#: superset/examples/countries.py
+msgid "Marshall Islands"
+msgstr "Маршаллові острови"
+
+#: superset/examples/countries.py
+msgid "Martinique"
+msgstr "Мартініка"
+
+#: superset/examples/countries.py
+msgid "Belize"
+msgstr "Беліз"
+
+#: superset/examples/countries.py
+msgid "Norfolk Island"
+msgstr "Острів Норфолк"
+
+#: superset/examples/countries.py
+msgid "Myanmar"
+msgstr "М'янма"
+
+#: superset/examples/countries.py
+msgid "Afghanistan"
+msgstr "Афганістан"
+
+#: superset/examples/countries.py
+msgid "Burundi"
+msgstr "Бурунді"
+
+#: superset/examples/countries.py
+msgid "British Virgin Islands"
+msgstr "Британські Віргінські острови"
+
+#: superset/examples/countries.py
+msgid "Belarus"
+msgstr "Білорусь"
+
+#: superset/examples/countries.py
+msgid "Saint Barthelemy"
+msgstr "Сен-Бартелемі"
+
+#: superset/examples/countries.py
+msgid "Grenada"
+msgstr "Гренада"
+
+#: superset/examples/countries.py
+msgid "Tokelau"
+msgstr "Токелау"
+
+#: superset/examples/countries.py
+msgid "Greece"
+msgstr "Греція"
+
+#: superset/examples/countries.py
+msgid "Russia"
+msgstr "Росія"
+
+#: superset/examples/countries.py
+msgid "Greenland"
+msgstr "Гренландія"
+
+#: superset/examples/countries.py
+msgid "Andorra"
+msgstr "Андорра"
+
+#: superset/examples/countries.py
+msgid "Mozambique"
+msgstr "Мозамбік"
+
+#: superset/examples/countries.py
+msgid "Tajikistan"
+msgstr "Таджикистан"
+
+#: superset/examples/countries.py
+msgid "Haiti"
+msgstr "Гаїті"
+
+#: superset/examples/countries.py
+msgid "Mexico"
+msgstr "Мексика"
+
+#: superset/examples/countries.py
+msgid "Zimbabwe"
+msgstr "Зімбабве"
+
+#: superset/examples/countries.py
+msgid "Saint Lucia"
+msgstr "Сент-Люсія"
+
+#: superset/examples/countries.py
+msgid "India"
+msgstr "Індія"
+
+#: superset/examples/countries.py
+msgid "Latvia"
+msgstr "Латвія"
+
+#: superset/examples/countries.py
+msgid "Bhutan"
+msgstr "Бутан"
+
+#: superset/examples/countries.py
+msgid "Saint Vincent and the Grenadines"
+msgstr "Сент-Вінсент і Гренадини"
+
+#: superset/examples/countries.py
+msgid "Vietnam"
+msgstr "В'єтнам"
+
+#: superset/examples/countries.py
+msgid "Norway"
+msgstr "Норвегія"
+
+#: superset/examples/countries.py
+msgid "Czech Republic"
+msgstr "Чеська Республіка"
+
+#: superset/examples/countries.py
+msgid "French Southern and Antarctic Lands"
+msgstr "Французькі південні та антарктичні землі"
+
+#: superset/examples/countries.py
+msgid "Antigua and Barbuda"
+msgstr "Антигуа і Барбуда"
+
+#: superset/examples/countries.py
+msgid "Fiji"
+msgstr "Фіджі"
+
+#: superset/examples/countries.py
+msgid "British Indian Ocean Territory"
+msgstr "Британська територія в Індійському океані"
+
+#: superset/examples/countries.py
+msgid "Honduras"
+msgstr "Гондурас"
+
+#: superset/examples/countries.py
+msgid "Mauritius"
+msgstr "Маврикій"
+
+#: superset/examples/countries.py
+msgid "Antarctica"
+msgstr "Антарктида"
+
+#: superset/examples/countries.py
+msgid "Luxembourg"
+msgstr "Люксембург"
+
+#: superset/examples/countries.py
+msgid "Israel"
+msgstr "Ізраїль"
+
+#: superset/examples/countries.py
+msgid "Micronesia"
+msgstr "Мікронезія"
+
+#: superset/examples/countries.py
+msgid "Peru"
+msgstr "Перу"
+
+#: superset/examples/countries.py
+msgid "Reunion"
+msgstr "Реюньйон"
+
+#: superset/examples/countries.py
+msgid "Indonesia"
+msgstr "Індонезія"
+
+#: superset/examples/countries.py
+msgid "Vanuatu"
+msgstr "Вануату"
+
+#: superset/examples/countries.py
+msgid "Macedonia"
+msgstr "Македонія"
+
+#: superset/examples/countries.py
+msgid "DR Congo"
+msgstr "ДР Конго"
+
+#: superset/examples/countries.py
+msgid "Republic of the Congo"
+msgstr "Республіка Конго"
+
+#: superset/examples/countries.py
+msgid "Iceland"
+msgstr "Ісландія"
+
+#: superset/examples/countries.py
+msgid "Guadeloupe"
+msgstr "Гваделупа"
+
+#: superset/examples/countries.py
+msgid "Cook Islands"
+msgstr "Острови Кука"
+
+#: superset/examples/countries.py
+msgid "Comoros"
+msgstr "Коморські острови"
+
+#: superset/examples/countries.py
+msgid "Colombia"
+msgstr "Колумбія"
+
+#: superset/examples/countries.py
+msgid "Nigeria"
+msgstr "Нігерія"
+
+#: superset/examples/countries.py
+msgid "Timor-Leste"
+msgstr "Східний Тимор"
+
+#: superset/examples/countries.py
+msgid "Taiwan"
+msgstr "Тайвань"
+
+#: superset/examples/countries.py
+msgid "Portugal"
+msgstr "Португалія"
+
+#: superset/examples/countries.py
+msgid "Moldova"
+msgstr "Молдавія"
+
+#: superset/examples/countries.py
+msgid "Guernsey"
+msgstr "Гернсі"
+
+#: superset/examples/countries.py
+msgid "Madagascar"
+msgstr "Мадагаскар"
+
+#: superset/examples/countries.py
+msgid "Ecuador"
+msgstr "Еквадор"
+
+#: superset/examples/countries.py
+msgid "Senegal"
+msgstr "Сенегал"
+
+#: superset/examples/countries.py
+msgid "New Zealand"
+msgstr "Нова Зеландія"
+
+#: superset/examples/countries.py
+msgid "Maldives"
+msgstr "Мальдіви"
+
+#: superset/examples/countries.py
+msgid "American Samoa"
+msgstr "Американське Самоа"
+
+#: superset/examples/countries.py
+msgid "Saint Pierre and Miquelon"
+msgstr "Сен-П'єр і Мікелон"
+
+#: superset/examples/countries.py
+msgid "Curacao"
+msgstr "Кюрасао"
+
+#: superset/examples/countries.py
+msgid "France"
+msgstr "Франція"
+
+#: superset/examples/countries.py
+msgid "Lithuania"
+msgstr "Литва"
+
+#: superset/examples/countries.py
+msgid "Rwanda"
+msgstr "Руанда"
+
+#: superset/examples/countries.py
+msgid "Zambia"
+msgstr "Замбія"
+
+#: superset/examples/countries.py
+msgid "Gambia"
+msgstr "Гамбія"
+
+#: superset/examples/countries.py
+msgid "Wallis and Futuna"
+msgstr "Уолліс і Футуна"
+
+#: superset/examples/countries.py
+msgid "Jersey"
+msgstr "Джерсі"
+
+#: superset/examples/countries.py
+msgid "Faroe Islands"
+msgstr "Фарерські острови"
+
+#: superset/examples/countries.py
+msgid "Guatemala"
+msgstr "Гватемала"
+
+#: superset/examples/countries.py
+msgid "Denmark"
+msgstr "Denmark"
+
+#: superset/examples/countries.py
+msgid "Isle of Man"
+msgstr "Острів Мен"
+
+#: superset/examples/countries.py
+msgid "Australia"
+msgstr "Австралія"
+
+#: superset/examples/countries.py
+msgid "Austria"
+msgstr "Австрія"
+
+#: superset/examples/countries.py
+msgid "Svalbard and Jan Mayen"
+msgstr "Шпіцберген і Ян-Маєн"
+
+#: superset/examples/countries.py
+msgid "Venezuela"
+msgstr "Венесуела"
+
+#: superset/examples/countries.py
+msgid "Kosovo"
+msgstr "Косово"
+
+#: superset/examples/countries.py
+msgid "Palau"
+msgstr "Палау"
+
+#: superset/examples/countries.py
+msgid "Kenya"
+msgstr "Кенія"
+
+#: superset/examples/countries.py
+msgid "Samoa"
+msgstr "Самоа"
+
+#: superset/examples/countries.py
+msgid "Turkey"
+msgstr "Туреччина"
+
+#: superset/examples/countries.py
+msgid "Albania"
+msgstr "Албанія"
+
+#: superset/examples/countries.py
+msgid "Oman"
+msgstr "Оман"
+
+#: superset/examples/countries.py
+msgid "Tuvalu"
+msgstr "Тувалу"
+
+#: superset/examples/countries.py
+msgid "Aland Islands"
+msgstr "Аландські острови"
+
+#: superset/examples/countries.py
+msgid "Brunei"
+msgstr "Бруней"
+
+#: superset/examples/countries.py
+msgid "Tunisia"
+msgstr "Туніс"
+
+#: superset/examples/countries.py
+msgid "Pitcairn Islands"
+msgstr "Острови Піткерн"
+
+#: superset/examples/countries.py
+msgid "Barbados"
+msgstr "Барбадос"
+
+#: superset/examples/countries.py
+msgid "Brazil"
+msgstr "Бразилія"
+
+#: superset/examples/countries.py
+msgid "Ivory Coast"
+msgstr "Берег Слонової Кістки"
+
+#: superset/examples/countries.py
+msgid "Serbia"
+msgstr "Сербія"
+
+#: superset/examples/countries.py
+msgid "Equatorial Guinea"
+msgstr "Екваторіальна Гвінея"
+
+#: superset/examples/countries.py
+msgid "United States"
+msgstr "Сполучені Штати Америки"
+
+#: superset/examples/countries.py
+msgid "Qatar"
+msgstr "Катар"
+
+#: superset/examples/countries.py
+msgid "Sweden"
+msgstr "Швеція"
+
+#: superset/examples/countries.py
+msgid "Azerbaijan"
+msgstr "Азербайджан"
+
+#: superset/examples/countries.py
+msgid "Guinea-Bissau"
+msgstr "Гвінея-Бісау"
+
+#: superset/examples/countries.py
+msgid "Swaziland"
+msgstr "Свазіленд"
+
+#: superset/examples/countries.py
+msgid "Tonga"
+msgstr "Тонга"
+
+#: superset/examples/countries.py
+msgid "Canada"
+msgstr "Канада"
+
+#: superset/examples/countries.py
+msgid "Ukraine"
+msgstr "Україна"
+
+#: superset/examples/countries.py
+msgid "South Korea"
+msgstr "Південна Корея"
+
+#: superset/examples/countries.py
+msgid "Anguilla"
+msgstr "Ангілья"
+
+#: superset/examples/countries.py
+msgid "Central African Republic"
+msgstr "Центральноафриканська Республіка"
+
+#: superset/examples/countries.py
+msgid "Slovakia"
+msgstr "Словакія"
+
+#: superset/examples/countries.py
+msgid "Cyprus"
+msgstr "Кіпр"
+
+#: superset/examples/countries.py
+msgid "Bosnia and Herzegovina"
+msgstr "Боснія і Герцеговина"
+
+#: superset/examples/countries.py
+msgid "Singapore"
+msgstr "Сінгапур"
+
+#: superset/examples/countries.py
+msgid "South Georgia"
+msgstr "Південна Джорджія"
+
+#: superset/examples/countries.py
+msgid "Somalia"
+msgstr "Сомалі"
+
+#: superset/examples/countries.py
+msgid "Uzbekistan"
+msgstr "Узбекістан"
+
+#: superset/examples/countries.py
+msgid "Eritrea"
+msgstr "Еритрея"
+
+#: superset/examples/countries.py
+msgid "Poland"
+msgstr "Польша"
+
+#: superset/examples/countries.py
+msgid "Kuwait"
+msgstr "Кувейт"
+
+#: superset/examples/countries.py
+msgid "Gabon"
+msgstr "Габон"
+
+#: superset/examples/countries.py
+msgid "Cayman Islands"
+msgstr "Кайманові острови"
+
+#: superset/examples/countries.py
+msgid "Vatican City"
+msgstr "Ватикан"
+
+#: superset/examples/countries.py
+msgid "Estonia"
+msgstr "Естонія"
+
+#: superset/examples/countries.py
+msgid "Malawi"
+msgstr "Малаві"
+
+#: superset/examples/countries.py
+msgid "Spain"
+msgstr "Іспанія"
+
+#: superset/examples/countries.py
+msgid "Iraq"
+msgstr "Ірак"
+
+#: superset/examples/countries.py
+msgid "El Salvador"
+msgstr "Сальвадор"
+
+#: superset/examples/countries.py
+msgid "Mali"
+msgstr "Малі"
+
+#: superset/examples/countries.py
+msgid "Ireland"
+msgstr "Ірландія"
+
+#: superset/examples/countries.py
+msgid "Iran"
+msgstr "Іран"
+
+#: superset/examples/countries.py
+msgid "Aruba"
+msgstr "Аруба"
+
+#: superset/examples/countries.py
+msgid "Papua New Guinea"
+msgstr "Папуа-Нова Гвінея"
+
+#: superset/examples/countries.py
+msgid "Panama"
+msgstr "Панама"
+
+#: superset/examples/countries.py
+msgid "Sudan"
+msgstr "Судан"
+
+#: superset/examples/countries.py
+msgid "Solomon Islands"
+msgstr "Соломонові острови"
+
+#: superset/examples/countries.py
+msgid "Western Sahara"
+msgstr "Західна Сахара"
+
+#: superset/examples/countries.py
+msgid "Monaco"
+msgstr "Монако"
+
+#: superset/examples/countries.py
+msgid "Italy"
+msgstr "Італія"
+
+#: superset/examples/countries.py
+msgid "Japan"
+msgstr "Японія"
+
+#: superset/examples/countries.py
+msgid "Kyrgyzstan"
+msgstr "Киргизстан"
+
+#: superset/examples/countries.py
+msgid "Uganda"
+msgstr "Уганда"
+
+#: superset/examples/countries.py
+msgid "New Caledonia"
+msgstr "Нова Каледонія"
+
+#: superset/examples/countries.py
+msgid "United Arab Emirates"
+msgstr "Об'єднані Арабські Емірати"
+
+#: superset/examples/countries.py
+msgid "Argentina"
+msgstr "Аргентина"
+
+#: superset/examples/countries.py
+msgid "Bahamas"
+msgstr "Багамські острови"
+
+#: superset/examples/countries.py
+msgid "Bahrain"
+msgstr "Бахрейн"
+
+#: superset/examples/countries.py
+msgid "Armenia"
+msgstr "Вірменія"
+
+#: superset/examples/countries.py
+msgid "Nauru"
+msgstr "Науру"
+
+#: superset/examples/countries.py
+msgid "Cuba"
+msgstr "Куба"
+
+#: superset/examples/countries.py
+msgid "Denmark"
+msgstr "Данія"
+
+msgid "Chernihiv"
+msgstr "Чернігівська"
+
+msgid "Volyn"
+msgstr "Волинська"
+
+msgid "Rivne"
+msgstr "Рівненська"
+
+msgid "Zhytomyr"
+msgstr "Житомирська"
+
+msgid "Kiev"
+msgstr "Київська"
+
+msgid "Transcarpathia"
+msgstr "Закарпатська"
+
+msgid "Chernivtsi"
+msgstr "Чернівецька"
+
+msgid "Ivano-Frankivs'k"
+msgstr "Івано-Франківська"
+
+msgid "Odessa"
+msgstr "Одеська"
+
+msgid "Vinnytsya"
+msgstr "Вінницька"
+
+msgid "L'viv"
+msgstr "Львівська"
+
+msgid "Sumy"
+msgstr "Сумська"
+
+msgid "Kharkiv"
+msgstr "Харківська"
+
+msgid "Luhans'k"
+msgstr "Луганська"
+
+msgid "Donets'k"
+msgstr "Донецька"
+
+msgid "Kherson"
+msgstr "Херсонська"
+
+msgid "Zaporizhzhya"
+msgstr "Запорізька"
+
+msgid "Mykolayiv"
+msgstr "Миколаївська"
+
+msgid "Poltava"
+msgstr "Полтавська"
+
+msgid "Khmel'nyts'kyy"
+msgstr "Хмельницька"
+
+msgid "Ternopil'"
+msgstr "Тернопільска"
+
+msgid "Dnipropetrovs'k"
+msgstr "Дніпропетровська"
+
+msgid "Cherkasy"
+msgstr "Черкаська"
+
+msgid "Kirovohrad"
+msgstr "Кіровоградська"
+
+msgid "Kyiv City"
+msgstr "м.Київ"
+
+msgid "Crimea"
+msgstr "Крим"
+
+# superset-frontend/plugins/legacy-plugin-chart-country-map/src/controlPanel.ts
+msgid "Regions"
+msgstr "Регіони"
+
+# superset-frontend/plugins/legacy-plugin-chart-country-map/src/controlPanel.ts
+msgid "Region"
+msgstr "Область"
+
+# superset-frontend/plugins/legacy-plugin-chart-country-map/src/controlPanel.ts
+msgid "Column containing names of region/province/department in your table."
+msgstr "Стовпець, що містить назви областей, провінцій або департаментів у таблиці."
+
+# superset-frontend/plugins/plugin-chart-region-map/src/controlPanel.ts
+msgid "Область"
+msgstr "Регіон"
+
+# superset-frontend/plugins/plugin-chart-region-map/src/controlPanel.ts
+msgid "Districts"
+msgstr "Райони"
+
+# superset-frontend/plugins/plugin-chart-region-map/src/controlPanel.ts
+msgid "Which region to plot the map for?"
+msgstr "Для якого регіону побудувати карту?"
+
+# superset-frontend/plugins/plugin-chart-region-map/src/controlPanel.ts
+msgid "Column containing district names in your table."
+msgstr "Стовпець, що містить назви районів у таблиці."
+
+# superset-frontend/plugins/plugin-chart-region-map/src/index.js
+msgid "Visualizes how a single metric varies across a country's secondary subdivisions (districts, etc) on a choropleth map. Each subdivision's value is elevated when you hover over the corresponding geographic boundary."
+msgstr "Візуалізує, як окрема метрика змінюється залежно від другорядних підрозділів країни (районів тощо) на карті. Значення кожного підрозділу збільшується, коли ви наводите курсор на відповідну географічну межу."
+
+# superset-frontend/plugins/plugin-chart-region-map/src/index.js
+msgid "Region Map"
+msgstr "Карта Регіону"
+
+msgid "Сhernihiv"
+msgstr "Чернігівська"
+
+msgid "Kyiv"
+msgstr "Київська"
+
+msgid "Zakarpattia"
+msgstr "Закарпатська"
+
+msgid "Ivano-Frankivsk"
+msgstr "Івано-Франківська"
+
+msgid "Odesa"
+msgstr "Одеська"
+
+msgid "Vinnytsia"
+msgstr "Вінницька"
+
+msgid "Lviv"
+msgstr "Львівська"
+
+msgid "Luhansk"
+msgstr "Луганська"
+
+msgid "Donetsk"
+msgstr "Донецька"
+
+msgid "Zaporizhzhia"
+msgstr "Запорізька"
+
+msgid "Mykolaiv"
+msgstr "Миколаївська"
+
+msgid "Khmelnytskyi"
+msgstr "Хмельницька"
+
+msgid "Dnipropetrovsk"
+msgstr "Дніпропетровська"
+
+msgid "Ternopil"
+msgstr "Тернопільска"
+
+#: superset-frontend/plugins/legacy-plugin-chart-country-map/src/countries.ts
+msgid "Italy (regions)"
+msgstr "Італія (регіони)"
+
+#: superset-frontend/plugins/legacy-plugin-chart-country-map/src/countries.ts
+msgid "Srilanka"
+msgstr "Шрі Ланка"
+
+#: superset-frontend/plugins/legacy-plugin-chart-country-map/src/countries.ts
+msgid "Timorleste"
+msgstr "Східний Тимор"
+
+#: superset-frontend/plugins/legacy-plugin-chart-country-map/src/countries.ts
+msgid "USA"
+msgstr "Сполучені Штати Америки"
+
+#: superset-frontend/plugins/legacy-plugin-chart-country-map/src/countries.ts
+msgid "UK"
+msgstr "Об'єднане Королівство"

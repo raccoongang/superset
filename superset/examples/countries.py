@@ -18,9 +18,11 @@
 # pylint: disable=too-many-lines
 from typing import Any, Optional
 
+from flask_babel import gettext as _
+
 countries: list[dict[str, Any]] = [
     {
-        "name": "Angola",
+        "name": _("Angola"),
         "area": 1246700,
         "cioc": "ANG",
         "cca2": "AO",
@@ -30,7 +32,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "AGO",
     },
     {
-        "name": "Algeria",
+        "name": _("Algeria"),
         "area": 2381741,
         "cioc": "ALG",
         "cca2": "DZ",
@@ -40,7 +42,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "DZA",
     },
     {
-        "name": "Egypt",
+        "name": _("Egypt"),
         "area": 1002450,
         "cioc": "EGY",
         "cca2": "EG",
@@ -50,7 +52,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "EGY",
     },
     {
-        "name": "Bangladesh",
+        "name": _("Bangladesh"),
         "area": 147570,
         "cioc": "BAN",
         "cca2": "BD",
@@ -60,7 +62,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BGD",
     },
     {
-        "name": "Niger",
+        "name": _("Niger"),
         "area": 1267000,
         "cioc": "NIG",
         "cca2": "NE",
@@ -70,7 +72,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "NER",
     },
     {
-        "name": "Liechtenstein",
+        "name": _("Liechtenstein"),
         "area": 160,
         "cioc": "LIE",
         "cca2": "LI",
@@ -80,7 +82,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "LIE",
     },
     {
-        "name": "Namibia",
+        "name": _("Namibia"),
         "area": 825615,
         "cioc": "NAM",
         "cca2": "NA",
@@ -90,7 +92,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "NAM",
     },
     {
-        "name": "Bulgaria",
+        "name": _("Bulgaria"),
         "area": 110879,
         "cioc": "BUL",
         "cca2": "BG",
@@ -100,7 +102,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BGR",
     },
     {
-        "name": "Bolivia",
+        "name": _("Bolivia"),
         "area": 1098581,
         "cioc": "BOL",
         "cca2": "BO",
@@ -110,7 +112,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BOL",
     },
     {
-        "name": "Ghana",
+        "name": _("Ghana"),
         "area": 238533,
         "cioc": "GHA",
         "cca2": "GH",
@@ -120,7 +122,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GHA",
     },
     {
-        "name": "Cocos (Keeling) Islands",
+        "name": _("Cocos (Keeling) Islands"),
         "area": 14,
         "cioc": "",
         "cca2": "CC",
@@ -130,7 +132,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "CCK",
     },
     {
-        "name": "Pakistan",
+        "name": _("Pakistan"),
         "area": 881912,
         "cioc": "PAK",
         "cca2": "PK",
@@ -140,7 +142,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "PAK",
     },
     {
-        "name": "Cape Verde",
+        "name": _("Cape Verde"),
         "area": 4033,
         "cioc": "CPV",
         "cca2": "CV",
@@ -150,7 +152,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "CPV",
     },
     {
-        "name": "Jordan",
+        "name": _("Jordan"),
         "area": 89342,
         "cioc": "JOR",
         "cca2": "JO",
@@ -160,7 +162,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "JOR",
     },
     {
-        "name": "Liberia",
+        "name": _("Liberia"),
         "area": 111369,
         "cioc": "LBR",
         "cca2": "LR",
@@ -170,7 +172,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "LBR",
     },
     {
-        "name": "Libya",
+        "name": _("Libya"),
         "area": 1759540,
         "cioc": "LBA",
         "cca2": "LY",
@@ -180,7 +182,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "LBY",
     },
     {
-        "name": "Malaysia",
+        "name": _("Malaysia"),
         "area": 330803,
         "cioc": "MAS",
         "cca2": "MY",
@@ -190,7 +192,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MYS",
     },
     {
-        "name": "Dominican Republic",
+        "name": _("Dominican Republic"),
         "area": 48671,
         "cioc": "DOM",
         "cca2": "DO",
@@ -200,7 +202,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "DOM",
     },
     {
-        "name": "Puerto Rico",
+        "name": _("Puerto Rico"),
         "area": 8870,
         "cioc": "PUR",
         "cca2": "PR",
@@ -210,7 +212,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "PRI",
     },
     {
-        "name": "Mayotte",
+        "name": _("Mayotte"),
         "area": 374,
         "cioc": "",
         "cca2": "YT",
@@ -220,7 +222,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MYT",
     },
     {
-        "name": "North Korea",
+        "name": _("North Korea"),
         "area": 120538,
         "cioc": "PRK",
         "cca2": "KP",
@@ -230,7 +232,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "PRK",
     },
     {
-        "name": "Palestine",
+        "name": _("Palestine"),
         "area": 6220,
         "cioc": "PLE",
         "cca2": "PS",
@@ -240,7 +242,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "PSE",
     },
     {
-        "name": "Tanzania",
+        "name": _("Tanzania"),
         "area": 945087,
         "cioc": "TAN",
         "cca2": "TZ",
@@ -250,7 +252,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "TZA",
     },
     {
-        "name": "Botswana",
+        "name": _("Botswana"),
         "area": 582000,
         "cioc": "BOT",
         "cca2": "BW",
@@ -260,7 +262,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BWA",
     },
     {
-        "name": "Cambodia",
+        "name": _("Cambodia"),
         "area": 181035,
         "cioc": "CAM",
         "cca2": "KH",
@@ -270,7 +272,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "KHM",
     },
     {
-        "name": "Nicaragua",
+        "name": _("Nicaragua"),
         "area": 130373,
         "cioc": "NCA",
         "cca2": "NI",
@@ -280,7 +282,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "NIC",
     },
     {
-        "name": "Trinidad and Tobago",
+        "name": _("Trinidad and Tobago"),
         "area": 5130,
         "cioc": "TTO",
         "cca2": "TT",
@@ -290,7 +292,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "TTO",
     },
     {
-        "name": "Ethiopia",
+        "name": _("Ethiopia"),
         "area": 1104300,
         "cioc": "ETH",
         "cca2": "ET",
@@ -300,7 +302,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ETH",
     },
     {
-        "name": "Paraguay",
+        "name": _("Paraguay"),
         "area": 406752,
         "cioc": "PAR",
         "cca2": "PY",
@@ -310,7 +312,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "PRY",
     },
     {
-        "name": "Hong Kong",
+        "name": _("Hong Kong"),
         "area": 1104,
         "cioc": "HKG",
         "cca2": "HK",
@@ -320,7 +322,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "HKG",
     },
     {
-        "name": "Saudi Arabia",
+        "name": _("Saudi Arabia"),
         "area": 2149690,
         "cioc": "KSA",
         "cca2": "SA",
@@ -330,7 +332,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SAU",
     },
     {
-        "name": "Lebanon",
+        "name": _("Lebanon"),
         "area": 10452,
         "cioc": "LIB",
         "cca2": "LB",
@@ -340,7 +342,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "LBN",
     },
     {
-        "name": "Slovenia",
+        "name": _("Slovenia"),
         "area": 20273,
         "cioc": "SLO",
         "cca2": "SI",
@@ -350,7 +352,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SVN",
     },
     {
-        "name": "Burkina Faso",
+        "name": _("Burkina Faso"),
         "area": 272967,
         "cioc": "BUR",
         "cca2": "BF",
@@ -360,7 +362,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BFA",
     },
     {
-        "name": "Switzerland",
+        "name": _("Switzerland"),
         "area": 41284,
         "cioc": "SUI",
         "cca2": "CH",
@@ -370,7 +372,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "CHE",
     },
     {
-        "name": "Mauritania",
+        "name": _("Mauritania"),
         "area": 1030700,
         "cioc": "MTN",
         "cca2": "MR",
@@ -380,7 +382,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MRT",
     },
     {
-        "name": "Croatia",
+        "name": _("Croatia"),
         "area": 56594,
         "cioc": "CRO",
         "cca2": "HR",
@@ -390,7 +392,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "HRV",
     },
     {
-        "name": "Chile",
+        "name": _("Chile"),
         "area": 756102,
         "cioc": "CHI",
         "cca2": "CL",
@@ -400,7 +402,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "CHL",
     },
     {
-        "name": "China",
+        "name": _("China"),
         "area": 9706961,
         "cioc": "CHN",
         "cca2": "CN",
@@ -410,7 +412,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "CHN",
     },
     {
-        "name": "Saint Kitts and Nevis",
+        "name": _("Saint Kitts and Nevis"),
         "area": 261,
         "cioc": "SKN",
         "cca2": "KN",
@@ -420,7 +422,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "KNA",
     },
     {
-        "name": "Sierra Leone",
+        "name": _("Sierra Leone"),
         "area": 71740,
         "cioc": "SLE",
         "cca2": "SL",
@@ -430,7 +432,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SLE",
     },
     {
-        "name": "Jamaica",
+        "name": _("Jamaica"),
         "area": 10991,
         "cioc": "JAM",
         "cca2": "JM",
@@ -440,7 +442,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "JAM",
     },
     {
-        "name": "San Marino",
+        "name": _("San Marino"),
         "area": 61,
         "cioc": "SMR",
         "cca2": "SM",
@@ -450,7 +452,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SMR",
     },
     {
-        "name": "Gibraltar",
+        "name": _("Gibraltar"),
         "area": 6,
         "cioc": "",
         "cca2": "GI",
@@ -460,7 +462,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GIB",
     },
     {
-        "name": "Djibouti",
+        "name": _("Djibouti"),
         "area": 23200,
         "cioc": "DJI",
         "cca2": "DJ",
@@ -470,7 +472,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "DJI",
     },
     {
-        "name": "Guinea",
+        "name": _("Guinea"),
         "area": 245857,
         "cioc": "GUI",
         "cca2": "GN",
@@ -480,7 +482,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GIN",
     },
     {
-        "name": "Finland",
+        "name": _("Finland"),
         "area": 338424,
         "cioc": "FIN",
         "cca2": "FI",
@@ -490,7 +492,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "FIN",
     },
     {
-        "name": "Uruguay",
+        "name": _("Uruguay"),
         "area": 181034,
         "cioc": "URU",
         "cca2": "UY",
@@ -500,7 +502,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "URY",
     },
     {
-        "name": "Thailand",
+        "name": _("Thailand"),
         "area": 513120,
         "cioc": "THA",
         "cca2": "TH",
@@ -510,7 +512,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "THA",
     },
     {
-        "name": "Sao Tome and Principe",
+        "name": _("Sao Tome and Principe"),
         "area": 964,
         "cioc": "STP",
         "cca2": "ST",
@@ -520,7 +522,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "STP",
     },
     {
-        "name": "Seychelles",
+        "name": _("Seychelles"),
         "area": 452,
         "cioc": "SEY",
         "cca2": "SC",
@@ -530,7 +532,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SYC",
     },
     {
-        "name": "Nepal",
+        "name": _("Nepal"),
         "area": 147181,
         "cioc": "NEP",
         "cca2": "NP",
@@ -540,7 +542,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "NPL",
     },
     {
-        "name": "Christmas Island",
+        "name": _("Christmas Island"),
         "area": 135,
         "cioc": "",
         "cca2": "CX",
@@ -550,7 +552,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "CXR",
     },
     {
-        "name": "Laos",
+        "name": _("Laos"),
         "area": 236800,
         "cioc": "LAO",
         "cca2": "LA",
@@ -560,7 +562,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "LAO",
     },
     {
-        "name": "Yemen",
+        "name": _("Yemen"),
         "area": 527968,
         "cioc": "YEM",
         "cca2": "YE",
@@ -570,7 +572,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "YEM",
     },
     {
-        "name": "Bouvet Island",
+        "name": _("Bouvet Island"),
         "area": 49,
         "cioc": "",
         "cca2": "BV",
@@ -580,7 +582,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BVT",
     },
     {
-        "name": "South Africa",
+        "name": _("South Africa"),
         "area": 1221037,
         "cioc": "RSA",
         "cca2": "ZA",
@@ -590,7 +592,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ZAF",
     },
     {
-        "name": "Kiribati",
+        "name": _("Kiribati"),
         "area": 811,
         "cioc": "KIR",
         "cca2": "KI",
@@ -600,7 +602,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "KIR",
     },
     {
-        "name": "Philippines",
+        "name": _("Philippines"),
         "area": 342353,
         "cioc": "PHI",
         "cca2": "PH",
@@ -610,7 +612,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "PHL",
     },
     {
-        "name": "Sint Maarten",
+        "name": _("Sint Maarten"),
         "area": 34,
         "cioc": "",
         "cca2": "SX",
@@ -620,7 +622,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SXM",
     },
     {
-        "name": "Romania",
+        "name": _("Romania"),
         "area": 238391,
         "cioc": "ROU",
         "cca2": "RO",
@@ -630,7 +632,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ROU",
     },
     {
-        "name": "United States Virgin Islands",
+        "name": _("United States Virgin Islands"),
         "area": 347,
         "cioc": "ISV",
         "cca2": "VI",
@@ -640,7 +642,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "VIR",
     },
     {
-        "name": "Syria",
+        "name": _("Syria"),
         "area": 185180,
         "cioc": "SYR",
         "cca2": "SY",
@@ -650,7 +652,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SYR",
     },
     {
-        "name": "Macau",
+        "name": _("Macau"),
         "area": 30,
         "cioc": "",
         "cca2": "MO",
@@ -660,7 +662,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MAC",
     },
     {
-        "name": "Saint Martin",
+        "name": _("Saint Martin"),
         "area": 53,
         "cioc": "",
         "cca2": "MF",
@@ -670,7 +672,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MAF",
     },
     {
-        "name": "Malta",
+        "name": _("Malta"),
         "area": 316,
         "cioc": "MLT",
         "cca2": "MT",
@@ -680,7 +682,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MLT",
     },
     {
-        "name": "Kazakhstan",
+        "name": _("Kazakhstan"),
         "area": 2724900,
         "cioc": "KAZ",
         "cca2": "KZ",
@@ -690,7 +692,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "KAZ",
     },
     {
-        "name": "Turks and Caicos Islands",
+        "name": _("Turks and Caicos Islands"),
         "area": 948,
         "cioc": "",
         "cca2": "TC",
@@ -700,7 +702,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "TCA",
     },
     {
-        "name": "French Polynesia",
+        "name": _("French Polynesia"),
         "area": 4167,
         "cioc": "",
         "cca2": "PF",
@@ -710,7 +712,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "PYF",
     },
     {
-        "name": "Niue",
+        "name": _("Niue"),
         "area": 260,
         "cioc": "",
         "cca2": "NU",
@@ -720,7 +722,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "NIU",
     },
     {
-        "name": "Dominica",
+        "name": _("Dominica"),
         "area": 751,
         "cioc": "DMA",
         "cca2": "DM",
@@ -730,7 +732,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "DMA",
     },
     {
-        "name": "Benin",
+        "name": _("Benin"),
         "area": 112622,
         "cioc": "BEN",
         "cca2": "BJ",
@@ -740,7 +742,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BEN",
     },
     {
-        "name": "French Guiana",
+        "name": _("French Guiana"),
         "area": 83534,
         "cioc": "",
         "cca2": "GF",
@@ -750,7 +752,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GUF",
     },
     {
-        "name": "Belgium",
+        "name": _("Belgium"),
         "area": 30528,
         "cioc": "BEL",
         "cca2": "BE",
@@ -760,7 +762,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BEL",
     },
     {
-        "name": "Montserrat",
+        "name": _("Montserrat"),
         "area": 102,
         "cioc": "",
         "cca2": "MS",
@@ -770,7 +772,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MSR",
     },
     {
-        "name": "Togo",
+        "name": _("Togo"),
         "area": 56785,
         "cioc": "TOG",
         "cca2": "TG",
@@ -780,7 +782,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "TGO",
     },
     {
-        "name": "Germany",
+        "name": _("Germany"),
         "area": 357114,
         "cioc": "GER",
         "cca2": "DE",
@@ -790,7 +792,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "DEU",
     },
     {
-        "name": "Guam",
+        "name": _("Guam"),
         "area": 549,
         "cioc": "GUM",
         "cca2": "GU",
@@ -800,7 +802,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GUM",
     },
     {
-        "name": "Sri Lanka",
+        "name": _("Sri Lanka"),
         "area": 65610,
         "cioc": "SRI",
         "cca2": "LK",
@@ -810,7 +812,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "LKA",
     },
     {
-        "name": "South Sudan",
+        "name": _("South Sudan"),
         "area": 619745,
         "cioc": "",
         "cca2": "SS",
@@ -820,7 +822,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SSD",
     },
     {
-        "name": "Falkland Islands",
+        "name": _("Falkland Islands"),
         "area": 12173,
         "cioc": "",
         "cca2": "FK",
@@ -830,7 +832,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "FLK",
     },
     {
-        "name": "United Kingdom",
+        "name": _("United Kingdom"),
         "area": 242900,
         "cioc": "GBR",
         "cca2": "GB",
@@ -840,7 +842,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GBR",
     },
     {
-        "name": "Guyana",
+        "name": _("Guyana"),
         "area": 214969,
         "cioc": "GUY",
         "cca2": "GY",
@@ -850,7 +852,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GUY",
     },
     {
-        "name": "Costa Rica",
+        "name": _("Costa Rica"),
         "area": 51100,
         "cioc": "CRC",
         "cca2": "CR",
@@ -860,7 +862,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "CRI",
     },
     {
-        "name": "Cameroon",
+        "name": _("Cameroon"),
         "area": 475442,
         "cioc": "CMR",
         "cca2": "CM",
@@ -870,7 +872,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "CMR",
     },
     {
-        "name": "Morocco",
+        "name": _("Morocco"),
         "area": 446550,
         "cioc": "MAR",
         "cca2": "MA",
@@ -880,7 +882,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MAR",
     },
     {
-        "name": "Northern Mariana Islands",
+        "name": _("Northern Mariana Islands"),
         "area": 464,
         "cioc": "",
         "cca2": "MP",
@@ -890,7 +892,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MNP",
     },
     {
-        "name": "Lesotho",
+        "name": _("Lesotho"),
         "area": 30355,
         "cioc": "LES",
         "cca2": "LS",
@@ -900,7 +902,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "LSO",
     },
     {
-        "name": "Hungary",
+        "name": _("Hungary"),
         "area": 93028,
         "cioc": "HUN",
         "cca2": "HU",
@@ -910,7 +912,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "HUN",
     },
     {
-        "name": "Turkmenistan",
+        "name": _("Turkmenistan"),
         "area": 488100,
         "cioc": "TKM",
         "cca2": "TM",
@@ -920,7 +922,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "TKM",
     },
     {
-        "name": "Suriname",
+        "name": _("Suriname"),
         "area": 163820,
         "cioc": "SUR",
         "cca2": "SR",
@@ -930,7 +932,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SUR",
     },
     {
-        "name": "Netherlands",
+        "name": _("Netherlands"),
         "area": 41850,
         "cioc": "NED",
         "cca2": "NL",
@@ -940,7 +942,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "NLD",
     },
     {
-        "name": "Bermuda",
+        "name": _("Bermuda"),
         "area": 54,
         "cioc": "BER",
         "cca2": "BM",
@@ -950,7 +952,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BMU",
     },
     {
-        "name": "Heard Island and McDonald Islands",
+        "name": _("Heard Island and McDonald Islands"),
         "area": 412,
         "cioc": "",
         "cca2": "HM",
@@ -960,7 +962,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "HMD",
     },
     {
-        "name": "Chad",
+        "name": _("Chad"),
         "area": 1284000,
         "cioc": "CHA",
         "cca2": "TD",
@@ -970,7 +972,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "TCD",
     },
     {
-        "name": "Georgia",
+        "name": _("Georgia"),
         "area": 69700,
         "cioc": "GEO",
         "cca2": "GE",
@@ -980,7 +982,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GEO",
     },
     {
-        "name": "Montenegro",
+        "name": _("Montenegro"),
         "area": 13812,
         "cioc": "MNE",
         "cca2": "ME",
@@ -990,7 +992,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MNE",
     },
     {
-        "name": "Mongolia",
+        "name": _("Mongolia"),
         "area": 1564110,
         "cioc": "MGL",
         "cca2": "MN",
@@ -1000,7 +1002,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MNG",
     },
     {
-        "name": "Marshall Islands",
+        "name": _("Marshall Islands"),
         "area": 181,
         "cioc": "MHL",
         "cca2": "MH",
@@ -1010,7 +1012,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MHL",
     },
     {
-        "name": "Martinique",
+        "name": _("Martinique"),
         "area": 1128,
         "cioc": "",
         "cca2": "MQ",
@@ -1020,7 +1022,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MTQ",
     },
     {
-        "name": "Belize",
+        "name": _("Belize"),
         "area": 22966,
         "cioc": "BIZ",
         "cca2": "BZ",
@@ -1030,7 +1032,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BLZ",
     },
     {
-        "name": "Norfolk Island",
+        "name": _("Norfolk Island"),
         "area": 36,
         "cioc": "",
         "cca2": "NF",
@@ -1040,7 +1042,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "NFK",
     },
     {
-        "name": "Myanmar",
+        "name": _("Myanmar"),
         "area": 676578,
         "cioc": "MYA",
         "cca2": "MM",
@@ -1050,7 +1052,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MMR",
     },
     {
-        "name": "Afghanistan",
+        "name": _("Afghanistan"),
         "area": 652230,
         "cioc": "AFG",
         "cca2": "AF",
@@ -1060,7 +1062,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "AFG",
     },
     {
-        "name": "Burundi",
+        "name": _("Burundi"),
         "area": 27834,
         "cioc": "BDI",
         "cca2": "BI",
@@ -1070,7 +1072,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BDI",
     },
     {
-        "name": "British Virgin Islands",
+        "name": _("British Virgin Islands"),
         "area": 151,
         "cioc": "IVB",
         "cca2": "VG",
@@ -1080,7 +1082,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "VGB",
     },
     {
-        "name": "Belarus",
+        "name": _("Belarus"),
         "area": 207600,
         "cioc": "BLR",
         "cca2": "BY",
@@ -1090,7 +1092,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BLR",
     },
     {
-        "name": "Saint Barthelemy",
+        "name": _("Saint Barthelemy"),
         "area": 21,
         "cioc": "",
         "cca2": "BL",
@@ -1100,7 +1102,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BLM",
     },
     {
-        "name": "Grenada",
+        "name": _("Grenada"),
         "area": 344,
         "cioc": "GRN",
         "cca2": "GD",
@@ -1110,7 +1112,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GRD",
     },
     {
-        "name": "Tokelau",
+        "name": _("Tokelau"),
         "area": 12,
         "cioc": "",
         "cca2": "TK",
@@ -1120,7 +1122,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "TKL",
     },
     {
-        "name": "Greece",
+        "name": _("Greece"),
         "area": 131990,
         "cioc": "GRE",
         "cca2": "GR",
@@ -1130,7 +1132,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GRC",
     },
     {
-        "name": "Russia",
+        "name": _("Russia"),
         "area": 17098242,
         "cioc": "RUS",
         "cca2": "RU",
@@ -1140,7 +1142,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "RUS",
     },
     {
-        "name": "Greenland",
+        "name": _("Greenland"),
         "area": 2166086,
         "cioc": "",
         "cca2": "GL",
@@ -1150,7 +1152,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GRL",
     },
     {
-        "name": "Andorra",
+        "name": _("Andorra"),
         "area": 468,
         "cioc": "AND",
         "cca2": "AD",
@@ -1160,7 +1162,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "AND",
     },
     {
-        "name": "Mozambique",
+        "name": _("Mozambique"),
         "area": 801590,
         "cioc": "MOZ",
         "cca2": "MZ",
@@ -1170,7 +1172,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MOZ",
     },
     {
-        "name": "Tajikistan",
+        "name": _("Tajikistan"),
         "area": 143100,
         "cioc": "TJK",
         "cca2": "TJ",
@@ -1180,7 +1182,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "TJK",
     },
     {
-        "name": "Haiti",
+        "name": _("Haiti"),
         "area": 27750,
         "cioc": "HAI",
         "cca2": "HT",
@@ -1190,7 +1192,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "HTI",
     },
     {
-        "name": "Mexico",
+        "name": _("Mexico"),
         "area": 1964375,
         "cioc": "MEX",
         "cca2": "MX",
@@ -1200,7 +1202,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MEX",
     },
     {
-        "name": "Zimbabwe",
+        "name": _("Zimbabwe"),
         "area": 390757,
         "cioc": "ZIM",
         "cca2": "ZW",
@@ -1210,7 +1212,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ZWE",
     },
     {
-        "name": "Saint Lucia",
+        "name": _("Saint Lucia"),
         "area": 616,
         "cioc": "LCA",
         "cca2": "LC",
@@ -1220,7 +1222,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "LCA",
     },
     {
-        "name": "India",
+        "name": _("India"),
         "area": 3287590,
         "cioc": "IND",
         "cca2": "IN",
@@ -1230,7 +1232,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "IND",
     },
     {
-        "name": "Latvia",
+        "name": _("Latvia"),
         "area": 64559,
         "cioc": "LAT",
         "cca2": "LV",
@@ -1240,7 +1242,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "LVA",
     },
     {
-        "name": "Bhutan",
+        "name": _("Bhutan"),
         "area": 38394,
         "cioc": "BHU",
         "cca2": "BT",
@@ -1250,7 +1252,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BTN",
     },
     {
-        "name": "Saint Vincent and the Grenadines",
+        "name": _("Saint Vincent and the Grenadines"),
         "area": 389,
         "cioc": "VIN",
         "cca2": "VC",
@@ -1260,7 +1262,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "VCT",
     },
     {
-        "name": "Vietnam",
+        "name": _("Vietnam"),
         "area": 331212,
         "cioc": "VIE",
         "cca2": "VN",
@@ -1270,7 +1272,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "VNM",
     },
     {
-        "name": "Norway",
+        "name": _("Norway"),
         "area": 323802,
         "cioc": "NOR",
         "cca2": "NO",
@@ -1280,7 +1282,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "NOR",
     },
     {
-        "name": "Czech Republic",
+        "name": _("Czech Republic"),
         "area": 78865,
         "cioc": "CZE",
         "cca2": "CZ",
@@ -1290,7 +1292,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "CZE",
     },
     {
-        "name": "French Southern and Antarctic Lands",
+        "name": _("French Southern and Antarctic Lands"),
         "area": 7747,
         "cioc": "",
         "cca2": "TF",
@@ -1300,7 +1302,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ATF",
     },
     {
-        "name": "Antigua and Barbuda",
+        "name": _("Antigua and Barbuda"),
         "area": 442,
         "cioc": "ANT",
         "cca2": "AG",
@@ -1310,7 +1312,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ATG",
     },
     {
-        "name": "Fiji",
+        "name": _("Fiji"),
         "area": 18272,
         "cioc": "FIJ",
         "cca2": "FJ",
@@ -1320,7 +1322,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "FJI",
     },
     {
-        "name": "British Indian Ocean Territory",
+        "name": _("British Indian Ocean Territory"),
         "area": 60,
         "cioc": "",
         "cca2": "IO",
@@ -1330,7 +1332,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "IOT",
     },
     {
-        "name": "Honduras",
+        "name": _("Honduras"),
         "area": 112492,
         "cioc": "HON",
         "cca2": "HN",
@@ -1340,7 +1342,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "HND",
     },
     {
-        "name": "Mauritius",
+        "name": _("Mauritius"),
         "area": 2040,
         "cioc": "MRI",
         "cca2": "MU",
@@ -1350,7 +1352,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MUS",
     },
     {
-        "name": "Antarctica",
+        "name": _("Antarctica"),
         "area": 14000000,
         "cioc": "",
         "cca2": "AQ",
@@ -1360,7 +1362,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ATA",
     },
     {
-        "name": "Luxembourg",
+        "name": _("Luxembourg"),
         "area": 2586,
         "cioc": "LUX",
         "cca2": "LU",
@@ -1370,7 +1372,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "LUX",
     },
     {
-        "name": "Israel",
+        "name": _("Israel"),
         "area": 20770,
         "cioc": "ISR",
         "cca2": "IL",
@@ -1380,7 +1382,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ISR",
     },
     {
-        "name": "Micronesia",
+        "name": _("Micronesia"),
         "area": 702,
         "cioc": "FSM",
         "cca2": "FM",
@@ -1390,7 +1392,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "FSM",
     },
     {
-        "name": "Peru",
+        "name": _("Peru"),
         "area": 1285216,
         "cioc": "PER",
         "cca2": "PE",
@@ -1400,7 +1402,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "PER",
     },
     {
-        "name": "Reunion",
+        "name": _("Reunion"),
         "area": 2511,
         "cioc": "",
         "cca2": "RE",
@@ -1410,7 +1412,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "REU",
     },
     {
-        "name": "Indonesia",
+        "name": _("Indonesia"),
         "area": 1904569,
         "cioc": "INA",
         "cca2": "ID",
@@ -1420,7 +1422,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "IDN",
     },
     {
-        "name": "Vanuatu",
+        "name": _("Vanuatu"),
         "area": 12189,
         "cioc": "VAN",
         "cca2": "VU",
@@ -1430,7 +1432,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "VUT",
     },
     {
-        "name": "Macedonia",
+        "name": _("Macedonia"),
         "area": 25713,
         "cioc": "MKD",
         "cca2": "MK",
@@ -1440,7 +1442,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MKD",
     },
     {
-        "name": "DR Congo",
+        "name": _("DR Congo"),
         "area": 2344858,
         "cioc": "COD",
         "cca2": "CD",
@@ -1450,7 +1452,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "COD",
     },
     {
-        "name": "Republic of the Congo",
+        "name": _("Republic of the Congo"),
         "area": 342000,
         "cioc": "CGO",
         "cca2": "CG",
@@ -1460,7 +1462,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "COG",
     },
     {
-        "name": "Iceland",
+        "name": _("Iceland"),
         "area": 103000,
         "cioc": "ISL",
         "cca2": "IS",
@@ -1470,7 +1472,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ISL",
     },
     {
-        "name": "Guadeloupe",
+        "name": _("Guadeloupe"),
         "area": 1628,
         "cioc": "",
         "cca2": "GP",
@@ -1480,7 +1482,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GLP",
     },
     {
-        "name": "Cook Islands",
+        "name": _("Cook Islands"),
         "area": 236,
         "cioc": "COK",
         "cca2": "CK",
@@ -1490,7 +1492,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "COK",
     },
     {
-        "name": "Comoros",
+        "name": _("Comoros"),
         "area": 1862,
         "cioc": "COM",
         "cca2": "KM",
@@ -1500,7 +1502,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "COM",
     },
     {
-        "name": "Colombia",
+        "name": _("Colombia"),
         "area": 1141748,
         "cioc": "COL",
         "cca2": "CO",
@@ -1510,7 +1512,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "COL",
     },
     {
-        "name": "Nigeria",
+        "name": _("Nigeria"),
         "area": 923768,
         "cioc": "NGR",
         "cca2": "NG",
@@ -1520,7 +1522,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "NGA",
     },
     {
-        "name": "Timor-Leste",
+        "name": _("Timor-Leste"),
         "area": 14874,
         "cioc": "TLS",
         "cca2": "TL",
@@ -1530,7 +1532,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "TLS",
     },
     {
-        "name": "Taiwan",
+        "name": _("Taiwan"),
         "area": 36193,
         "cioc": "TPE",
         "cca2": "TW",
@@ -1540,7 +1542,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "TWN",
     },
     {
-        "name": "Portugal",
+        "name": _("Portugal"),
         "area": 92090,
         "cioc": "POR",
         "cca2": "PT",
@@ -1550,7 +1552,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "PRT",
     },
     {
-        "name": "Moldova",
+        "name": _("Moldova"),
         "area": 33846,
         "cioc": "MDA",
         "cca2": "MD",
@@ -1560,7 +1562,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MDA",
     },
     {
-        "name": "Guernsey",
+        "name": _("Guernsey"),
         "area": 78,
         "cioc": "",
         "cca2": "GG",
@@ -1570,7 +1572,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GGY",
     },
     {
-        "name": "Madagascar",
+        "name": _("Madagascar"),
         "area": 587041,
         "cioc": "MAD",
         "cca2": "MG",
@@ -1580,7 +1582,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MDG",
     },
     {
-        "name": "Ecuador",
+        "name": _("Ecuador"),
         "area": 276841,
         "cioc": "ECU",
         "cca2": "EC",
@@ -1590,7 +1592,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ECU",
     },
     {
-        "name": "Senegal",
+        "name": _("Senegal"),
         "area": 196722,
         "cioc": "SEN",
         "cca2": "SN",
@@ -1600,7 +1602,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SEN",
     },
     {
-        "name": "New Zealand",
+        "name": _("New Zealand"),
         "area": 270467,
         "cioc": "NZL",
         "cca2": "NZ",
@@ -1610,7 +1612,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "NZL",
     },
     {
-        "name": "Maldives",
+        "name": _("Maldives"),
         "area": 300,
         "cioc": "MDV",
         "cca2": "MV",
@@ -1620,7 +1622,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MDV",
     },
     {
-        "name": "American Samoa",
+        "name": _("American Samoa"),
         "area": 199,
         "cioc": "ASA",
         "cca2": "AS",
@@ -1630,7 +1632,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ASM",
     },
     {
-        "name": "Saint Pierre and Miquelon",
+        "name": _("Saint Pierre and Miquelon"),
         "area": 242,
         "cioc": "",
         "cca2": "PM",
@@ -1640,7 +1642,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SPM",
     },
     {
-        "name": "Curacao",
+        "name": _("Curacao"),
         "area": 444,
         "cioc": "",
         "cca2": "CW",
@@ -1650,7 +1652,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "CUW",
     },
     {
-        "name": "France",
+        "name": _("France"),
         "area": 551695,
         "cioc": "FRA",
         "cca2": "FR",
@@ -1660,7 +1662,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "FRA",
     },
     {
-        "name": "Lithuania",
+        "name": _("Lithuania"),
         "area": 65300,
         "cioc": "LTU",
         "cca2": "LT",
@@ -1670,7 +1672,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "LTU",
     },
     {
-        "name": "Rwanda",
+        "name": _("Rwanda"),
         "area": 26338,
         "cioc": "RWA",
         "cca2": "RW",
@@ -1680,7 +1682,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "RWA",
     },
     {
-        "name": "Zambia",
+        "name": _("Zambia"),
         "area": 752612,
         "cioc": "ZAM",
         "cca2": "ZM",
@@ -1690,7 +1692,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ZMB",
     },
     {
-        "name": "Gambia",
+        "name": _("Gambia"),
         "area": 10689,
         "cioc": "GAM",
         "cca2": "GM",
@@ -1700,7 +1702,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GMB",
     },
     {
-        "name": "Wallis and Futuna",
+        "name": _("Wallis and Futuna"),
         "area": 142,
         "cioc": "",
         "cca2": "WF",
@@ -1710,7 +1712,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "WLF",
     },
     {
-        "name": "Jersey",
+        "name": _("Jersey"),
         "area": 116,
         "cioc": "",
         "cca2": "JE",
@@ -1720,7 +1722,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "JEY",
     },
     {
-        "name": "Faroe Islands",
+        "name": _("Faroe Islands"),
         "area": 1393,
         "cioc": "",
         "cca2": "FO",
@@ -1730,7 +1732,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "FRO",
     },
     {
-        "name": "Guatemala",
+        "name": _("Guatemala"),
         "area": 108889,
         "cioc": "GUA",
         "cca2": "GT",
@@ -1740,7 +1742,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GTM",
     },
     {
-        "name": "Denmark",
+        "name": _("Denmark"),
         "area": 43094,
         "cioc": "DEN",
         "cca2": "DK",
@@ -1750,7 +1752,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "DNK",
     },
     {
-        "name": "Isle of Man",
+        "name": _("Isle of Man"),
         "area": 572,
         "cioc": "",
         "cca2": "IM",
@@ -1760,7 +1762,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "IMN",
     },
     {
-        "name": "Australia",
+        "name": _("Australia"),
         "area": 7692024,
         "cioc": "AUS",
         "cca2": "AU",
@@ -1770,7 +1772,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "AUS",
     },
     {
-        "name": "Austria",
+        "name": _("Austria"),
         "area": 83871,
         "cioc": "AUT",
         "cca2": "AT",
@@ -1780,7 +1782,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "AUT",
     },
     {
-        "name": "Svalbard and Jan Mayen",
+        "name": _("Svalbard and Jan Mayen"),
         "area": -1,
         "cioc": "",
         "cca2": "SJ",
@@ -1790,7 +1792,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SJM",
     },
     {
-        "name": "Venezuela",
+        "name": _("Venezuela"),
         "area": 916445,
         "cioc": "VEN",
         "cca2": "VE",
@@ -1800,7 +1802,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "VEN",
     },
     {
-        "name": "Kosovo",
+        "name": _("Kosovo"),
         "area": 10908,
         "cioc": "KOS",
         "cca2": "XK",
@@ -1810,7 +1812,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "UNK",
     },
     {
-        "name": "Palau",
+        "name": _("Palau"),
         "area": 459,
         "cioc": "PLW",
         "cca2": "PW",
@@ -1820,7 +1822,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "PLW",
     },
     {
-        "name": "Kenya",
+        "name": _("Kenya"),
         "area": 580367,
         "cioc": "KEN",
         "cca2": "KE",
@@ -1830,7 +1832,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "KEN",
     },
     {
-        "name": "Samoa",
+        "name": _("Samoa"),
         "area": 2842,
         "cioc": "SAM",
         "cca2": "WS",
@@ -1840,7 +1842,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "WSM",
     },
     {
-        "name": "Turkey",
+        "name": _("Turkey"),
         "area": 783562,
         "cioc": "TUR",
         "cca2": "TR",
@@ -1850,7 +1852,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "TUR",
     },
     {
-        "name": "Albania",
+        "name": _("Albania"),
         "area": 28748,
         "cioc": "ALB",
         "cca2": "AL",
@@ -1860,7 +1862,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ALB",
     },
     {
-        "name": "Oman",
+        "name": _("Oman"),
         "area": 309500,
         "cioc": "OMA",
         "cca2": "OM",
@@ -1870,7 +1872,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "OMN",
     },
     {
-        "name": "Tuvalu",
+        "name": _("Tuvalu"),
         "area": 26,
         "cioc": "TUV",
         "cca2": "TV",
@@ -1880,7 +1882,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "TUV",
     },
     {
-        "name": "Aland Islands",
+        "name": _("Aland Islands"),
         "area": 1580,
         "cioc": "",
         "cca2": "AX",
@@ -1890,7 +1892,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ALA",
     },
     {
-        "name": "Brunei",
+        "name": _("Brunei"),
         "area": 5765,
         "cioc": "BRU",
         "cca2": "BN",
@@ -1900,7 +1902,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BRN",
     },
     {
-        "name": "Tunisia",
+        "name": _("Tunisia"),
         "area": 163610,
         "cioc": "TUN",
         "cca2": "TN",
@@ -1910,7 +1912,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "TUN",
     },
     {
-        "name": "Pitcairn Islands",
+        "name": _("Pitcairn Islands"),
         "area": 47,
         "cioc": "",
         "cca2": "PN",
@@ -1920,7 +1922,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "PCN",
     },
     {
-        "name": "Barbados",
+        "name": _("Barbados"),
         "area": 430,
         "cioc": "BAR",
         "cca2": "BB",
@@ -1930,7 +1932,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BRB",
     },
     {
-        "name": "Brazil",
+        "name": _("Brazil"),
         "area": 8515767,
         "cioc": "BRA",
         "cca2": "BR",
@@ -1940,7 +1942,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BRA",
     },
     {
-        "name": "Ivory Coast",
+        "name": _("Ivory Coast"),
         "area": 322463,
         "cioc": "CIV",
         "cca2": "CI",
@@ -1950,7 +1952,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "CIV",
     },
     {
-        "name": "Serbia",
+        "name": _("Serbia"),
         "area": 88361,
         "cioc": "SRB",
         "cca2": "RS",
@@ -1960,7 +1962,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SRB",
     },
     {
-        "name": "Equatorial Guinea",
+        "name": _("Equatorial Guinea"),
         "area": 28051,
         "cioc": "GEQ",
         "cca2": "GQ",
@@ -1970,7 +1972,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GNQ",
     },
     {
-        "name": "United States",
+        "name": _("United States"),
         "area": 9372610,
         "cioc": "USA",
         "cca2": "US",
@@ -1980,7 +1982,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "USA",
     },
     {
-        "name": "Qatar",
+        "name": _("Qatar"),
         "area": 11586,
         "cioc": "QAT",
         "cca2": "QA",
@@ -1990,7 +1992,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "QAT",
     },
     {
-        "name": "Sweden",
+        "name": _("Sweden"),
         "area": 450295,
         "cioc": "SWE",
         "cca2": "SE",
@@ -2000,7 +2002,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SWE",
     },
     {
-        "name": "Azerbaijan",
+        "name": _("Azerbaijan"),
         "area": 86600,
         "cioc": "AZE",
         "cca2": "AZ",
@@ -2010,7 +2012,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "AZE",
     },
     {
-        "name": "Guinea-Bissau",
+        "name": _("Guinea-Bissau"),
         "area": 36125,
         "cioc": "GBS",
         "cca2": "GW",
@@ -2020,7 +2022,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GNB",
     },
     {
-        "name": "Swaziland",
+        "name": _("Swaziland"),
         "area": 17364,
         "cioc": "SWZ",
         "cca2": "SZ",
@@ -2030,7 +2032,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SWZ",
     },
     {
-        "name": "Tonga",
+        "name": _("Tonga"),
         "area": 747,
         "cioc": "TGA",
         "cca2": "TO",
@@ -2040,7 +2042,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "TON",
     },
     {
-        "name": "Canada",
+        "name": _("Canada"),
         "area": 9984670,
         "cioc": "CAN",
         "cca2": "CA",
@@ -2050,7 +2052,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "CAN",
     },
     {
-        "name": "Ukraine",
+        "name": _("Ukraine"),
         "area": 603500,
         "cioc": "UKR",
         "cca2": "UA",
@@ -2060,7 +2062,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "UKR",
     },
     {
-        "name": "South Korea",
+        "name": _("South Korea"),
         "area": 100210,
         "cioc": "KOR",
         "cca2": "KR",
@@ -2070,7 +2072,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "KOR",
     },
     {
-        "name": "Anguilla",
+        "name": _("Anguilla"),
         "area": 91,
         "cioc": "",
         "cca2": "AI",
@@ -2080,7 +2082,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "AIA",
     },
     {
-        "name": "Central African Republic",
+        "name": _("Central African Republic"),
         "area": 622984,
         "cioc": "CAF",
         "cca2": "CF",
@@ -2090,7 +2092,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "CAF",
     },
     {
-        "name": "Slovakia",
+        "name": _("Slovakia"),
         "area": 49037,
         "cioc": "SVK",
         "cca2": "SK",
@@ -2100,7 +2102,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SVK",
     },
     {
-        "name": "Cyprus",
+        "name": _("Cyprus"),
         "area": 9251,
         "cioc": "CYP",
         "cca2": "CY",
@@ -2110,7 +2112,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "CYP",
     },
     {
-        "name": "Bosnia and Herzegovina",
+        "name": _("Bosnia and Herzegovina"),
         "area": 51209,
         "cioc": "BIH",
         "cca2": "BA",
@@ -2120,7 +2122,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BIH",
     },
     {
-        "name": "Singapore",
+        "name": _("Singapore"),
         "area": 710,
         "cioc": "SIN",
         "cca2": "SG",
@@ -2130,7 +2132,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SGP",
     },
     {
-        "name": "South Georgia",
+        "name": _("South Georgia"),
         "area": 3903,
         "cioc": "",
         "cca2": "GS",
@@ -2140,7 +2142,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SGS",
     },
     {
-        "name": "Somalia",
+        "name": _("Somalia"),
         "area": 637657,
         "cioc": "SOM",
         "cca2": "SO",
@@ -2150,7 +2152,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SOM",
     },
     {
-        "name": "Uzbekistan",
+        "name": _("Uzbekistan"),
         "area": 447400,
         "cioc": "UZB",
         "cca2": "UZ",
@@ -2160,7 +2162,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "UZB",
     },
     {
-        "name": "Eritrea",
+        "name": _("Eritrea"),
         "area": 117600,
         "cioc": "ERI",
         "cca2": "ER",
@@ -2170,7 +2172,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ERI",
     },
     {
-        "name": "Poland",
+        "name": _("Poland"),
         "area": 312679,
         "cioc": "POL",
         "cca2": "PL",
@@ -2180,7 +2182,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "POL",
     },
     {
-        "name": "Kuwait",
+        "name": _("Kuwait"),
         "area": 17818,
         "cioc": "KUW",
         "cca2": "KW",
@@ -2190,7 +2192,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "KWT",
     },
     {
-        "name": "Gabon",
+        "name": _("Gabon"),
         "area": 267668,
         "cioc": "GAB",
         "cca2": "GA",
@@ -2200,7 +2202,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "GAB",
     },
     {
-        "name": "Cayman Islands",
+        "name": _("Cayman Islands"),
         "area": 264,
         "cioc": "CAY",
         "cca2": "KY",
@@ -2210,7 +2212,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "CYM",
     },
     {
-        "name": "Vatican City",
+        "name": _("Vatican City"),
         "area": 0.44,
         "cioc": "",
         "cca2": "VA",
@@ -2220,7 +2222,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "VAT",
     },
     {
-        "name": "Estonia",
+        "name": _("Estonia"),
         "area": 45227,
         "cioc": "EST",
         "cca2": "EE",
@@ -2230,7 +2232,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "EST",
     },
     {
-        "name": "Malawi",
+        "name": _("Malawi"),
         "area": 118484,
         "cioc": "MAW",
         "cca2": "MW",
@@ -2240,7 +2242,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MWI",
     },
     {
-        "name": "Spain",
+        "name": _("Spain"),
         "area": 505992,
         "cioc": "ESP",
         "cca2": "ES",
@@ -2250,7 +2252,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ESP",
     },
     {
-        "name": "Iraq",
+        "name": _("Iraq"),
         "area": 438317,
         "cioc": "IRQ",
         "cca2": "IQ",
@@ -2260,7 +2262,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "IRQ",
     },
     {
-        "name": "El Salvador",
+        "name": _("El Salvador"),
         "area": 21041,
         "cioc": "ESA",
         "cca2": "SV",
@@ -2270,7 +2272,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SLV",
     },
     {
-        "name": "Mali",
+        "name": _("Mali"),
         "area": 1240192,
         "cioc": "MLI",
         "cca2": "ML",
@@ -2280,7 +2282,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MLI",
     },
     {
-        "name": "Ireland",
+        "name": _("Ireland"),
         "area": 70273,
         "cioc": "IRL",
         "cca2": "IE",
@@ -2290,7 +2292,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "IRL",
     },
     {
-        "name": "Iran",
+        "name": _("Iran"),
         "area": 1648195,
         "cioc": "IRI",
         "cca2": "IR",
@@ -2300,7 +2302,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "IRN",
     },
     {
-        "name": "Aruba",
+        "name": _("Aruba"),
         "area": 180,
         "cioc": "ARU",
         "cca2": "AW",
@@ -2310,7 +2312,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ABW",
     },
     {
-        "name": "Papua New Guinea",
+        "name": _("Papua New Guinea"),
         "area": 462840,
         "cioc": "PNG",
         "cca2": "PG",
@@ -2320,7 +2322,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "PNG",
     },
     {
-        "name": "Panama",
+        "name": _("Panama"),
         "area": 75417,
         "cioc": "PAN",
         "cca2": "PA",
@@ -2330,7 +2332,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "PAN",
     },
     {
-        "name": "Sudan",
+        "name": _("Sudan"),
         "area": 1886068,
         "cioc": "SUD",
         "cca2": "SD",
@@ -2340,7 +2342,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SDN",
     },
     {
-        "name": "Solomon Islands",
+        "name": _("Solomon Islands"),
         "area": 28896,
         "cioc": "SOL",
         "cca2": "SB",
@@ -2350,7 +2352,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "SLB",
     },
     {
-        "name": "Western Sahara",
+        "name": _("Western Sahara"),
         "area": 266000,
         "cioc": "",
         "cca2": "EH",
@@ -2360,7 +2362,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ESH",
     },
     {
-        "name": "Monaco",
+        "name": _("Monaco"),
         "area": 2.02,
         "cioc": "MON",
         "cca2": "MC",
@@ -2370,7 +2372,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "MCO",
     },
     {
-        "name": "Italy",
+        "name": _("Italy"),
         "area": 301336,
         "cioc": "ITA",
         "cca2": "IT",
@@ -2380,7 +2382,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ITA",
     },
     {
-        "name": "Japan",
+        "name": _("Japan"),
         "area": 377930,
         "cioc": "JPN",
         "cca2": "JP",
@@ -2390,7 +2392,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "JPN",
     },
     {
-        "name": "Kyrgyzstan",
+        "name": _("Kyrgyzstan"),
         "area": 199951,
         "cioc": "KGZ",
         "cca2": "KG",
@@ -2400,7 +2402,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "KGZ",
     },
     {
-        "name": "Uganda",
+        "name": _("Uganda"),
         "area": 241550,
         "cioc": "UGA",
         "cca2": "UG",
@@ -2410,7 +2412,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "UGA",
     },
     {
-        "name": "New Caledonia",
+        "name": _("New Caledonia"),
         "area": 18575,
         "cioc": "",
         "cca2": "NC",
@@ -2420,7 +2422,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "NCL",
     },
     {
-        "name": "United Arab Emirates",
+        "name": _("United Arab Emirates"),
         "area": 83600,
         "cioc": "UAE",
         "cca2": "AE",
@@ -2430,7 +2432,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ARE",
     },
     {
-        "name": "Argentina",
+        "name": _("Argentina"),
         "area": 2780400,
         "cioc": "ARG",
         "cca2": "AR",
@@ -2440,7 +2442,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ARG",
     },
     {
-        "name": "Bahamas",
+        "name": _("Bahamas"),
         "area": 13943,
         "cioc": "BAH",
         "cca2": "BS",
@@ -2450,7 +2452,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BHS",
     },
     {
-        "name": "Bahrain",
+        "name": _("Bahrain"),
         "area": 765,
         "cioc": "BRN",
         "cca2": "BH",
@@ -2460,7 +2462,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "BHR",
     },
     {
-        "name": "Armenia",
+        "name": _("Armenia"),
         "area": 29743,
         "cioc": "ARM",
         "cca2": "AM",
@@ -2470,7 +2472,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "ARM",
     },
     {
-        "name": "Nauru",
+        "name": _("Nauru"),
         "area": 21,
         "cioc": "NRU",
         "cca2": "NR",
@@ -2480,7 +2482,7 @@ countries: list[dict[str, Any]] = [
         "cca3": "NRU",
     },
     {
-        "name": "Cuba",
+        "name": _("Cuba"),
         "area": 109884,
         "cioc": "CUB",
         "cca2": "CU",

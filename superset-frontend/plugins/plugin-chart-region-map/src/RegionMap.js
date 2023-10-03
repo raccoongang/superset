@@ -23,21 +23,20 @@ import { extent as d3Extent } from 'd3-array';
 import {
   getNumberFormatter,
   getSequentialSchemeRegistry,
-  t,
   CategoricalColorNamespace,
 } from '@superset-ui/core';
-import countries, { countryOptions } from './countries';
+import regions, { regionOptions } from './regions';
 
 const propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      country_id: PropTypes.string,
+      district_id: PropTypes.string,
       metric: PropTypes.number,
     }),
   ),
   width: PropTypes.number,
   height: PropTypes.number,
-  country: PropTypes.string,
+  region: PropTypes.string,
   linearColorScheme: PropTypes.string,
   mapBaseUrl: PropTypes.string,
   numberFormat: PropTypes.string,
@@ -45,18 +44,17 @@ const propTypes = {
 
 const maps = {};
 
-function CountryMap(element, props) {
+function RegionMap(element, props) {
   const {
     data,
     width,
     height,
-    country,
+    region,
     linearColorScheme,
     numberFormat,
     colorScheme,
     sliceId,
   } = props;
-
   const container = element;
   const format = getNumberFormatter(numberFormat);
   const linearColorScale = getSequentialSchemeRegistry()
@@ -66,15 +64,15 @@ function CountryMap(element, props) {
 
   const colorMap = {};
   data.forEach(d => {
-    colorMap[d.country_id] = colorScheme
-      ? colorScale(d.country_id, sliceId)
+    colorMap[d.district_id] = colorScheme
+      ? colorScale(d.district_id, sliceId)
       : linearColorScale(d.metric);
   });
-  const colorFn = d => colorMap[d.properties.ISO] || 'none';
+  const colorFn = d => colorMap[d.properties.shapeName] || 'none';
 
   const path = d3.geo.path();
   const div = d3.select(container);
-  div.classed('superset-legacy-chart-country-map', true);
+  div.classed('superset-chart-region-map', true);
   div.selectAll('*').remove();
   container.style.height = `${height}px`;
   container.style.width = `${width}px`;
@@ -149,19 +147,14 @@ function CountryMap(element, props) {
 
   backgroundRect.on('click', clicked);
 
-  const selectAndDisplayNameOfRegion = function selectAndDisplayNameOfRegion(
-    feature,
-  ) {
-    let name = '';
-    if (feature && feature.properties) {
-      if (feature.properties.ID_2) {
-        name = feature.properties.NAME_2;
-      } else {
-        name = feature.properties.NAME_1;
+  const selectAndDisplayNameOfDistrict =
+    function selectAndDisplayNameOfDistrict(feature) {
+      let name = '';
+      if (feature && feature.properties) {
+        name = feature.properties.shapeName;
       }
-    }
-    bigText.text(t(name));
-  };
+      bigText.text(name);
+    };
 
   const updateMetrics = function updateMetrics(region) {
     if (region.length > 0) {
@@ -176,9 +169,9 @@ function CountryMap(element, props) {
       c = d3.rgb(c).darker().toString();
     }
     d3.select(this).style('fill', c);
-    selectAndDisplayNameOfRegion(d);
+    selectAndDisplayNameOfDistrict(d);
     const result = data.filter(
-      region => region.country_id === d.properties.ISO,
+      district => district.district_id === d.properties.shapeName,
     );
     updateMetrics(result);
   };
@@ -229,27 +222,27 @@ function CountryMap(element, props) {
       .on('click', clicked);
   }
 
-  const map = maps[country];
+  const map = maps[region];
   if (map) {
     drawMap(map);
   } else {
-    const url = countries[country];
+    const url = regions[region];
     d3.json(url, (error, mapData) => {
       if (error) {
-        const countryName =
-          countryOptions.find(x => x[0] === country)?.[1] || country;
+        const regionName =
+          regionOptions.find(x => x[0] === region)?.[1] || region;
         d3.select(element).html(
-          `<div class="alert alert-danger">Could not load map data for ${countryName}</div>`,
+          `<div class="alert alert-danger">Could not load map data for ${regionName}</div>`,
         );
       } else {
-        maps[country] = mapData;
+        maps[region] = mapData;
         drawMap(mapData);
       }
     });
   }
 }
 
-CountryMap.displayName = 'CountryMap';
-CountryMap.propTypes = propTypes;
+RegionMap.displayName = 'RegionMap';
+RegionMap.propTypes = propTypes;
 
-export default CountryMap;
+export default RegionMap;

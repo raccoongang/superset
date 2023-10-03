@@ -23,6 +23,7 @@ import { extent as d3Extent } from 'd3-array';
 import {
   getNumberFormatter,
   getSequentialSchemeRegistry,
+  t,
   CategoricalColorNamespace,
 } from '@superset-ui/core';
 import countries, { countryOptions } from './countries';
@@ -157,9 +158,9 @@ function CountryMap(element: HTMLElement, props: CountryMapProps) {
   ): string {
     if (feature && feature.properties) {
       if (feature.properties.ID_2) {
-        return feature.properties.NAME_2 || '';
+        return feature.properties.NAME_2 ? t(feature.properties.NAME_2) : '';
       }
-      return feature.properties.NAME_1 || '';
+      return feature.properties.NAME_1 ? t(feature.properties.NAME_1) : '';
     }
     return '';
   };

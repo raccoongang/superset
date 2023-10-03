@@ -105,7 +105,6 @@ PDF_GENERATOR_BASEURL = "http://superset-pdf-report:8890/"
 WEBDRIVER_BASEURL_USER_FRIENDLY = WEBDRIVER_BASEURL
 SQLLAB_CTAS_NO_LIMIT = True
 
-BABEL_DEFAULT_LOCALE = "uk"
 #
 # Optionally import superset_config_docker.py (which will have been included on
 # the PYTHONPATH) in order to allow for local settings to be overridden

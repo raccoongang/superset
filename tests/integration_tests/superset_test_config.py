@@ -38,6 +38,8 @@ SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(
 DEBUG = False
 SUPERSET_WEBSERVER_PORT = 8081
 SILENCE_FAB = False
+BABEL_DEFAULT_LOCALE = "en"
+
 # Allowing SQLALCHEMY_DATABASE_URI and SQLALCHEMY_EXAMPLES_URI to be defined as an env vars for
 # continuous integration
 if "SUPERSET__SQLALCHEMY_DATABASE_URI" in os.environ:

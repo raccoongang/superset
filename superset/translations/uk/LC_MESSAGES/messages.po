@@ -5795,6 +5795,22 @@ msgstr "Завантажити як зображення"
 msgid "Download to CSV"
 msgstr "Завантажити у CSV"
 
+#: superset-frontend/src/dashboard/components/Header/HeaderActionsDropdown/index.jsx:317
+msgid "Download as PDF"
+msgstr "Завантажити як PDF"
+
+#: superset-frontend/src/dashboard/components/Header/HeaderActionsDropdown/index.jsx:317
+msgid "Download as Doc"
+msgstr "Завантажити як Word документ"
+
+#: superset-frontend/src/dashboard/components/Header/HeaderActionsDropdown/index.jsx:317
+msgid "Portrait"
+msgstr "Портрет"
+
+#: superset-frontend/src/dashboard/components/Header/HeaderActionsDropdown/index.jsx:317
+msgid "Landscape"
+msgstr "Пейзаж"
+
 #: superset-frontend/src/dashboard/components/PublishedStatus/index.jsx:72
 #: superset-frontend/src/dashboard/components/PublishedStatus/index.jsx:83
 #: superset-frontend/src/pages/DashboardList/index.tsx:336

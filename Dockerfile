@@ -74,6 +74,9 @@ RUN mkdir -p ${PYTHONPATH} superset/static superset-frontend apache_superset.egg
         libpq-dev \
         libecpg-dev \
         libldap2-dev \
+        ffmpeg \
+        libsm6 \
+        libxext6 \
     && apt-get autoremove -yqq --purge && rm -rf /var/lib/apt/lists/* /var/[log,tmp]/* /tmp/* && apt-get clean \
     && touch superset/static/version_info.json \
     && chown -R superset:superset ./*

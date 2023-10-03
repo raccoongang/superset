@@ -1914,6 +1914,10 @@
       "Download": ["Завантажити"],
       "Download as image": ["Завантажити як зображення"],
       "Download to CSV": ["Завантажити у CSV"],
+      "Download as PDF": ["Завантажити як PDF"],
+      "Download as Doc": ["Завантажити як Word документ"],
+      "Portrait": ["Портрет"],
+      "Landscape": ["Пейзаж"],
       "Draft": ["Чернетка"],
       "Drag and drop components and charts to the dashboard": [
         "Перетягніть компоненти та діаграми на дашборд"

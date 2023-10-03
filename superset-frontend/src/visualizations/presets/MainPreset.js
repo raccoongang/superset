@@ -28,6 +28,7 @@ import MapBoxChartPlugin from '@superset-ui/legacy-plugin-chart-map-box';
 import PairedTTestChartPlugin from '@superset-ui/legacy-plugin-chart-paired-t-test';
 import ParallelCoordinatesChartPlugin from '@superset-ui/legacy-plugin-chart-parallel-coordinates';
 import PartitionChartPlugin from '@superset-ui/legacy-plugin-chart-partition';
+import RegionMapChartPlugin from '@superset-ui/plugin-chart-region-map';
 import RoseChartPlugin from '@superset-ui/legacy-plugin-chart-rose';
 import SankeyChartPlugin from '@superset-ui/legacy-plugin-chart-sankey';
 import TableChartPlugin from '@superset-ui/plugin-chart-table';
@@ -110,6 +111,7 @@ export default class MainPreset extends Preset {
         new ChordChartPlugin().configure({ key: 'chord' }),
         new CompareChartPlugin().configure({ key: 'compare' }),
         new CountryMapChartPlugin().configure({ key: 'country_map' }),
+        new RegionMapChartPlugin().configure({ key: 'region_map' }),
         new DistBarChartPlugin().configure({ key: 'dist_bar' }),
         new EventFlowChartPlugin().configure({ key: 'event_flow' }),
         new EchartsFunnelChartPlugin().configure({ key: 'funnel' }),

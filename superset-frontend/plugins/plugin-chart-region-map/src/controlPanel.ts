@@ -21,25 +21,27 @@ import {
   ControlPanelConfig,
   D3_FORMAT_OPTIONS,
   D3_FORMAT_DOCS,
+  sections,
   getStandardizedControls,
 } from '@superset-ui/chart-controls';
-import { countryOptions } from './countries';
+import { regionOptions } from './regions';
 
 const config: ControlPanelConfig = {
   controlPanelSections: [
+    sections.legacyRegularTime,
     {
       label: t('Query'),
       expanded: true,
       controlSetRows: [
         [
           {
-            name: 'select_country',
+            name: 'select_region',
             config: {
               type: 'SelectControl',
-              label: t('Country'),
+              label: t('Region'),
               default: null,
-              choices: countryOptions,
-              description: t('Which country to plot the map for?'),
+              choices: regionOptions,
+              description: t('Which region to plot the map for?'),
               validators: [validateNonEmpty],
             },
           },
@@ -74,10 +76,8 @@ const config: ControlPanelConfig = {
   ],
   controlOverrides: {
     entity: {
-      label: t('Regions'),
-      description: t(
-        'Column containing names of region/province/department in your table.',
-      ),
+      label: t('Districts'),
+      description: t('Column containing district names in your table.'),
     },
     metric: {
       label: t('Metric'),

@@ -17,6 +17,7 @@
  * under the License.
  */
 
+import { t } from '@superset-ui/core';
 import afghanistan from './countries/afghanistan.geojson';
 import aland from './countries/aland.geojson';
 import albania from './countries/albania.geojson';
@@ -415,26 +416,23 @@ export const countries = {
   zimbabwe,
 };
 
-export const countryOptions = Object.keys(countries).map(x => {
-  if (x === 'uk' || x === 'usa') {
-    return [x, x.toUpperCase()];
-  }
-  if (x === 'italy_regions') {
-    return [x, 'Italy (regions)'];
-  }
-  if (x === 'france_regions') {
-    return [x, 'France (regions)'];
-  }
-  if (x === 'turkey_regions') {
-    return [x, 'Turkey (regions)'];
-  }
-  return [
-    x,
-    x
+export const countryOptions = Object.keys(countries).map(countryId => {
+  let countryRepr;
+  if (countryId === 'uk' || countryId === 'usa') {
+    countryRepr = countryId.toUpperCase();
+  } else if (countryId === 'italy_regions') {
+    countryRepr = 'Italy (regions)';
+  } else if (x === 'france_regions') {
+    countryRepr = 'France (regions)';
+  } else if (x === 'turkey_regions') {
+    countryRepr = 'Turkey (regions)';
+  } else {
+    countryRepr = countryId
       .split('_')
-      .map(e => e[0].toUpperCase() + e.slice(1))
-      .join(' '),
-  ];
+      .map(x => x.charAt(0).toUpperCase() + x.slice(1))
+      .join(' ');
+  }
+  return [countryId, t(countryRepr)];
 });
 
 export default countries;

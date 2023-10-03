@@ -20337,3 +20337,19 @@ msgstr "Редагувати Інформацію про Користувача"
 msgid "How do you prefer to work?"
 msgstr "Як вам подобається працювати?"
 
+#: superset-frontend/src/dashboard/components/Header/HeaderActionsDropdown/index.jsx:317
+msgid "Download as PDF"
+msgstr "Завантажити як PDF"
+
+#: superset-frontend/src/dashboard/components/Header/HeaderActionsDropdown/index.jsx:317
+msgid "Download as Doc"
+msgstr "Завантажити як Word документ"
+
+#: superset-frontend/src/dashboard/components/Header/HeaderActionsDropdown/index.jsx:317
+msgid "Portrait"
+msgstr "Портрет"
+
+#: superset-frontend/src/dashboard/components/Header/HeaderActionsDropdown/index.jsx:317
+msgid "Landscape"
+msgstr "Пейзаж"
+

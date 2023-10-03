@@ -1480,12 +1480,61 @@ class CountryMapViz(BaseViz):
     def get_data(self, df: pd.DataFrame) -> VizData:
         if df.empty:
             return None
+
+        # pylint: disable=import-outside-toplevel
+        from superset.examples import subdivisions
+
         cols = get_column_names([self.form_data.get("entity")])  # type: ignore
         metric = self.metric_labels[0]
         cols += [metric]
         ndf = df[cols]
         df = ndf
         df.columns = ["country_id", "metric"]
+        data = df.to_dict(orient="records")
+        for row in data:
+            row["country_id"] = subdivisions.get_region_iso(
+                country=self.form_data["select_country"],
+                region_name=row["country_id"],
+            )
+        return data
+
+
+class RegionMapViz(BaseViz):
+
+    """
+    Region map chart to visualize how single metric varies across region districts.
+    """
+
+    viz_type = "region_map"
+    verbose_name = _("Region Map")
+    is_timeseries = False
+    credits = "From bl.ocks.org By john-guerra"
+
+    @deprecated(deprecated_in="3.0")
+    def query_obj(self) -> QueryObjectDict:
+        query_obj = super().query_obj()
+        metric = self.form_data.get("metric")
+        entity = self.form_data.get("entity")
+        if not self.form_data.get("select_region"):
+            raise QueryObjectValidationError("Must specify a region")
+        if not metric:
+            raise QueryObjectValidationError("Must specify a metric")
+        if not entity:
+            raise QueryObjectValidationError("Must provide district names")
+        query_obj["metrics"] = [metric]
+        query_obj["groupby"] = [entity]
+        return query_obj
+
+    @deprecated(deprecated_in="3.0")
+    def get_data(self, df: pd.DataFrame) -> VizData:
+        if df.empty:
+            return None
+        cols = get_column_names([self.form_data.get("entity")])  # type: ignore
+        metric = self.metric_labels[0]
+        cols += [metric]
+        ndf = df[cols]
+        df = ndf
+        df.columns = ["district_id", "metric"]
         return df.to_dict(orient="records")
 
 

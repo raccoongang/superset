@@ -5704,7 +5704,7 @@ msgid "Enter theme name"
 msgstr "Ім'я сповіщення"
 
 msgid "Enter your login and password below:"
-msgstr ""
+msgstr "Введіть логін і пароль нижче:"
 
 msgid "Entity"
 msgstr "Сутність"
@@ -9347,9 +9347,8 @@ msgstr "Пароль"
 msgid "Password is required"
 msgstr "Потрібен тип"
 
-#, fuzzy
 msgid "Password:"
-msgstr "Пароль"
+msgstr "Пароль:"
 
 #, fuzzy
 msgid "Passwords do not match!"
@@ -14957,9 +14956,8 @@ msgstr "Ім'я користувача"
 msgid "Username is required"
 msgstr "Ім'я потрібно"
 
-#, fuzzy
 msgid "Username:"
-msgstr "Ім'я користувача"
+msgstr "Логін:"
 
 #, fuzzy
 msgid "Users"
@@ -21524,4 +21522,7 @@ msgstr "Сполучені Штати Америки"
 #: superset-frontend/plugins/legacy-plugin-chart-country-map/src/countries.ts
 msgid "UK"
 msgstr "Об'єднане Королівство"
+
+msgid "Sign In"
+msgstr "Увійти"
 

@@ -118,6 +118,8 @@ RESULTS_BACKEND = RedisCache(
       {{- end }}
 )
 
+PDF_GENERATOR_BASEURL = "http://{{ template "superset.fullname" . }}-pdfreport:{{ .Values.supersetPdfReport.service.port }}/"
+
 {{ if .Values.configOverrides }}
 # Overrides
 {{- range $key, $value := .Values.configOverrides }}

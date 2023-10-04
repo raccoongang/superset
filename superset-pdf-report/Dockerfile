@@ -40,4 +40,4 @@ RUN npm install -g nodemon && npm install
 FROM base as production_build
 USER root
 RUN npm ci
-COPY . /app
+COPY ./superset-pdf-report/ /app

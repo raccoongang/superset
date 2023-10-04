@@ -21526,3 +21526,6 @@ msgstr "Об'єднане Королівство"
 msgid "Sign In"
 msgstr "Увійти"
 
+msgid "Enter your login and password below"
+msgstr "Введіть логін і пароль нижче"
+

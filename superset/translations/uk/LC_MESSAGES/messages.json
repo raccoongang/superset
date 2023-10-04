@@ -6872,10 +6872,8 @@
       "Timorleste": ["Східний Тимор"],
       "USA": ["Сполучені Штати Америки"],
       "UK": ["Об'єднане Королівство"],
-      "Enter your login and password below:": ["Введіть логін і пароль нижче:"],
-      "Sign In": ["Увійти"],
-      "Username:": ["Логін:"],
-      "Password:": ["Пароль:"]
+      "Enter your login and password below": ["Введіть логін і пароль нижче"],
+      "Sign In": ["Увійти"]
     }
   }
 }

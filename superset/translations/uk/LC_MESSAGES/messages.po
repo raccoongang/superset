@@ -20632,14 +20632,8 @@ msgstr "Сполучені Штати Америки"
 msgid "UK"
 msgstr "Об'єднане Королівство"
 
-msgid "Enter your login and password below:"
-msgstr "Введіть логін і пароль нижче:"
+msgid "Enter your login and password below"
+msgstr "Введіть логін і пароль нижче"
 
 msgid "Sign In"
 msgstr "Увійти"
-
-msgid "Username:"
-msgstr "Логін:"
-
-msgid "Password:"
-msgstr "Пароль:"

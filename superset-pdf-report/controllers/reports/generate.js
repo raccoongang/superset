@@ -23,7 +23,7 @@ const generate = async function (req, res, next) {
     output = await reportPdfView.execute();
   } catch (e) {
     if (e instanceof PDFGenerationError) {
-      res.status(400).send({
+      return res.status(400).send({
         statusText:
           'PDF generation error. Make sure that location and session are correct.',
       });
@@ -33,7 +33,7 @@ const generate = async function (req, res, next) {
       event: errMsg,
       exc: e.message,
     });
-    res.status(500).send({
+    return res.status(500).send({
       statusText: errMsg,
     });
   }
@@ -41,7 +41,7 @@ const generate = async function (req, res, next) {
     event: 'Report generated',
   });
 
-  res.status(201).send(output);
+  return res.status(201).send(output);
 };
 
 module.exports = generate;

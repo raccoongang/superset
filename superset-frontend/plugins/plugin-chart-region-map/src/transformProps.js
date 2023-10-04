@@ -21,7 +21,7 @@ export default function transformProps(chartProps) {
   const {
     linearColorScheme,
     numberFormat,
-    selectRegion: selectRegion,
+    selectRegion,
     colorScheme,
     sliceId,
   } = formData;

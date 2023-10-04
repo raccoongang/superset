@@ -699,6 +699,66 @@ supersetWebsockets:
   # -- Set priorityClassName for supersetWebsockets pods
   priorityClassName: ~
 
+supersetPdfReport:
+  enabled: false
+  replicaCount: 1
+  image:
+    repository: oneacrefund/superset-pdfreport
+    tag: latest
+    pullPolicy: IfNotPresent
+  config:
+    port: 8890
+  service:
+    type: ClusterIP
+    annotations: {}
+    loadBalancerIP: ~
+    port: 8890
+    nodePort:
+      # -- (int)
+      http: nil
+  command:
+    - npm
+    - run
+    - start:prod
+  resources: {}
+  deploymentAnnotations: {}
+  # -- Affinity to be added to supersetPdfReport deployment
+  affinity: {}
+  # -- TopologySpreadConstrains to be added to supersetPdfReport deployments
+  topologySpreadConstraints: []
+  podAnnotations: {}
+  podLabels: {}
+  strategy: {}
+  podSecurityContext: {}
+  containerSecurityContext: {}
+  startupProbe:
+    httpGet:
+      path: /health
+      port: pdfreport
+    initialDelaySeconds: 5
+    timeoutSeconds: 1
+    failureThreshold: 60
+    periodSeconds: 5
+    successThreshold: 1
+  livenessProbe:
+    httpGet:
+      path: /health
+      port: pdfreport
+    initialDelaySeconds: 5
+    timeoutSeconds: 1
+    failureThreshold: 3
+    periodSeconds: 5
+    successThreshold: 1
+  readinessProbe:
+    httpGet:
+      path: /health
+      port: pdfreport
+    initialDelaySeconds: 5
+    timeoutSeconds: 1
+    failureThreshold: 3
+    periodSeconds: 5
+    successThreshold: 1
+
 init:
   # Configure resources
   # Warning: fab command consumes a lot of ram and can

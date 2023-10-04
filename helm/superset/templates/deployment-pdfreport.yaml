@@ -1,0 +1,140 @@
+{{/*
+
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+
+*/}}
+
+{{- if .Values.supersetPdfReport.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{ template "superset.fullname" . }}-pdfreport"
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: "{{ template "superset.name" . }}-pdfreport"
+    chart: {{ template "superset.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  {{- if .Values.supersetPdfReport.deploymentAnnotations }}
+  annotations: {{- toYaml .Values.supersetPdfReport.deploymentAnnotations | nindent 4 }}
+  {{- end }}
+spec:
+  replicas: {{ .Values.supersetPdfReport.replicaCount }}
+  selector:
+    matchLabels:
+      app: "{{ template "superset.name" . }}-pdfreport"
+      release: {{ .Release.Name }}
+  {{- if .Values.supersetPdfReport.strategy }}
+  strategy: {{- toYaml .Values.supersetPdfReport.strategy | nindent 4 }}
+  {{- end }}
+  template:
+    metadata:
+      annotations:
+        checksum/secrets: {{ tpl (toJson .Values.extraSecretEnv) . | sha256sum }}
+        {{- if .Values.supersetPdfReport.podAnnotations }}
+          {{- toYaml .Values.supersetPdfReport.podAnnotations | nindent 8 }}
+        {{- end }}
+      labels:
+        app: "{{ template "superset.name" . }}-pdfreport"
+        release: {{ .Release.Name }}
+        {{- if .Values.supersetPdfReport.podLabels }}
+          {{- toYaml .Values.supersetPdfReport.podLabels | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- if or (.Values.serviceAccount.create) (.Values.serviceAccountName) }}
+      serviceAccountName: {{ template "superset.serviceAccountName" . }}
+      {{- end }}
+      securityContext:
+        runAsUser: {{ .Values.runAsUser }}
+        {{- if .Values.supersetPdfReport.podSecurityContext }}
+          {{- toYaml .Values.supersetPdfReport.podSecurityContext | nindent 8 }}
+        {{- end }}
+      {{- with .Values.hostAliases }}
+      hostAliases: {{- toYaml . | nindent 6 }}
+      {{- end }}
+      containers:
+        - name: "{{ .Chart.Name }}-pdfreport"
+          image: "{{ .Values.supersetPdfReport.image.repository }}:{{ .Values.supersetPdfReport.image.tag }}"
+          imagePullPolicy: {{ .Values.supersetPdfReport.image.pullPolicy }}
+          {{- if .Values.supersetPdfReport.containerSecurityContext }}
+          securityContext: {{- toYaml .Values.supersetPdfReport.containerSecurityContext | nindent 12 }}
+          {{- end }}
+          command: {{  tpl (toJson .Values.supersetPdfReport.command) . }}
+          # Passing all the envs is a bit blunt... we only need a few (see https://github.com/apache/superset/blob/master/superset-websocket/src/config.ts)...
+          env:
+            - name: "PORT"
+              value: {{ .Values.supersetPdfReport.config.port | quote}}
+            {{- range $key, $value := .Values.extraEnv }}
+            - name: {{ $key | quote}}
+              value: {{ $value | quote }}
+            {{- end }}
+            {{- if .Values.extraEnvRaw }}
+              {{- toYaml .Values.extraEnvRaw | nindent 12 }}
+            {{- end }}
+          envFrom:
+            - secretRef:
+                name: {{ tpl .Values.envFromSecret . | quote }}
+            {{- range .Values.envFromSecrets }}
+            - secretRef:
+                name: {{ tpl . $ | quote }}
+            {{- end }}
+          ports:
+            - name: pdfreport
+              containerPort: {{ .Values.supersetPdfReport.config.port }}
+              protocol: TCP
+          resources:
+            {{- if .Values.supersetPdfReport.resources }}
+              {{- toYaml .Values.supersetPdfReport.resources | nindent 12 }}
+            {{- else }}
+              {{- toYaml .Values.resources | nindent 12 }}
+            {{- end }}
+          {{- if .Values.supersetPdfReport.startupProbe }}
+          startupProbe: {{- .Values.supersetPdfReport.startupProbe | toYaml | nindent 12 }}
+          {{- end }}
+          {{- if .Values.supersetPdfReport.readinessProbe }}
+          readinessProbe: {{- .Values.supersetPdfReport.readinessProbe | toYaml | nindent 12 }}
+          {{- end }}
+          {{- if .Values.supersetPdfReport.livenessProbe }}
+          livenessProbe: {{- .Values.supersetPdfReport.livenessProbe | toYaml | nindent 12 }}
+          {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector: {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if or .Values.affinity .Values.supersetPdfReport.affinity }}
+      affinity:
+        {{- with .Values.affinity }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
+        {{- with .Values.supersetPdfReport.affinity }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
+      {{- end }}
+      {{- if or .Values.topologySpreadConstraints .Values.supersetPdfReport.topologySpreadConstraints }}
+      topologySpreadConstraints:
+        {{- with .Values.topologySpreadConstraints }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
+        {{- with .Values.supersetPdfReport.topologySpreadConstraints }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:  {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets: {{- toYaml .Values.imagePullSecrets | nindent 8 }}
+      {{- end }}
+{{- end }}

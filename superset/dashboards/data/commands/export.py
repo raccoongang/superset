@@ -1,7 +1,7 @@
 import tempfile
 from typing import NamedTuple, Optional
 
-from pdf2docx import parse as parse_pdf_to_doc
+import pdf2docx
 from superset.commands.base import BaseCommand
 from superset.daos.dashboard import DashboardDAO
 from superset.dashboards.commands.exceptions import DashboardNotFoundError
@@ -10,6 +10,15 @@ from superset.models.dashboard import Dashboard
 from superset.tasks.utils import get_current_user
 from superset.utils.screenshots import PDFDashboardScreenshot
 from superset.utils.urls import get_url_path
+
+# NOTE: I had to make a monkey patch of the pdf2docx external library.
+# Since it has Arial font by default, but it is not present in the docker container
+# based on the Debian operating system. All attempts to add this font failed
+# to a positive result. Finally I managed to add the font, but pdf2docx is exactly the same
+# could not be found. It was decided that we will use the font that is in
+# containers, namely - helv.
+pdf2docx.common.constants.DEFAULT_FONT_NAME = "helv"
+# end NOTE.
 
 
 class ExportedFile(NamedTuple):
@@ -55,7 +64,7 @@ class DocExportCommand(PDFExportCommand):
             pdf_file.write(exported_file.content)
             pdf_file.seek(0)
             with tempfile.NamedTemporaryFile(suffix=".doc") as doc_file:
-                parse_pdf_to_doc(pdf_file.name, doc_file.name)
+                pdf2docx.parse(pdf_file.name, doc_file.name)
                 with open(doc_file.name, mode="rb") as file_content:
                     document_content = file_content.read()
         return ExportedFile(name=exported_file.name, content=document_content)

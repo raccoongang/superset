@@ -104,8 +104,10 @@ RESULTS_BACKEND = RedisCache(
       port=env('REDIS_PORT'),
       key_prefix='superset_results'
 )
-
+{{- if .Values.supersetPdfReport.enabled }}
 PDF_GENERATOR_BASEURL = "http://{{ template "superset.fullname" . }}-pdfreport:{{ .Values.supersetPdfReport.service.port }}/"
+WEBDRIVER_BASEURL = "http://{{ template "superset.fullname" . }}:{{ .Values.service.port }}/"
+{{- end }}
 
 {{ if .Values.configOverrides }}
 # Overrides

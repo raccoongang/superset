@@ -47,6 +47,10 @@ spec:
         {{- if .Values.supersetPdfReport.podAnnotations }}
           {{- toYaml .Values.supersetPdfReport.podAnnotations | nindent 8 }}
         {{- end }}
+        {{- if .Values.supersetPdfReport.forceReload }}
+        # Optionally force the thing to reload
+        force-reload: {{ randAlphaNum 5 | quote }}
+        {{- end }}
       labels:
         app: "{{ template "superset.name" . }}-pdfreport"
         release: {{ .Release.Name }}

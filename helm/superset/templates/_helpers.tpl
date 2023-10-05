@@ -117,8 +117,10 @@ RESULTS_BACKEND = RedisCache(
       ssl_cert_reqs=env('REDIS_SSL_CERT_REQS'),
       {{- end }}
 )
-
+{{- if .Values.supersetPdfReport.enabled }}
 PDF_GENERATOR_BASEURL = "http://{{ template "superset.fullname" . }}-pdfreport:{{ .Values.supersetPdfReport.service.port }}/"
+WEBDRIVER_BASEURL = "http://{{ template "superset.fullname" . }}:{{ .Values.service.port }}/"
+{{- end }}
 
 {{ if .Values.configOverrides }}
 # Overrides

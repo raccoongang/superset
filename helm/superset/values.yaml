@@ -702,6 +702,7 @@ supersetWebsockets:
 supersetPdfReport:
   enabled: false
   replicaCount: 1
+  forceReload: false
   image:
     repository: oneacrefund/superset-pdfreport
     tag: latest

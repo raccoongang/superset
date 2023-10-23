@@ -200,7 +200,7 @@ class HeaderActionsDropdown extends React.PureComponent {
       case MENU_KEYS.DOWNLOAD_AS_DOC_PORTRAIT: {
         exportDashboard({
           formData: { id: this.props.dashboardId },
-          resultFormat: 'doc',
+          resultFormat: 'docx',
           landscape: false,
         });
         break;
@@ -208,7 +208,7 @@ class HeaderActionsDropdown extends React.PureComponent {
       case MENU_KEYS.DOWNLOAD_AS_DOC_LANDSCAPE: {
         exportDashboard({
           formData: { id: this.props.dashboardId },
-          resultFormat: 'doc',
+          resultFormat: 'docx',
           landscape: true,
         });
         break;

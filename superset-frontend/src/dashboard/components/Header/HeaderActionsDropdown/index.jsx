@@ -162,7 +162,7 @@ export class HeaderActionsDropdown extends PureComponent {
       case MenuKeys.DownloadAsDocPortrait: {
         exportDashboard({
           formData: { id: this.props.dashboardId },
-          resultFormat: 'doc',
+          resultFormat: 'docx',
           landscape: false,
         });
         break;
@@ -170,7 +170,7 @@ export class HeaderActionsDropdown extends PureComponent {
       case MenuKeys.DownloadAsDocLandscape: {
         exportDashboard({
           formData: { id: this.props.dashboardId },
-          resultFormat: 'doc',
+          resultFormat: 'docx',
           landscape: true,
         });
         break;

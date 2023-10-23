@@ -1809,6 +1809,7 @@ TALISMAN_CONFIG = {
         "img-src": [
             "'self'",
             "blob:",
+            "https:",
             "data:",
             "https://apachesuperset.gateway.scarf.sh",
             "https://static.scarf.sh/",
@@ -1843,6 +1844,7 @@ TALISMAN_DEV_CONFIG = {
         "img-src": [
             "'self'",
             "blob:",
+            "https:",
             "data:",
             "https://apachesuperset.gateway.scarf.sh",
             "https://static.scarf.sh/",

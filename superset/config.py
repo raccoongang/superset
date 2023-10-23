@@ -1563,14 +1563,7 @@ TALISMAN_CONFIG = {
     "content_security_policy": {
         "base-uri": ["'self'"],
         "default-src": ["'self'"],
-        "img-src": [
-            "'self'",
-            "blob:",
-            "data:",
-            "https://apachesuperset.gateway.scarf.sh",
-            "https://static.scarf.sh/",
-            # "https://avatars.slack-edge.com", # Uncomment when SLACK_ENABLE_AVATARS is True
-        ],
+        "img-src": ["'self'", "https:", "data:"],
         "worker-src": ["'self'", "blob:"],
         "connect-src": [
             "'self'",
@@ -1593,14 +1586,7 @@ TALISMAN_DEV_CONFIG = {
     "content_security_policy": {
         "base-uri": ["'self'"],
         "default-src": ["'self'"],
-        "img-src": [
-            "'self'",
-            "blob:",
-            "data:",
-            "https://apachesuperset.gateway.scarf.sh",
-            "https://static.scarf.sh/",
-            "https://avatars.slack-edge.com",
-        ],
+        "img-src": ["'self'", "https:", "data:"],
         "worker-src": ["'self'", "blob:"],
         "connect-src": [
             "'self'",

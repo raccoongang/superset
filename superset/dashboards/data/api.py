@@ -128,5 +128,5 @@ class DashboardDataRestApi(DashboardRestApi):
         """
         return {
             "pdf": lambda: PDFExportCommand(dashboard_id, landscape),
-            "doc": lambda: DocExportCommand(dashboard_id, landscape),
+            "docx": lambda: DocExportCommand(dashboard_id, landscape),
         }.get(format_type, lambda: None)()

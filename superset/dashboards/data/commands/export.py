@@ -63,7 +63,7 @@ class DocExportCommand(PDFExportCommand):
         with tempfile.NamedTemporaryFile(suffix=".pdf") as pdf_file:
             pdf_file.write(exported_file.content)
             pdf_file.seek(0)
-            with tempfile.NamedTemporaryFile(suffix=".doc") as doc_file:
+            with tempfile.NamedTemporaryFile(suffix=".docx") as doc_file:
                 pdf2docx.parse(pdf_file.name, doc_file.name)
                 with open(doc_file.name, mode="rb") as file_content:
                     document_content = file_content.read()

@@ -49,7 +49,9 @@ from flask_appbuilder.widgets import ListWidget
 from flask_babel import get_locale, gettext as __
 from flask_jwt_extended.exceptions import NoAuthorizationError
 from flask_wtf.form import FlaskForm
+from slugify import slugify
 from sqlalchemy.orm import Query
+from unidecode import unidecode
 from wtforms.fields.core import Field, UnboundField
 
 from superset import (
@@ -145,7 +147,11 @@ def data_payload_response(payload_json: str, has_error: bool = False) -> FlaskRe
 def generate_download_headers(
     extension: str, filename: str | None = None
 ) -> dict[str, Any]:
-    filename = filename if filename else datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = (
+        slugify(unidecode(filename))
+        if filename
+        else datetime.now().strftime("%Y%m%d_%H%M%S")
+    )
     content_disp = f"attachment; filename={filename}.{extension}"
     headers = {"Content-Disposition": content_disp}
     return headers

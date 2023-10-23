@@ -46,8 +46,10 @@ from flask_babel import get_locale, gettext as __, lazy_gettext as _
 from flask_jwt_extended.exceptions import NoAuthorizationError
 from flask_wtf.csrf import CSRFError
 from flask_wtf.form import FlaskForm
+from slugify import slugify
 from sqlalchemy import exc
 from sqlalchemy.orm import Query
+from unidecode import unidecode
 from werkzeug.exceptions import HTTPException
 from wtforms import Form
 from wtforms.fields.core import Field, UnboundField
@@ -184,7 +186,11 @@ def data_payload_response(payload_json: str, has_error: bool = False) -> FlaskRe
 def generate_download_headers(
     extension: str, filename: Optional[str] = None
 ) -> dict[str, Any]:
-    filename = filename if filename else datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = (
+        slugify(unidecode(filename))
+        if filename
+        else datetime.now().strftime("%Y%m%d_%H%M%S")
+    )
     content_disp = f"attachment; filename={filename}.{extension}"
     headers = {"Content-Disposition": content_disp}
     return headers

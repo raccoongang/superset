@@ -248,6 +248,10 @@ parsedatetime==2.6
     # via apache-superset
 pdf2docx==0.5.6
     # via apache-superset
+unidecode==1.0.22
+    # via apache-superset
+python-slugify==v8.0.1
+    # via apache-superset
 pgsanity==0.2.9
     # via apache-superset
 platformdirs==3.8.1

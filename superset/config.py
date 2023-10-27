@@ -1575,6 +1575,7 @@ TALISMAN_CONFIG = {
         "worker-src": ["'self'", "blob:"],
         "connect-src": [
             "'self'",
+            "https:",
             "https://api.mapbox.com",
             "https://events.mapbox.com",
         ],
@@ -1606,6 +1607,7 @@ TALISMAN_DEV_CONFIG = {
         "worker-src": ["'self'", "blob:"],
         "connect-src": [
             "'self'",
+            "https:",
             "https://api.mapbox.com",
             "https://events.mapbox.com",
         ],

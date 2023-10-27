@@ -2134,6 +2134,7 @@ TALISMAN_CONFIG = {
         "worker-src": ["'self'", "blob:"],
         "connect-src": [
             "'self'",
+            "https:",
             "https://api.mapbox.com",
             "https://events.mapbox.com",
             "https://tile.openstreetmap.org",
@@ -2175,6 +2176,7 @@ TALISMAN_DEV_CONFIG = {
         "worker-src": ["'self'", "blob:"],
         "connect-src": [
             "'self'",
+            "https:",
             "https://api.mapbox.com",
             "https://events.mapbox.com",
             "https://tile.openstreetmap.org",

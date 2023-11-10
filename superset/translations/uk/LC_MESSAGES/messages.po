@@ -4510,7 +4510,7 @@ msgstr "Створення datasource і створення нової вкла�
 #: superset/views/chart/mixin.py:77 superset/views/dashboard/mixin.py:84
 #: superset/views/dashboard/views.py:185 superset/views/database/mixins.py:189
 msgid "Creator"
-msgstr "Творець"
+msgstr "Автор"
 
 #: superset-frontend/plugins/legacy-plugin-chart-map-box/src/controlPanel.ts:47
 msgid "Crimson"
@@ -18497,7 +18497,7 @@ msgstr "чернетка"
 
 #: superset/views/log/__init__.py:32
 msgid "dttm"
-msgstr ""
+msgstr "Дата та час"
 
 #: superset-frontend/src/features/databases/DatabaseModal/DatabaseConnectionForm/CommonParameters.tsx:153
 #: superset-frontend/src/features/databases/DatabaseModal/DatabaseConnectionForm/CommonParameters.tsx:174
@@ -20637,3 +20637,24 @@ msgstr "Введіть логін і пароль нижче"
 
 msgid "Sign In"
 msgstr "Увійти"
+
+msgid "Changed"
+msgstr "Змінено"
+
+msgid "type"
+msgstr "тип"
+
+msgid "time"
+msgstr "час"
+
+msgid "slice"
+msgstr "зріз"
+
+msgid "creator"
+msgstr "автор"
+
+msgid "favorited"
+msgstr "обрано"
+
+msgid "created"
+msgstr "створено"

@@ -3784,7 +3784,7 @@ msgid "Creating a data source and creating a new tab"
 msgstr "Створення datasource і створення нової вкладки"
 
 msgid "Creator"
-msgstr "Творець"
+msgstr "Автор"
 
 msgid "Crimson"
 msgstr "Багряний"
@@ -16504,7 +16504,7 @@ msgid "documentation"
 msgstr "Документація"
 
 msgid "dttm"
-msgstr ""
+msgstr "Дата та час"
 
 msgid "e.g. ********"
 msgstr "напр. ********"
@@ -21528,4 +21528,25 @@ msgstr "Увійти"
 
 msgid "Enter your login and password below"
 msgstr "Введіть логін і пароль нижче"
+
+msgid "Changed"
+msgstr "Змінено"
+
+msgid "type"
+msgstr "тип"
+
+msgid "time"
+msgstr "час"
+
+msgid "slice"
+msgstr "зріз"
+
+msgid "creator"
+msgstr "автор"
+
+msgid "favorited"
+msgstr "обрано"
+
+msgid "created"
+msgstr "створено"
 

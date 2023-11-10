@@ -35,7 +35,7 @@ export default function RecentActivity({ user }: RecentActivityProps) {
       .filter(row => row.action === 'dashboard' || row.action === 'explore')
       .map(row => ({
         name: <a href={row.item_url}>{row.item_title}</a>,
-        type: row.action,
+        type: t(row.action),
         time: moment.utc(row.time).fromNow(),
         _time: row.time,
       }));

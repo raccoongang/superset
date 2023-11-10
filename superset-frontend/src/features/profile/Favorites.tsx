@@ -56,7 +56,7 @@ export default class Favorites extends React.PureComponent<FavoritesProps> {
       <TableLoader
         dataEndpoint={`/api/v1/chart/?q=${query}`}
         className="table-condensed"
-        columns={['slice', 'creator', 'favorited']}
+        columns={[t('slice'), t('creator'), t('favorited')]}
         mutator={mutator}
         noDataText={t('No favorite charts yet, go click on stars!')}
         sortable
@@ -87,7 +87,7 @@ export default class Favorites extends React.PureComponent<FavoritesProps> {
         mutator={mutator}
         dataEndpoint={`/api/v1/dashboard/?q=${query}`}
         noDataText={t('No favorite dashboards yet, go click on stars!')}
-        columns={['dashboard', 'creator', 'created']}
+        columns={[t('dashboard'), t('creator'), t('created')]}
         sortable
       />
     );

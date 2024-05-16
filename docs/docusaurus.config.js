@@ -233,7 +233,7 @@ const config = {
       navbar: {
         logo: {
           alt: 'Superset Logo',
-          src: '/img/superset-logo-horiz.svg',
+          src: '/img/superset-logo-horiz.png',
           srcDark: '/img/superset-logo-horiz-dark.svg',
         },
         items: [

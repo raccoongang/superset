@@ -287,7 +287,7 @@ AUTH_RATE_LIMIT = "5 per second"
 APP_NAME = "Superset"
 
 # Specify the App icon
-APP_ICON = "/static/assets/images/superset-logo-horiz.svg"
+APP_ICON = "/static/assets/images/superset-logo-horiz.png"
 
 # Specify where clicking the logo would take the user
 # e.g. setting it to '/' would take the user to '/superset/welcome/'
@@ -596,14 +596,14 @@ EXTRA_CATEGORICAL_COLOR_SCHEMES: list[dict[str, Any]] = []
 THEME_OVERRIDES = {
     "colors": {
         "primary": {
-            "base": "#e62050",
-            "dark1": "#c1163f",
-            "dark2": "#991132",
-            "light1": "#f1839e",
-            "light2": "#f7b4c4",
-            "light3": "#fce7ec",
-            "light4": "#fce7ec",
-            "light5": "#fce7ec",
+            "base": "#2b47ff",
+            "dark1": "#2141e6",
+            "dark2": "#1831cc",
+            "light1": "#3456ff",
+            "light2": "#406eff",
+            "light3": "#4b84ff",
+            "light4": "#dae9ff",
+            "light5": "#60b2ff",
         }
     }
 }

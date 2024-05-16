@@ -114,6 +114,24 @@ const StyledHeader = styled.header`
         .main-nav .antd5-menu-submenu-title > svg:nth-of-type(1) {
           display: none;
         }
+        .ant-menu-item-active > a {
+          &:hover {
+            color: ${theme.colors.primary.base} !important;
+            background-color: transparent !important;
+          }
+        }
+      }
+      .ant-menu-item a {
+        &:hover {
+          color: ${theme.colors.grayscale.dark1};
+          background-color: transparent;
+          border-bottom: none;
+          margin: 0;
+          &:after {
+            opacity: 1;
+            width: 100%;
+          }
+        }
       }
   `}
 `;

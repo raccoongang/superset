@@ -136,7 +136,7 @@ const StyledHeader = styled.header`
       .ant-menu-item a {
         &:hover {
           color: ${theme.colors.grayscale.dark1};
-          background-color: ${theme.colors.primary.light5};
+          background-color: transparent;
           border-bottom: none;
           margin: 0;
           &:after {

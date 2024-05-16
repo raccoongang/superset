@@ -474,7 +474,7 @@ export default function Home(): JSX.Element {
     const navbar = document.body.querySelector('.navbar');
     const logo = document.body.querySelector('.navbar__logo img');
     navbar.classList.remove('navbar--dark');
-    logo.setAttribute('src', '/img/superset-logo-horiz.svg');
+    logo.setAttribute('src', '/img/superset-logo-horiz.png');
   };
 
   // Set up dark <-> light navbar change

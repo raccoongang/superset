@@ -1426,7 +1426,6 @@ TALISMAN_CONFIG = {
         "style-src": ["'self'", "'unsafe-inline'"],
         "script-src": ["'self'", "'unsafe-inline'", "'strict-dynamic'"],
     },
-    "content_security_policy_nonce_in": ["script-src"],
     "force_https": False,
 }
 # React requires `eval` to work correctly in dev mode
@@ -1445,7 +1444,6 @@ TALISMAN_DEV_CONFIG = {
         "style-src": ["'self'", "'unsafe-inline'"],
         "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
     },
-    "content_security_policy_nonce_in": ["script-src"],
     "force_https": False,
 }
 

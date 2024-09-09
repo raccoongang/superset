@@ -1586,7 +1586,6 @@ TALISMAN_CONFIG = {
         ],
         "script-src": ["'self'", "'unsafe-inline'", "'strict-dynamic'"],
     },
-    "content_security_policy_nonce_in": ["script-src"],
     "force_https": False,
     "session_cookie_secure": False,
 }
@@ -1618,7 +1617,6 @@ TALISMAN_DEV_CONFIG = {
         ],
         "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
     },
-    "content_security_policy_nonce_in": ["script-src"],
     "force_https": False,
     "session_cookie_secure": False,
 }

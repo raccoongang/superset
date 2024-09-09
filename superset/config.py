@@ -1424,7 +1424,7 @@ TALISMAN_CONFIG = {
         ],
         "object-src": "'none'",
         "style-src": ["'self'", "'unsafe-inline'"],
-        "script-src": ["'self'", "'strict-dynamic'"],
+        "script-src": ["'self'", "'unsafe-inline'", "'strict-dynamic'"],
     },
     "content_security_policy_nonce_in": ["script-src"],
     "force_https": False,

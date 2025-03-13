@@ -654,22 +654,22 @@ EXTRA_CATEGORICAL_COLOR_SCHEMES: list[dict[str, Any]] = []
 
 # THEME_OVERRIDES is used for adding custom theme to superset
 # example code for "My theme" custom scheme
-# THEME_OVERRIDES = {
-#   "borderRadius": 4,
-#   "colors": {
-#     "primary": {
-#       "base": 'red',
-#     },
-#     "secondary": {
-#       "base": 'green',
-#     },
-#     "grayscale": {
-#       "base": 'orange',
-#     }
-#   }
-# }
+THEME_OVERRIDES = {
+  "colors": {
+    "primary": {
+        "base": "#37604f",
+        "dark1": "#2c4d40",
+        "dark2": "#203a30",
+        "light1": "#5e8772",
+        "light2": "#84a895",
+        "light3": "#b0c9b9",
+        "light4": "#d5e4d9",
+        "light5": "#edf4f0",
+    }
+  }
+}
 
-THEME_OVERRIDES: dict[str, Any] = {}
+# THEME_OVERRIDES: dict[str, Any] = {}
 
 # EXTRA_SEQUENTIAL_COLOR_SCHEMES is used for adding custom sequential color schemes
 # EXTRA_SEQUENTIAL_COLOR_SCHEMES =  [

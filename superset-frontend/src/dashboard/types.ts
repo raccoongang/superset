@@ -266,6 +266,10 @@ export enum MenuKeys {
   EditProperties = 'edit_properties',
   EditCss = 'edit_css',
   ToggleFullscreen = 'toggle_fullscreen',
+  DownloadAsPDFPortrait = 'download-as-pdf-portrait',
+  DownloadAsPDFLandscape = 'download-as-pdf-landscape',
+  DownloadAsDocPortrait = 'download-as-doc-portrait',
+  DownloadAsDocLandscape = 'download-as-doc-landscape',
   ManageEmbedded = 'manage_embedded',
   ManageEmailReports = 'manage_email_reports',
 }

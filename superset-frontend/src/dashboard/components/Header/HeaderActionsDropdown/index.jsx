@@ -24,7 +24,6 @@ import { css, t } from '@superset-ui/core';
 import { Menu } from 'src/components/Menu';
 import { URL_PARAMS } from 'src/constants';
 import ShareMenuItems from 'src/dashboard/components/menu/ShareMenuItems';
-import DownloadMenuItems from 'src/dashboard/components/menu/DownloadMenuItems';
 import CssEditor from 'src/dashboard/components/CssEditor';
 import Icons from 'src/components/Icons';
 import RefreshIntervalModal from 'src/dashboard/components/RefreshIntervalModal';
@@ -92,7 +91,7 @@ const iconReset = css`
   }
 `;
 
-class HeaderActionsDropdown extends React.PureComponent {
+export class HeaderActionsDropdown extends PureComponent {
   static discardChanges() {
     window.location.reload();
   }
@@ -159,7 +158,7 @@ class HeaderActionsDropdown extends React.PureComponent {
         });
         break;
       }
-      case MenyKeys.DownloadAsDocPortrait: {
+      case MenuKeys.DownloadAsDocPortrait: {
         exportDashboard({
           formData: { id: this.props.dashboardId },
           resultFormat: 'docx',
@@ -167,7 +166,7 @@ class HeaderActionsDropdown extends React.PureComponent {
         });
         break;
       }
-      case MenyKeys.DownloadAsDocLandscape: {
+      case MenuKeys.DownloadAsDocLandscape: {
         exportDashboard({
           formData: { id: this.props.dashboardId },
           resultFormat: 'docx',
@@ -326,7 +325,7 @@ class HeaderActionsDropdown extends React.PureComponent {
                 {t('Portrait')}
               </Menu.Item>
               <Menu.Item
-                key={MENU_KEYS.DownloadAsPDFLandscape}
+                key={MenuKeys.DownloadAsPDFLandscape}
                 icon={<Icons.FilePdfOutlined css={iconReset} />}
                 onClick={this.handleMenuClick}
               >
@@ -335,17 +334,17 @@ class HeaderActionsDropdown extends React.PureComponent {
             </Menu.SubMenu>
             <Menu.SubMenu
               title={t('Download as Doc')}
-              key={MENU_KEYS.DOWNLOAD_SUBMENU}
+              key={MenuKeys.DownloadSubmenu}
             >
               <Menu.Item
-                key={MENU_KEYS.DownloadAsDocPortrait}
+                key={MenuKeys.DownloadAsDocPortrait}
                 icon={<Icons.FileWordOutlined css={iconReset} />}
                 onClick={this.handleMenuClick}
               >
                 {t('Portrait')}
               </Menu.Item>
               <Menu.Item
-                key={MENU_KEYS.DownloadAsDocLandscape}
+                key={MenuKeys.DownloadAsDocLandscape}
                 icon={<Icons.FileWordOutlined css={iconReset} />}
                 onClick={this.handleMenuClick}
               >
@@ -353,7 +352,7 @@ class HeaderActionsDropdown extends React.PureComponent {
               </Menu.Item>
             </Menu.SubMenu>
             <Menu.Item
-              key={MENU_KEYS.DOWNLOAD_AS_IMAGE}
+              key={MenuKeys.DownloadAsImage}
               icon={<Icons.FileOutlined css={iconReset} />}
               onClick={this.handleMenuClick}
             >

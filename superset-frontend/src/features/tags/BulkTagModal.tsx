@@ -16,14 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-import React, { useState, useEffect } from 'react';
-import { t, SupersetClient } from '@superset-ui/core';
+import { useState, useEffect, FC } from 'react';
+
+import { t, styled, SupersetClient } from '@superset-ui/core';
 import { FormLabel } from 'src/components/Form';
 import Modal from 'src/components/Modal';
 import AsyncSelect from 'src/components/Select/AsyncSelect';
 import Button from 'src/components/Button';
 import { loadTags } from 'src/components/Tags/utils';
 import { TaggableResourceOption } from 'src/features/tags/TagModal';
+
+const BulkTagModalContainer = styled.div`
+  .bulk-tag-text {
+    margin-bottom: ${({ theme }) => theme.gridUnit * 2.5}px;
+  }
+`;
 
 interface BulkTagModalProps {
   onHide: () => void;
@@ -35,7 +42,7 @@ interface BulkTagModalProps {
   resourceName: string;
 }
 
-const BulkTagModal: React.FC<BulkTagModalProps> = ({
+const BulkTagModal: FC<BulkTagModalProps> = ({
   show,
   selected = [],
   onHide,
@@ -45,17 +52,34 @@ const BulkTagModal: React.FC<BulkTagModalProps> = ({
   addDangerToast,
 }) => {
   useEffect(() => {}, []);
+  const [tags, setTags] = useState<TaggableResourceOption[]>([]);
 
   const onSave = async () => {
     await SupersetClient.post({
       endpoint: `/api/v1/tag/bulk_create`,
       jsonPayload: {
-        tags: tags.map(tag => tag.value),
-        objects_to_tag: selected.map(item => [resourceName, +item.original.id]),
+        tags: tags.map(tag => ({
+          name: tag.value,
+          objects_to_tag: selected.map(item => [
+            resourceName,
+            +item.original.id,
+          ]),
+        })),
       },
     })
       .then(({ json = {} }) => {
-        addSuccessToast(t('Tagged %s items', selected.length));
+        const skipped = json.result.objects_skipped;
+        const tagged = json.result.objects_tagged;
+        if (skipped.length > 0) {
+          addSuccessToast(
+            t(
+              '%s items could not be tagged because you don’t have edit permissions to all selected objects.',
+              skipped.length,
+              resourceName,
+            ),
+          );
+        }
+        addSuccessToast(t('Tagged %s %ss', tagged.length, resourceName));
       })
       .catch(err => {
         addDangerToast(t('Failed to tag items'));
@@ -65,8 +89,6 @@ const BulkTagModal: React.FC<BulkTagModalProps> = ({
     onHide();
     setTags([]);
   };
-
-  const [tags, setTags] = useState<TaggableResourceOption[]>([]);
 
   return (
     <Modal
@@ -95,9 +117,10 @@ const BulkTagModal: React.FC<BulkTagModalProps> = ({
         </div>
       }
     >
-      <>
-        <>{t('You are adding tags to the %s entities', selected.length)}</>
-        <br />
+      <BulkTagModalContainer>
+        <div className="bulk-tag-text">
+          {t('You are adding tags to %s %ss', selected.length, resourceName)}
+        </div>
         <FormLabel>{t('tags')}</FormLabel>
         <AsyncSelect
           ariaLabel="tags"
@@ -110,7 +133,7 @@ const BulkTagModal: React.FC<BulkTagModalProps> = ({
           placeholder={t('Select Tags')}
           mode="multiple"
         />
-      </>
+      </BulkTagModalContainer>
     </Modal>
   );
 };

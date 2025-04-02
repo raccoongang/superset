@@ -75,6 +75,7 @@ RUN mkdir -p ${PYTHONPATH} superset/static requirements superset-frontend apache
     && useradd --user-group -d ${SUPERSET_HOME} -m --no-log-init --shell /bin/bash superset \
     && apt-get update -qq && apt-get install -yqq --no-install-recommends \
         curl \
+        pkg-config \
         default-libmysqlclient-dev \
         libsasl2-dev \
         libsasl2-modules-gssapi-mit \

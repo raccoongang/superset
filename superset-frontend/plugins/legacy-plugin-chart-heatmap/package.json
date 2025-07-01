@@ -23,16 +23,16 @@
     "lib"
   ],
   "dependencies": {
-    "d3": "^3.5.17",
-    "d3-svg-legend": "^1.x",
-    "d3-tip": "^0.9.1",
-    "prop-types": "^15.8.1"
+    "d3": "3.5.17",
+    "d3-svg-legend": "1.x",
+    "d3-tip": "0.9.1",
+    "prop-types": "15.8.1"
   },
   "peerDependencies": {
-    "@emotion/react": "^11.4.1",
+    "@emotion/react": "11.4.1",
     "@superset-ui/chart-controls": "*",
     "@superset-ui/core": "*",
-    "react": "^16.13.1"
+    "react": "16.13.1"
   },
   "publishConfig": {
     "access": "public"

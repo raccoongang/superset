@@ -25,15 +25,15 @@
     "access": "public"
   },
   "dependencies": {
-    "@turf/flip": "^6.5.0",
-    "d3": "^3.5.17",
-    "d3-array": "^2.0.3",
-    "leaflet": "^1.9.4",
-    "prop-types": "^15.6.2"
+    "@turf/flip": "6.5.0",
+    "d3": "3.5.17",
+    "d3-array": "2.0.3",
+    "leaflet": "1.9.4",
+    "prop-types": "15.6.2"
   },
   "peerDependencies": {
     "@superset-ui/chart-controls": "*",
     "@superset-ui/core": "*",
-    "react": "^16.13.1"
+    "react": "16.13.1"
   }
 }

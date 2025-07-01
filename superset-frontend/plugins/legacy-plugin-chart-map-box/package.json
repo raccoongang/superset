@@ -26,16 +26,16 @@
     "lib"
   ],
   "dependencies": {
-    "prop-types": "^15.8.1",
-    "react-map-gl": "^6.1.19",
-    "supercluster": "^4.1.1",
-    "viewport-mercator-project": "^6.1.1"
+    "prop-types": "15.8.1",
+    "react-map-gl": "6.1.19",
+    "supercluster": "4.1.1",
+    "viewport-mercator-project": "6.1.1"
   },
   "peerDependencies": {
     "@superset-ui/chart-controls": "*",
     "@superset-ui/core": "*",
     "mapbox-gl": "*",
-    "react": "^15 || ^16"
+    "react": "15 || ^16"
   },
   "publishConfig": {
     "access": "public"

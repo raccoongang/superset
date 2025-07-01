@@ -23,14 +23,14 @@
     "lib"
   ],
   "dependencies": {
-    "distributions": "^2.2.0",
-    "prop-types": "^15.8.1",
-    "reactable": "^1.1.0"
+    "distributions": "2.2.0",
+    "prop-types": "15.8.1",
+    "reactable": "1.1.0"
   },
   "peerDependencies": {
     "@superset-ui/chart-controls": "*",
     "@superset-ui/core": "*",
-    "react": "^15 || ^16"
+    "react": "15 || ^16"
   },
   "publishConfig": {
     "access": "public"

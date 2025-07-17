@@ -3040,18 +3040,17 @@ msgstr "Конфігурація"
 msgid "Configure Advanced Time Range "
 msgstr "Налаштування розширеного діапазону часу "
 
-#, fuzzy
 msgid "Configure Time Range: Current..."
-msgstr "Налаштування діапазону часу: Останнє ..."
+msgstr "Налаштування діапазону часу: Поточний ..."
 
 msgid "Configure Time Range: Last..."
-msgstr "Налаштування діапазону часу: Останнє ..."
+msgstr "Налаштування діапазону часу: Останній ..."
 
 msgid "Configure Time Range: Previous..."
 msgstr "Налаштування діапазону часу: Попередній ..."
 
 msgid "Configure custom time range"
-msgstr "Налаштуйте спеціальний діапазон часу"
+msgstr "Налаштуйте власний діапазон часу"
 
 msgid "Configure filter scopes"
 msgstr "Налаштуйте фільтрувальні сфери"
@@ -3351,29 +3350,23 @@ msgstr ""
 msgid "Currency symbol"
 msgstr ""
 
-#, fuzzy
 msgid "Current"
-msgstr "рахувати"
+msgstr "Поточний"
 
-#, fuzzy
 msgid "Current day"
-msgstr "Запустити запит"
+msgstr "Поточний день"
 
-#, fuzzy
 msgid "Current month"
-msgstr "Формат значення"
+msgstr "Поточний місяць"
 
-#, fuzzy
 msgid "Current quarter"
-msgstr "Запустити запит"
+msgstr "Поточний квартал"
 
-#, fuzzy
 msgid "Current week"
-msgstr "Запустити запит"
+msgstr "Поточний тиждень"
 
-#, fuzzy
 msgid "Current year"
-msgstr "Запустити запит"
+msgstr "Поточний рік"
 
 #, python-format
 msgid "Currently rendered: %s"
@@ -6304,31 +6297,26 @@ msgstr "Останній оновлений %s на %s"
 msgid "Last available value seen on %s"
 msgstr "Остання доступна вартість, що спостерігається на %s"
 
-#, fuzzy
 msgid "Last day"
-msgstr "останній день"
+msgstr "Минулий день"
 
 msgid "Last modified"
 msgstr "Останнє змінено"
 
-#, fuzzy
 msgid "Last month"
-msgstr "минулого місяця"
+msgstr "Минулий місяць"
 
-#, fuzzy
 msgid "Last quarter"
-msgstr "останній чверть"
+msgstr "Минулий квартал"
 
 msgid "Last run"
 msgstr "Останній пробіг"
 
-#, fuzzy
 msgid "Last week"
-msgstr "минулого тижня"
+msgstr "Минулий тиждень"
 
-#, fuzzy
 msgid "Last year"
-msgstr "минулого року"
+msgstr "Минулий рік"
 
 msgid "Latitude"
 msgstr "Широта"
@@ -14488,9 +14476,11 @@ msgstr "стан постійного посилання не знайдено"
 msgid "pixelated (Sharp)"
 msgstr "пікселізований (різкий)"
 
-#, fuzzy
 msgid "pixels"
 msgstr "Пікселі"
+
+msgid "previous calendar quarter"
+msgstr "попередній календарний квартал"
 
 msgid "previous calendar month"
 msgstr "попередній календарний місяць"

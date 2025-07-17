@@ -520,6 +520,9 @@ msgstr "28 днів"
 msgid "28 days ago"
 msgstr "28 днів тому"
 
+msgid "6 days ago"
+msgstr "6 днів тому"
+
 msgid "2D"
 msgstr "2d"
 
@@ -8477,7 +8480,7 @@ msgstr ""
 "з’являться тут"
 
 msgid "Recents"
-msgstr "Втілення"
+msgstr "Останні"
 
 msgid "Recipients are separated by \",\" or \";\""
 msgstr "Одержувачі розділені \",\" або \";\""
@@ -14697,3 +14700,9 @@ msgstr "рік"
 
 msgid "zoom area"
 msgstr "масштаб"
+
+msgid "List Users"
+msgstr "Список користувачів"
+
+msgid "List Roles"
+msgstr "Список ролей"

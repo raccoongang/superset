@@ -393,11 +393,11 @@ LANGUAGES = {
     "nl": {"flag": "nl", "name": "Dutch"},
     "uk": {"flag": "uk", "name": "Ukranian"},
 }
-# Turning off i18n by default as translation in most languages are
-# incomplete and not well maintained.
-# Raccoongang: enable only Ukrainian
+
+# Raccoongang: add Ukrainian
 LANGUAGES = {
     "uk": {"flag": "uk", "name": "Ukranian"},
+    "en": {"flag": "us", "name": "English"},
 }
 
 

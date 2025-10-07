@@ -54,8 +54,8 @@ RUN mkdir -p /app/superset/translations
 COPY superset/translations /app/superset/translations
 # Compiles .json files from the .po files, then deletes the .po files
 RUN npm run build-translation
-RUN rm /app/superset/translations/*/LC_MESSAGES/*.po
-RUN rm /app/superset/translations/messages.pot
+# RUN rm /app/superset/translations/*/LC_MESSAGES/*.po
+# RUN rm /app/superset/translations/messages.pot
 
 ######################################################################
 # Final lean image...

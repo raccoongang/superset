@@ -110,8 +110,8 @@ COPY --chown=superset:superset --from=superset-node /app/superset/translations s
 
 # Compile translations for the backend - this generates .mo files, then deletes the .po files
 COPY ./scripts/translations/generate_mo_files.sh ./scripts/translations/
-RUN ./scripts/translations/generate_mo_files.sh \
-    && chown -R superset:superset superset/translations \
+RUN ./scripts/translations/generate_mo_files.sh
+RUN chown -R superset:superset superset/translations \
     && rm superset/translations/messages.pot \
     && rm superset/translations/*/LC_MESSAGES/*.po
 

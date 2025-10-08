@@ -54,8 +54,8 @@ RUN mkdir -p /app/superset/translations
 COPY superset/translations /app/superset/translations
 # Compiles .json files from the .po files, then deletes the .po files
 RUN npm run build-translation
-# RUN rm /app/superset/translations/*/LC_MESSAGES/*.po
-# RUN rm /app/superset/translations/messages.pot
+RUN rm /app/superset/translations/*/LC_MESSAGES/*.po
+RUN rm /app/superset/translations/messages.pot
 
 ######################################################################
 # Final lean image...
@@ -105,17 +105,15 @@ COPY --chown=superset:superset superset superset
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -e .
 
-# Copy the .json translations from the frontend layer
-COPY --chown=superset:superset --from=superset-node /app/superset/translations superset/translations
-
-ARG NO_CACHED_VALUE=ci-job-id
 # Compile translations for the backend - this generates .mo files, then deletes the .po files
-COPY ./scripts/translations/generate_mo_files.sh ./scripts/translations/
-RUN ./scripts/translations/generate_mo_files.sh \
-    && echo ${NO_CACHED_VALUE}
-# RUN chown -R superset:superset superset/translations \
-#     && rm superset/translations/messages.pot \
-#     && rm superset/translations/*/LC_MESSAGES/*.po
+COPY superset/translations /app/superset/translations
+RUN flask fab babel-compile --target /app/superset/translations
+RUN chown -R superset:superset superset/translations \
+    && rm superset/translations/messages.pot \
+    && rm superset/translations/*/LC_MESSAGES/*.po
+
+    # Copy the .json translations from the frontend layer
+COPY --chown=superset:superset --from=superset-node /app/superset/translations superset/translations
 
 COPY --chmod=755 ./docker/run-server.sh /usr/bin/
 USER superset

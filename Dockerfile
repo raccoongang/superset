@@ -105,16 +105,15 @@ COPY --chown=superset:superset superset superset
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -e .
 
+RUN mkdir -p /app/translations_mo
 # Compile translations for the backend - this generates .mo files, then deletes the .po files
-COPY superset/translations/ /app/translations_mo/
-RUN pybabel compile -d /app/translations_mo \
-    && rm -f /app/translations_mo/*/*/*.po; \
-    && rm -f /app/translations_mo/*/*/*.json;
+COPY superset/translations /app/translations_mo
+RUN flask fab babel-compile --target /app/translations_mo
 
+RUN cp -r /app/translations_mo/ superset/translations/
 # Copy the .json translations from the frontend layer
 COPY --chown=superset:superset --from=superset-node /app/superset/translations superset/translations
 
-COPY /app/translations_mo superset/translations
 
 COPY --chmod=755 ./docker/run-server.sh /usr/bin/
 USER superset

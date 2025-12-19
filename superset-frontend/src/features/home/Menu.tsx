@@ -47,48 +47,29 @@ const StyledHeader = styled.header`
     padding: 0 ${theme.sizeUnit * 4}px;
     z-index: 10;
 
-      &:nth-last-of-type(2) nav {
-        margin-bottom: 2px;
-      }
-      .caret {
-        display: none;
-      }
-      .navbar-brand {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        /* must be exactly the height of the Antd navbar */
-        min-height: 50px;
-        padding: ${theme.gridUnit}px
-          ${theme.gridUnit * 2}px
-          ${theme.gridUnit}px
-          ${theme.gridUnit * 4}px;
-        max-width: ${theme.gridUnit * theme.brandIconMaxWidth}px;
-        margin-top: ${theme.gridUnit / 2}px;
-        img {
-          height: 100%;
-          object-fit: contain;
-        }
-        &:focus {
-          border-color: transparent;
-        }
-        &:focus-visible {
-          border-color: ${theme.colors.primary.dark1};
-        }
-      }
-      .navbar-brand-text {
-        border-left: 1px solid ${theme.colors.grayscale.light2};
-        border-right: 1px solid ${theme.colors.grayscale.light2};
-        height: 100%;
-        color: ${theme.colors.grayscale.dark1};
-        padding-left: ${theme.gridUnit * 4}px;
-        padding-right: ${theme.gridUnit * 4}px;
-        margin-right: ${theme.gridUnit * 6}px;
-        font-size: ${theme.gridUnit * 4}px;
-        float: left;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    &:nth-last-of-type(2) nav {
+      margin-bottom: 2px;
+    }
+
+    .caret {
+      display: none;
+    }
+  `}
+`;
+
+const StyledBrandText = styled.div`
+  ${({ theme }) => css`
+    border-left: 1px solid ${theme.colorBorderSecondary};
+    border-right: 1px solid ${theme.colorBorderSecondary};
+    height: 100%;
+    color: ${theme.colorText};
+    padding-left: ${theme.sizeUnit * 4}px;
+    padding-right: ${theme.sizeUnit * 4}px;
+    font-size: ${theme.fontSizeLG}px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     span {
       max-width: ${theme.sizeUnit * 58}px;

@@ -152,7 +152,11 @@ services:
     image: superset-pdf-report
     ports:
       - 8890:8890
-    depends_on: *superset-depends-on
+    depends_on:
+      db:
+        condition: service_started
+      redis:
+        condition: service_started
     volumes:
       - ./superset-pdf-report:/app
       - /app/node_modules

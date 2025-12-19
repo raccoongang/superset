@@ -293,6 +293,8 @@ export enum MenuKeys {
   SetFilterMapping = 'set_filter_mapping',
   EditProperties = 'edit_properties',
   EditCss = 'edit_css',
+  DownloadAsPDFSubMenu = 'download-as-pdf-submenu',
+  DownloadAsDocSubMenu = 'download-as-doc-submenu',
   DownloadAsPDFPortrait = 'download-as-pdf-portrait',
   DownloadAsPDFLandscape = 'download-as-pdf-landscape',
   DownloadAsDocPortrait = 'download-as-doc-portrait',

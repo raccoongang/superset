@@ -28,6 +28,11 @@ from celery.schedules import crontab
 from flask_caching.backends.filesystemcache import FileSystemCache
 
 logger = logging.getLogger()
+APP_ICON = "/static/assets/images/superset-logo-horiz.svg"
+BABEL_DEFAULT_LOCALE = "uk"
+LANGUAGES = {
+    "uk": {"flag": "uk", "name": "Ukrainian"},
+}
 
 DATABASE_DIALECT = os.getenv("DATABASE_DIALECT")
 DATABASE_USER = os.getenv("DATABASE_USER")
@@ -101,7 +106,7 @@ CELERY_CONFIG = CeleryConfig
 
 FEATURE_FLAGS = {"ALERT_REPORTS": True}
 ALERT_REPORTS_NOTIFICATION_DRY_RUN = True
-WEBDRIVER_BASEURL = f"http://superset_app{os.environ.get('SUPERSET_APP_ROOT', '/')}/"  # When using docker compose baseurl should be http://superset_nginx{ENV{BASEPATH}}/  # noqa: E501
+WEBDRIVER_BASEURL = f"http://nginx{os.environ.get('SUPERSET_APP_ROOT', '/')}/"  # When using docker compose baseurl should be http://superset_nginx{ENV{BASEPATH}}/  # noqa: E501
 PDF_GENERATOR_BASEURL = "http://superset-pdf-report:8890/"
 # The base URL for the email report hyperlinks.
 WEBDRIVER_BASEURL_USER_FRIENDLY = (

@@ -712,24 +712,47 @@ COMMON_BOOTSTRAP_OVERRIDES_FUNC: Callable[  # noqa: E731
 # This is merely a default
 EXTRA_CATEGORICAL_COLOR_SCHEMES: list[dict[str, Any]] = []
 
-# THEME_OVERRIDES is used for adding custom theme to superset
-# example code for "My theme" custom scheme
-THEME_OVERRIDES = {
-    "colors": {
-        "primary": {
-            "base": "#e62050",
-            "dark1": "#c1163f",
-            "dark2": "#991132",
-            "light1": "#f1839e",
-            "light2": "#f7b4c4",
-            "light3": "#fce7ec",
-            "light4": "#fce7ec",
-            "light5": "#fce7ec",
-        }
-    }
+# ---------------------------------------------------
+# Theme Configuration for Superset
+# ---------------------------------------------------
+# Superset supports custom theming through Ant Design's theme structure.
+# This allows users to customize colors, fonts, and other UI elements.
+#
+# Theme Generation:
+# - Use the Ant Design theme editor: https://ant.design/theme-editor
+# - Export or copy the generated theme JSON and assign to the variables below
+# - For detailed instructions: https://superset.apache.org/docs/configuration/theming/
+#
+# To expose a JSON theme editor modal that can be triggered from the navbar
+# set the `ENABLE_THEME_EDITOR` feature flag to True.
+#
+# Theme Structure:
+# Each theme should follow Ant Design's theme format.
+# To create custom themes, use the Ant Design Theme Editor at https://ant.design/theme-editor
+# and copy the generated JSON configuration.
+#
+# Example theme definition:
+# THEME_DEFAULT = {
+#       "token": {
+#            "colorPrimary": "#2893B3",
+#            "colorSuccess": "#5ac189",
+#            "colorWarning": "#fcc700",
+#            "colorError": "#e04355",
+#            "fontFamily": "'Inter', Helvetica, Arial",
+#            ... # other tokens
+#       },
+#       ... # other theme properties
+# }
+
+# Default theme configuration
+# Leave empty to use Superset's default theme
+THEME_DEFAULT: Theme = {
+    "algorithm": "default"
 }
 
-# THEME_OVERRIDES: dict[str, Any] = {}
+# Dark theme configuration
+# Applied when user selects dark mode
+THEME_DARK: Theme = {"algorithm": "dark"}
 
 # Theme behavior and user preference settings
 # To force a single theme on all users, set THEME_DARK = None

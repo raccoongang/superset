@@ -529,6 +529,12 @@ parsedatetime==2.6
     # via
     #   -c requirements/base.txt
     #   apache-superset
+pdf2docx==0.5.6
+    # via apache-superset
+unidecode==1.0.22
+    # via apache-superset
+python-slugify==v8.0.1
+    # via apache-superset
 pathable==0.4.3
     # via jsonschema-path
 pgsanity==0.2.9

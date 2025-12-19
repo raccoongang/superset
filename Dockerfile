@@ -194,7 +194,10 @@ RUN /app/docker/apt-install.sh \
       libsasl2-modules-gssapi-mit \
       libpq-dev \
       libecpg-dev \
-      libldap2-dev
+      libldap2-dev \
+      ffmpeg \
+      libsm6 \
+      libxext6
 
 # Copy compiled things from previous stages
 COPY --from=superset-node /app/superset/static/assets superset/static/assets

@@ -41,7 +41,7 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions as EC  # noqa: N812
 from selenium.webdriver.support.ui import WebDriverWait
 
-from superset import app, security_manager
+from superset import security_manager
 from superset import feature_flag_manager
 from superset.extensions import machine_auth_provider_factory
 from superset.utils.machine_auth import MachineAuthProvider

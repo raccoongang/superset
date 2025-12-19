@@ -932,12 +932,12 @@ THEME_DEFAULT: Theme = {
         "brandSpinnerUrl": None,
         "brandSpinnerSvg": None,
         # Default colors
-        "colorPrimary": "#2893B3",  # NOTE: previous lighter primary color was #20a7c9 # noqa: E501
-        "colorLink": "#2893B3",
+        "colorPrimary": "#e62050",
+        "colorLink": "#e62050",
         "colorError": "#e04355",
         "colorWarning": "#fcc700",
         "colorSuccess": "#5ac189",
-        "colorInfo": "#66bcfe",
+        "colorInfo": "#f1839e",
         # Fonts
         "fontUrls": [],
         "fontFamily": "Inter, Helvetica, Arial, sans-serif",

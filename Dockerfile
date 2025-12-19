@@ -194,7 +194,10 @@ RUN /app/docker/apt-install.sh \
       libsasl2-modules-gssapi-mit \
       libpq-dev \
       libecpg-dev \
-      libldap2-dev
+      libldap2-dev \
+      ffmpeg \
+      libsm6 \
+      libxext6
 
 # Create data directory for DuckDB examples database
 # The database file will be created at runtime when examples are loaded from Parquet files

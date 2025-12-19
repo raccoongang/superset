@@ -31,6 +31,7 @@ import { MenuKeys } from 'src/dashboard/types';
 import downloadAsPdf from 'src/utils/downloadAsPdf';
 import downloadAsImage from 'src/utils/downloadAsImage';
 import handleResourceExport from 'src/utils/export';
+import { exportDashboard } from 'src/explore/exploreUtils';
 import {
   LOG_ACTIONS_DASHBOARD_DOWNLOAD_AS_PDF,
   LOG_ACTIONS_DASHBOARD_DOWNLOAD_AS_IMAGE,
@@ -150,31 +151,80 @@ export const useDownloadMenuItems = (
     }
   };
 
-  const screenshotMenuItems: MenuItem[] = isWebDriverScreenshotEnabled
-    ? [
-        {
-          key: DownloadScreenshotFormat.PDF,
-          label: pdfMenuItemTitle,
-          onClick: () => downloadScreenshot(DownloadScreenshotFormat.PDF),
-        },
-        {
-          key: DownloadScreenshotFormat.PNG,
-          label: imageMenuItemTitle,
-          onClick: () => downloadScreenshot(DownloadScreenshotFormat.PNG),
-        },
-      ]
-    : [
-        {
-          key: 'download-pdf',
-          label: pdfMenuItemTitle,
-          onClick: (e: any) => onDownloadPdf(e.domEvent),
-        },
-        {
-          key: 'download-image',
-          label: imageMenuItemTitle,
-          onClick: (e: any) => onDownloadImage(e.domEvent),
-        },
-      ];
+  // Create submenu items for PDF download options
+  const pdfSubmenuItems: MenuItem[] = [
+    {
+      key: MenuKeys.DownloadAsPDFPortrait,
+      label: t('Portrait'),
+      onClick: () => {
+        exportDashboard({
+          formData: { id: dashboardId },
+          resultFormat: 'pdf',
+          landscape: false,
+        });
+      },
+    },
+    {
+      key: MenuKeys.DownloadAsPDFLandscape,
+      label: t('Landscape'),
+      onClick: () => {
+        exportDashboard({
+          formData: { id: dashboardId },
+          resultFormat: 'pdf',
+          landscape: true,
+        });
+      },
+    },
+  ];
+
+  // Create submenu items for Doc download options
+  const docSubmenuItems: MenuItem[] = [
+    {
+      key: MenuKeys.DownloadAsDocPortrait,
+      label: t('Portrait'),
+      onClick: () => {
+        exportDashboard({
+          formData: { id: dashboardId },
+          resultFormat: 'docx',
+          landscape: false,
+        });
+      },
+    },
+    {
+      key: MenuKeys.DownloadAsDocLandscape,
+      label: t('Landscape'),
+      onClick: () => {
+        exportDashboard({
+          formData: { id: dashboardId },
+          resultFormat: 'docx',
+          landscape: true,
+        });
+      },
+    },
+  ];
+
+  // Create PDF submenu
+  const pdfSubmenu: MenuItem = {
+    key: MenuKeys.DownloadAsPDFSubMenu,
+    type: 'submenu',
+    label: t('Download as PDF'),
+    children: pdfSubmenuItems,
+  };
+
+  // Create Doc submenu
+  const docSubmenu: MenuItem = {
+    key: MenuKeys.DownloadAsDocSubMenu,
+    type: 'submenu',
+    label: t('Download as Doc'),
+    children: docSubmenuItems,
+  };
+
+  // Create image download menu item
+  const imageMenuItem: MenuItem = {
+    key: MenuKeys.DownloadAsImage,
+    label: t('Download as image'),
+    onClick: (e: any) => onDownloadImage(e.domEvent),
+  };
 
   const exportMenuItems: MenuItem[] = [
     {
@@ -194,7 +244,9 @@ export const useDownloadMenuItems = (
   ];
 
   const children: MenuItem[] = [
-    ...screenshotMenuItems,
+    pdfSubmenu,
+    docSubmenu,
+    imageMenuItem,
     { type: 'divider', key: 'export-divider' },
     ...exportMenuItems,
   ];

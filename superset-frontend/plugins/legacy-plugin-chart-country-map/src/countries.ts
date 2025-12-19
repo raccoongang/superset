@@ -432,10 +432,7 @@ export const countryOptions = Object.keys(countries).map(countryId => {
     countryRepr = 'Italy (regions)';
   } else if (countryId === 'france_regions') {
     countryRepr = 'France (regions)';
-  } else if (countryId === 'france_overseas') {
-    return [x, 'France (with overseas)'];
-  }
-  if (x === 'turkey_regions') {
+  } else if (countryId === 'turkey_regions') {
     countryRepr = 'Turkey (regions)';
   } else {
     countryRepr = countryId

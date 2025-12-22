@@ -33,17 +33,3 @@ export function processTimeTableData(data: TimeTableData): {
 
   return { entries, reversedEntries };
 }
-
-@media print {
-  a[href]::after {
-    content: none !important;
-  }
-
-  .header-controls {
-    display: none !important;
-  }
-
-  .grid-row--empty > div {
-    color: transparent !important;
-  }
-}

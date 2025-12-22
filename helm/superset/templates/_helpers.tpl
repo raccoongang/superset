@@ -69,6 +69,15 @@ from flask_caching.backends.rediscache import RedisCache
 def env(key, default=None):
     return os.getenv(key, default)
 
+# Theme settings
+APP_ICON = "/static/assets/images/superset-logo-horiz.svg"
+
+# Localisation
+BABEL_DEFAULT_LOCALE = "uk"
+LANGUAGES = {
+    "uk": {"flag": "uk", "name": "Ukrainian"}
+}
+
 # Redis Base URL
 {{- if .Values.supersetNode.connections.redis_password }}
 REDIS_BASE_URL=f"{env('REDIS_PROTO')}://{env('REDIS_USER', '')}:{env('REDIS_PASSWORD')}@{env('REDIS_HOST')}:{env('REDIS_PORT')}"

@@ -45,7 +45,9 @@ export const useDownloadMenuItems = (
   props: UseDownloadMenuItemsProps,
 ): MenuItem => {
   const {
+    // @ts-ignore
     pdfMenuItemTitle,
+    // @ts-ignore
     imageMenuItemTitle,
     logEvent,
     dashboardId,
@@ -57,12 +59,15 @@ export const useDownloadMenuItems = (
   const { addDangerToast } = useToasts();
   const SCREENSHOT_NODE_SELECTOR = '.dashboard';
 
+  // @ts-ignore
   const isWebDriverScreenshotEnabled =
     isFeatureEnabled(FeatureFlag.EnableDashboardScreenshotEndpoints) &&
     isFeatureEnabled(FeatureFlag.EnableDashboardDownloadWebDriverScreenshot);
 
+  // @ts-ignore
   const downloadScreenshot = useDownloadScreenshot(dashboardId, logEvent);
 
+  // @ts-ignore
   const onDownloadPdf = async (e: SyntheticEvent) => {
     try {
       downloadAsPdf(SCREENSHOT_NODE_SELECTOR, dashboardTitle, true)(e);
@@ -91,7 +96,7 @@ export const useDownloadMenuItems = (
       onClick: () => {
         exportDashboard({
           formData: { id: dashboardId },
-          resultFormat: 'pdf',
+          resultFormat: DownloadScreenshotFormat.PDF,
           landscape: false,
         });
       },
@@ -102,7 +107,7 @@ export const useDownloadMenuItems = (
       onClick: () => {
         exportDashboard({
           formData: { id: dashboardId },
-          resultFormat: 'pdf',
+          resultFormat: DownloadScreenshotFormat.PDF,
           landscape: true,
         });
       },
@@ -117,7 +122,7 @@ export const useDownloadMenuItems = (
       onClick: () => {
         exportDashboard({
           formData: { id: dashboardId },
-          resultFormat: 'docx',
+          resultFormat: DownloadScreenshotFormat.DOCX,
           landscape: false,
         });
       },
@@ -128,7 +133,7 @@ export const useDownloadMenuItems = (
       onClick: () => {
         exportDashboard({
           formData: { id: dashboardId },
-          resultFormat: 'docx',
+          resultFormat: DownloadScreenshotFormat.DOCX,
           landscape: true,
         });
       },

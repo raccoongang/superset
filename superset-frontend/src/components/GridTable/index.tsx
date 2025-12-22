@@ -179,6 +179,7 @@ export function GridTable<RecordType extends object>({
         isExternalFilterPresent={isExternalFilterPresent}
         doesExternalFilterPass={externalFilter}
         components={gridComponents}
+        // @ts-ignore
         gridOptions={gridOptions}
         onCellKeyDown={onKeyDown}
       />

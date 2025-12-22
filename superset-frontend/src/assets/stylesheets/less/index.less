@@ -16,9 +16,46 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+// Index .less, any imports here will be included in the final css build
 
-export enum DownloadScreenshotFormat {
-  PDF = 'pdf',
-  PNG = 'png',
-  DOCX = 'docx',
+@import '~bootstrap/less/bootstrap.less';
+@import './fonts.less';
+@import './variables.less';
+@import './cosmo/bootswatch.less';
+
+html,
+body {
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  flex: 0 1 auto;
+}
+
+#app {
+  flex: 1 1 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+@media print {
+  a[href]::after {
+    content: none !important;
+  }
+
+  .header-controls {
+    display: none !important;
+  }
+
+  .grid-row--empty > div {
+    color: transparent !important;
+  }
 }

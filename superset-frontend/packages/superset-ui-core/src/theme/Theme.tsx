@@ -65,9 +65,9 @@ export class Theme {
     // Brand
     brandLogoAlt: 'Apache Superset',
     brandLogoUrl: '/static/assets/images/superset-logo-horiz.svg',
-    brandLogoMargin: '18px',
+    brandLogoMargin: '3px 0 0 0',
     brandLogoHref: '/',
-    brandLogoHeight: '24px',
+    brandLogoHeight: '38px',
 
     // Default colors
     colorPrimary: '#e62050', // NOTE: previous lighter primary color was #20a7c9

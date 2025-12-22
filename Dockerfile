@@ -24,7 +24,7 @@ ARG PY_VER=3.11.13-slim-bookworm
 ARG BUILDPLATFORM=${BUILDPLATFORM:-amd64}
 
 # Include translations in the final build
-ARG BUILD_TRANSLATIONS="false"
+ARG BUILD_TRANSLATIONS="true"
 
 ######################################################################
 # superset-node-ci used as a base for building frontend assets and CI
@@ -190,6 +190,8 @@ COPY --chmod=755 ./docker/entrypoints/run-server.sh /usr/bin/
 # Some debian libs
 RUN /app/docker/apt-install.sh \
       curl \
+      default-libmysqlclient-dev \
+      pkg-config \
       libsasl2-dev \
       libsasl2-modules-gssapi-mit \
       libpq-dev \

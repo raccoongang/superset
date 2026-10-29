@@ -7,7 +7,9 @@
   },
   "exclude": [
     "lib",
-    "test"
+    "test",
+    "src/**/*.test.*",
+    "src/**/*.stories.*"
   ],
   "extends": "../../tsconfig.json",
   "include": [

@@ -23,9 +23,9 @@ import { extent as d3Extent } from 'd3-array';
 import {
   getNumberFormatter,
   getSequentialSchemeRegistry,
-  t,
   CategoricalColorNamespace,
 } from '@superset-ui/core';
+import { t } from '@apache-superset/core/translation';
 import countries, { countryOptions } from './countries';
 
 /**

@@ -17,7 +17,8 @@
  * under the License.
  */
 import React from 'react';
-import { reactify, styled } from '@superset-ui/core';
+import { reactify } from '@superset-ui/core';
+import { styled } from '@apache-superset/core/theme';
 import Component from './RegionMap';
 
 const ReactComponent = reactify(Component);

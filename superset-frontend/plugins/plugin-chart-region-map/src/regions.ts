@@ -17,7 +17,7 @@
  * under the License.
  */
 
-import { t } from '@superset-ui/core';
+import { t } from '@apache-superset/core/translation';
 import cherkasy from './regions/cherkasy.geojson';
 import chernihiv from './regions/chernihiv.geojson';
 import chernivtsi from './regions/chernivtsi.geojson';

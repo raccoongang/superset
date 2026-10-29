@@ -66,7 +66,8 @@ msgid ""
 msgstr ""
 "\n"
 " Цей фільтр було успадковано з контексту дашборду.\n"
-" Він не буде збережено під час збереження діаграми.\n"
+" Він не буде збережений під час збереження діаграми.\n"
+" "
 
 #, python-format
 msgid ""
@@ -197,15 +198,15 @@ msgstr "%(label)s файл"
 
 #, python-format
 msgid "%(name)s.csv"
-msgstr "%(ім'я)s.csv"
+msgstr "%(name)s.csv"
 
-#, fuzzy, python-format
+#, python-format
 msgid "%(name)s.pdf"
-msgstr "%(name)s.CSV"
+msgstr "%(name)s.pdf"
 
 #, python-format
 msgid "%(object)s does not exist in this database."
-msgstr "%(об'єкт)s не існує в цій базі даних."
+msgstr "%(object)s не існує в цій базі даних."
 
 #, python-format
 msgid "%(prefix)s %(title)s"
@@ -1092,7 +1093,7 @@ msgstr[2] ""
 #, python-format
 msgid "Added to 1 dashboard"
 msgid_plural "Added to %s dashboards"
-msgstr[0] "Додано до 1 дашборду"
+msgstr[0] "Додано до %s дашборду"
 msgstr[1] "Додано до %s дашбордів"
 msgstr[2] "Додано до %s дашбордів"
 
@@ -16310,7 +16311,7 @@ msgid "beta"
 msgstr "Додатковий"
 
 msgid "between {down} and {up} {name}"
-msgstr "між {вниз} і {вгору} {ім'я}"
+msgstr "між {down} і {up} {name}"
 
 msgid "bfill"
 msgstr ""
@@ -17072,6 +17073,7 @@ msgid ""
 msgstr ""
 "\n"
 " Помилка: %(text)s\n"
+" "
 
 #: superset-frontend/src/components/ErrorMessage/DatabaseErrorMessage.tsx:83
 #, python-format
@@ -18158,7 +18160,7 @@ msgstr "Вираз"
 #: superset/views/database/mixins.py:240 superset/views/database/mixins.py:264
 #, python-format
 msgid "Extra field cannot be decoded by JSON. %(msg)s"
-msgstr "Додаткове поле не може бути декодовано JSON. "
+msgstr "Додаткове поле не може бути декодовано JSON. %(msg)s"
 
 #: superset/views/database/forms.py:177 superset/views/database/forms.py:334
 #: superset/views/database/forms.py:465
@@ -19730,7 +19732,8 @@ msgid ""
 " database \"%(db_name)s\". Error message: %(error_msg)s"
 msgstr ""
 "Не вдалося завантажити файл CSV \"%(filename)s\" до таблиці "
-"\"%(table_name)s\" у базі даних \"%(db_name)s\". "
+"\"%(table_name)s\" у базі даних \"%(db_name)s\". Повідомлення про "
+"помилку: %(error_msg)s"
 
 #: superset/views/database/views.py:556
 #, python-format

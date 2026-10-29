@@ -16,7 +16,7 @@
         ""
       ],
       "\n                This filter was inherited from the dashboard's context.\n                It won't be saved when saving the chart.\n              ": [
-        "\n Цей фільтр було успадковано з контексту дашборду.\n Він не буде збережено під час збереження діаграми.\n"
+        "\n Цей фільтр було успадковано з контексту дашборду.\n Він не буде збережений під час збереження діаграми.\n "
       ],
       "\n            <p>Your report/alert was unable to be generated because of the following error: %(text)s</p>\n            <p>Please check your dashboard/chart for errors.</p>\n            <p><b><a href=\"%(url)s\">%(call_to_action)s</a></b></p>\n            ": [
         ""
@@ -57,9 +57,10 @@
       "%(dialect)s cannot be used as a data source for security reasons.": [
         "%(dialect)s не можна використовувати як datasource з міркувань безпеки."
       ],
-      "%(name)s.csv": ["%(ім'я)s.csv"],
+      "%(name)s.csv": ["%(name)s.csv"],
+      "%(name)s.pdf": ["%(name)s.pdf"],
       "%(object)s does not exist in this database.": [
-        "%(об'єкт)s не існує в цій базі даних."
+        "%(object)s не існує в цій базі даних."
       ],
       "%(prefix)s %(title)s": ["%(prefix)s %(title)s"],
       "%(report_type)s schedule frequency exceeding limit. Please configure a schedule with a minimum interval of %(minimum_interval)d minutes per execution.": [
@@ -349,7 +350,7 @@
         "Added %s new columns to the virtual dataset"
       ],
       "Added to 1 dashboard": [
-        "Додано до 1 дашборду",
+        "Додано до %s дашборду",
         "Додано до %s дашбордів",
         "Додано до %s дашбордів"
       ],
@@ -5784,7 +5785,7 @@
       "background": ["фон"],
       "basis": ["основа"],
       "below (example:": ["нижче (приклад:"],
-      "between {down} and {up} {name}": ["між {вниз} і {вгору} {ім'я}"],
+      "between {down} and {up} {name}": ["між {down} і {up} {name}"],
       "bfill": [""],
       "bolt": ["болт"],
       "boolean type icon": ["значок логічного типу"],
@@ -6000,7 +6001,9 @@
       "your-project-1234-a1": [""],
       "zoom area": ["область масштабування"],
       "© Layer attribution": [""],
-      "\n            Error: %(text)s\n            ": ["\n Помилка: %(text)s\n"],
+      "\n            Error: %(text)s\n            ": [
+        "\n Помилка: %(text)s\n "
+      ],
       "%(message)s\nThis may be triggered by: \n%(issues)s": [
         "%(message)s\nЦе може бути викликано: \n%(issues)s"
       ],
@@ -6369,7 +6372,7 @@
       "Expose this DB in SQL Lab": ["Надати доступ до БД у SQL Lab"],
       "Expression": ["Вираз"],
       "Extra field cannot be decoded by JSON. %(msg)s": [
-        "Додаткове поле не може бути декодовано JSON. "
+        "Додаткове поле не може бути декодовано JSON. %(msg)s"
       ],
       "Fail": ["Помилка"],
       "Failed at stopping query. %s": ["Не вдалося зупинити запит. %s"],
@@ -6948,7 +6951,7 @@
         "Неможливо додати нову вкладку до серверної частини. Будь ласка, зверніться до свого адміністратора."
       ],
       "Unable to upload CSV file \"%(filename)s\" to table \"%(table_name)s\" in database \"%(db_name)s\". Error message: %(error_msg)s": [
-        "Не вдалося завантажити файл CSV \"%(filename)s\" до таблиці \"%(table_name)s\" у базі даних \"%(db_name)s\". "
+        "Не вдалося завантажити файл CSV \"%(filename)s\" до таблиці \"%(table_name)s\" у базі даних \"%(db_name)s\". Повідомлення про помилку: %(error_msg)s"
       ],
       "Unable to upload Columnar file \"%(filename)s\" to table \"%(table_name)s\" in database \"%(db_name)s\". Error message: %(error_msg)s": [
         "Неможливо завантажити файл стовпців \"%(filename)s\" до таблиці \"%(table_name)s\" у базі даних \"%(db_name)s\". Повідомлення про помилку: %(error_msg)s"

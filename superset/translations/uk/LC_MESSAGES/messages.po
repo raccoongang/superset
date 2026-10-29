@@ -6181,9 +6181,8 @@ msgstr "Не вдалося перевірити вибрати параметр
 msgid "Failed to start remote query on a worker."
 msgstr "Помилка запуску віддаленого запиту для робочого."
 
-#, fuzzy
 msgid "Failed to stop query."
-msgstr "Не вдалося зупинити запит. %s"
+msgstr "Не вдалося зупинити запит."
 
 msgid "Failed to store query results. Please try again."
 msgstr ""
@@ -11068,9 +11067,8 @@ msgstr "Виберіть тип візуалізації"
 msgid "Select aggregate options"
 msgstr "Виберіть параметри агрегату"
 
-#, fuzzy
 msgid "Select all"
-msgstr "Скасувати всі"
+msgstr "Вибрати все"
 
 msgid "Select all data"
 msgstr "Вибрати всі дані"
@@ -12269,9 +12267,8 @@ msgstr "Сума значень за вказаний період"
 msgid "Sum values"
 msgstr "Сумарні значення"
 
-#, fuzzy
 msgid "Summary"
-msgstr "Неділя"
+msgstr "Підсумки"
 
 msgid "Sunburst Chart"
 msgstr "Діаграма Сонячні Промені"
@@ -13531,9 +13528,8 @@ msgstr ""
 "У запиті SQL є синтаксична помилка. Можливо, була орфографічна помилка "
 "або друкарська помилка."
 
-#, fuzzy
 msgid "There is currently no information to display."
-msgstr "Тип візуалізації для відображення"
+msgstr "Наразі немає інформації для відображення."
 
 msgid ""
 "There is no chart definition associated with this component, could it "

@@ -2121,6 +2121,7 @@
       "Failed to start remote query on a worker.": [
         "Помилка запуску віддаленого запиту для робочого."
       ],
+      "Failed to stop query.": ["Не вдалося зупинити запит."],
       "Failed to store query results. Please try again.": [""],
       "Failed to update report": ["Не вдалося оновити звіт"],
       "Failed to validate expression. Please try again.": [""],
@@ -3819,6 +3820,7 @@
       ],
       "Select a visualization type": ["Виберіть тип візуалізації"],
       "Select aggregate options": ["Виберіть параметри агрегату"],
+      "Select all": ["Вибрати все"],
       "Select all data": ["Вибрати всі дані"],
       "Select all items": ["Виберіть усі елементи"],
       "Select chart": ["Виберіть діаграму"],
@@ -4198,6 +4200,7 @@
         "Сума значень за вказаний період"
       ],
       "Sum values": ["Сумарні значення"],
+      "Summary": ["Підсумки"],
       "Sunburst Chart": ["Діаграма Сонячні Промені"],
       "Sunday": ["Неділя"],
       "Superset Chart": ["Діаграма Superset"],
@@ -4659,6 +4662,9 @@
       "There are unsaved changes.": ["Є незбережені зміни."],
       "There is a syntax error in the SQL query. Perhaps there was a misspelling or a typo.": [
         "У запиті SQL є синтаксична помилка. Можливо, була орфографічна помилка або друкарська помилка."
+      ],
+      "There is currently no information to display.": [
+        "Наразі немає інформації для відображення."
       ],
       "There is no chart definition associated with this component, could it have been deleted?": [
         "Немає визначення діаграми, пов’язаного з цим компонентом, можливо, його було видалено?"

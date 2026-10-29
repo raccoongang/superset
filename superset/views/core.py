@@ -907,7 +907,13 @@ class Superset(BaseSupersetView):
         file_path = safe_join(base_dir, lang, "LC_MESSAGES", "messages.json")
 
         if file_path and os.path.isfile(file_path):
-            return send_file(file_path, mimetype="application/json")
+            # The URL is not versioned, so caches must revalidate the pack to pick
+            # up translation fixes. Flask-Compress rewrites the ETag after
+            # send_file has evaluated the request, so ETag revalidation never
+            # matches; rely on Last-Modified to answer it with 304
+            return send_file(
+                file_path, mimetype="application/json", etag=False, max_age=0
+            )
 
         return json_error_response(
             "Language pack doesn't exist on the server", status=404

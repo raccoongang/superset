@@ -39,6 +39,35 @@ def test_language_pack_endpoint_is_public(app: "SupersetApp") -> None:
             assert resp.is_json
 
 
+def test_language_pack_endpoint_revalidates_with_last_modified(
+    app: "SupersetApp",
+) -> None:
+    """A browser revalidation of an unchanged pack is answered with 304.
+
+    The pack has no ETag because Flask-Compress rewrites it (``"...:gzip"``) after
+    the request has been evaluated, so the If-None-Match a browser sends back never
+    matched and every revalidation downloaded the whole pack.
+    """
+    with app.test_client() as client:
+        resp = client.get(
+            "/superset/language_pack/uk/", headers={"Accept-Encoding": "gzip"}
+        )
+        assert resp.status_code == 200
+        assert "ETag" not in resp.headers
+        assert "max-age=0" in resp.headers["Cache-Control"]
+        last_modified = resp.headers["Last-Modified"]
+
+        resp = client.get(
+            "/superset/language_pack/uk/",
+            headers={
+                "Accept-Encoding": "gzip",
+                "If-None-Match": '"cached-by-superset-6.0:gzip"',
+                "If-Modified-Since": last_modified,
+            },
+        )
+        assert resp.status_code == 304
+
+
 def test_language_pack_endpoint_rejects_invalid_lang(app: "SupersetApp") -> None:
     """Invalid language codes are rejected with 400."""
     with app.test_client() as client:

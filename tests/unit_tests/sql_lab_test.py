@@ -17,6 +17,7 @@
 # pylint: disable=import-outside-toplevel, invalid-name, unused-argument, too-many-locals
 
 import json  # noqa: TID251
+from typing import Any
 from unittest.mock import MagicMock
 from urllib.parse import parse_qs, urlparse
 from uuid import UUID
@@ -190,6 +191,44 @@ def test_execute_sql_statement_within_payload_limit(mocker: MockerFixture, app) 
         )
 
 
+def test_execute_sql_statements_skips_stopped_query(mocker: MockerFixture, app) -> None:
+    """
+    Test that a query stopped while waiting for a Celery worker is not executed.
+    """
+    query = mocker.MagicMock()
+    query.status = QueryStatus.PENDING
+    query.select_as_cta = False
+    query.database.allow_run_async = False
+    mocker.patch("superset.sql_lab.get_query", return_value=query)
+
+    def stop_in_sql_lab(*args: Any, **kwargs: Any) -> None:
+        # the stop request committed while the query was waiting for a worker
+        query.status = QueryStatus.STOPPED
+
+    refresh = mocker.patch(
+        "superset.sql_lab.db.session.refresh", side_effect=stop_in_sql_lab
+    )
+    commit = mocker.patch("superset.sql_lab.db.session.commit")
+    execute_query = mocker.patch("superset.sql_lab.execute_query")
+
+    payload = execute_sql_statements(
+        query_id=1,
+        rendered_query="SELECT 42 AS answer",
+        return_results=False,
+        store_results=False,
+        start_time=None,
+        expand_data=False,
+        log_params={},
+    )
+
+    assert payload == {"query_id": 1, "status": QueryStatus.STOPPED}
+    assert query.status == QueryStatus.STOPPED
+    refresh.assert_called_once_with(query, with_for_update=True)
+    commit.assert_called_once()
+    query.database.get_raw_connection.assert_not_called()
+    execute_query.assert_not_called()
+
+
 @freeze_time("2021-04-01T00:00:00Z")
 def test_get_sql_results_oauth2(mocker: MockerFixture, app) -> None:
     """
@@ -228,6 +267,7 @@ def test_get_sql_results_oauth2(mocker: MockerFixture, app) -> None:
 
     query = mocker.MagicMock(select_as_cta=False, database=database)
     mocker.patch("superset.sql_lab.get_query", return_value=query)
+    mocker.patch("superset.sql_lab.db.session.refresh")
 
     payload = get_sql_results(query_id=1, rendered_query="SELECT 1")
     assert payload["status"] == QueryStatus.FAILED

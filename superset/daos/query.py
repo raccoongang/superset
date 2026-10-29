@@ -62,9 +62,26 @@ class QueryDAO(BaseDAO[Query]):
         if not query:
             raise QueryNotFoundException(f"Query with client_id {client_id} not found")
 
+        if query.status == QueryStatus.PENDING:
+            # Still waiting for a Celery worker, so there is nothing to cancel in the
+            # database yet. Stop it only if no worker has picked it up meanwhile; the
+            # worker skips stopped queries. Otherwise cancel it as a running query.
+            stopped = (
+                db.session.query(Query)
+                .filter(Query.id == query.id, Query.status == QueryStatus.PENDING)
+                .update(
+                    {"status": QueryStatus.STOPPED, "end_time": now_as_float()},
+                    synchronize_session="fetch",
+                )
+            )
+            if stopped:
+                return
+            db.session.refresh(query)
+
         if query.status in [
             QueryStatus.FAILED,
             QueryStatus.SUCCESS,
+            QueryStatus.STOPPED,
             QueryStatus.TIMED_OUT,
         ]:
             logger.warning(

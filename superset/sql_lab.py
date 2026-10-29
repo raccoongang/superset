@@ -396,6 +396,15 @@ def execute_sql_statements(  # noqa: C901
     if database.allow_run_async and not results_backend:
         raise SupersetResultsBackendNotConfigureException()
 
+    # Lock the row until RUNNING is committed, so a stop request from SQL Lab cannot
+    # slip in between; a query stopped while waiting for a worker is skipped.
+    db.session.refresh(query, with_for_update=True)
+    if query.status == QueryStatus.STOPPED:
+        logger.info("Query %s: Skipping query stopped before execution", str(query_id))
+        db.session.commit()
+        payload.update({"status": query.status})
+        return payload
+
     logger.info("Query %s: Set query to 'running'", str(query_id))
     query.status = QueryStatus.RUNNING
     query.start_running_time = now_as_float()

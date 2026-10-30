@@ -70,6 +70,7 @@ click==8.2.1
     #   click-repl
     #   flask
     #   flask-appbuilder
+clickhouse-connect==0.6.8
 click-didyoumean==0.3.1
     # via celery
 click-option-group==0.5.7
@@ -237,6 +238,8 @@ msgpack==1.0.8
     # via apache-superset (pyproject.toml)
 msgspec==0.19.0
     # via flask-session
+mysqlclient==2.2.6
+    # via apache-superset
 nh3==0.2.21
     # via apache-superset (pyproject.toml)
 numexpr==2.10.2
@@ -276,7 +279,13 @@ paramiko==3.5.1
     #   apache-superset (pyproject.toml)
     #   sshtunnel
 parsedatetime==2.6
-    # via apache-superset (pyproject.toml)
+    # via apache-superset
+pdf2docx==0.5.6
+    # via apache-superset
+unidecode==1.0.22
+    # via apache-superset
+python-slugify==v8.0.1
+    # via apache-superset
 pgsanity==0.2.9
     # via apache-superset (pyproject.toml)
 pillow==11.3.0
@@ -347,6 +356,8 @@ pyyaml==6.0.2
     # via
     #   apache-superset (pyproject.toml)
     #   apispec
+psycopg2-binary==2.9.6
+    # via apache-superset
 redis==5.3.1
     # via apache-superset (pyproject.toml)
 referencing==0.36.2

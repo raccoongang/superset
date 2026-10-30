@@ -1663,6 +1663,10 @@ class TestRolePermission(SupersetTestCase):
             ["SupersetRegisterUserView", "register"],
             ["SupersetRegisterUserView", "activation"],
             ["RedirectView", "redirect_warning"],
+            # Language pack endpoint serves JS bundle translations, no auth
+            # needed; embedded dashboards fetch this without a guest-token
+            # header, so it must be reachable unauthenticated.
+            ["Superset", "language_pack"],
         ]
         unsecured_views = []
         for view_class in appbuilder.baseviews:

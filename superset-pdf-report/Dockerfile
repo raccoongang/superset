@@ -1,7 +1,7 @@
 # This Dockerfile uses multi-stage build to customize DEV and PROD images:
 # https://docs.docker.com/develop/develop-images/multistage-build/
 
-FROM node:16-bullseye AS base
+FROM node:16-bookworm AS base
 
 LABEL maintainer="nikolay.borovenskiy@raccoongang.com"
 LABEL vendor="Prozori solutions"

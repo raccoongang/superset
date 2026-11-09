@@ -75,6 +75,10 @@ export default function initPreamble(): Promise<void> {
         const languagePackUrl = makeUrl(`/superset/language_pack/${lang}/`);
         const resp = await fetch(languagePackUrl, {
           signal: abortController.signal,
+          // the pack used to be served with a one-year max-age from an unversioned
+          // URL; revalidate it (cheap 304 via Last-Modified) so translation fixes
+          // reach browsers that still hold such a copy
+          cache: 'no-cache',
         });
         if (!resp.ok) {
           throw new Error(`Failed to fetch language pack: ${resp.status}`);

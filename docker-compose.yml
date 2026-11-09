@@ -138,6 +138,31 @@ services:
       - REDIS_PORT=6379
       - REDIS_SSL=false
 
+  superset-pdf-report:
+    container_name: superset_pdf_report
+    build:
+      target: development_build
+      context: .
+      dockerfile: ./superset-pdf-report/Dockerfile
+      args:
+        NODE_ENV: development
+    image: superset-pdf-report
+    ports:
+      - 8890:8890
+    depends_on:
+      db:
+        condition: service_started
+      redis:
+        condition: service_started
+    volumes:
+      - ./superset-pdf-report:/app
+      - /app/node_modules
+    command: npm run start:dev
+    environment:
+      - PORT=8890
+    stdin_open: true
+    tty: true
+
   superset-init:
     build:
       <<: *common-build
@@ -256,6 +281,19 @@ services:
     healthcheck:
       test: ["CMD-SHELL", "celery inspect ping -A superset.tasks.celery_app:app -d celery@$$HOSTNAME"]
 
+  clickhouse:
+    image: clickhouse/clickhouse-server:22.3
+    user: "101:101"
+    env_file: docker/.env
+    container_name: superset_clickhouse
+    hostname: clickhouse
+    restart: unless-stopped
+    volumes:
+      - clickhouse:/var/lib/clickhouse
+    ports:
+      - "127.0.0.1:8123:8123"
+      - "127.0.0.1:9000:9000"
+
 volumes:
   superset_home:
     external: false
@@ -264,4 +302,6 @@ volumes:
   redis:
     external: false
   superset_data:
+    external: false
+  clickhouse:
     external: false

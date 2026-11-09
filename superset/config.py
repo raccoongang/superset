@@ -355,7 +355,7 @@ AUTH_RATE_LIMIT = "5 per second"
 APP_NAME = "Superset"
 
 # Specify the App icon
-APP_ICON = "/static/assets/images/superset-logo-horiz.png"
+APP_ICON = "/static/assets/images/superset-logo-horiz.svg"
 
 # Specify where clicking the logo would take the user'
 # Default value of None will take you to '/superset/welcome'
@@ -414,7 +414,7 @@ PUBLIC_ROLE_LIKE: str | None = None
 # Babel config for translations
 # ---------------------------------------------------
 # Setup default language
-BABEL_DEFAULT_LOCALE = "en"
+BABEL_DEFAULT_LOCALE = "uk"
 # Your application default translation path
 BABEL_DEFAULT_FOLDER = "superset/translations"
 # The allowed translation for your app
@@ -925,19 +925,19 @@ THEME_DEFAULT: Theme = {
         "brandAppName": APP_NAME,
         "brandLogoAlt": "Apache Superset",
         "brandLogoUrl": APP_ICON,
-        "brandLogoMargin": "18px 0",
+        "brandLogoMargin": "3px 0 0 0",
         "brandLogoHref": "/",
-        "brandLogoHeight": "24px",
+        "brandLogoHeight": "38px",
         # Spinner
         "brandSpinnerUrl": None,
         "brandSpinnerSvg": None,
         # Default colors
-        "colorPrimary": "#2893B3",  # NOTE: previous lighter primary color was #20a7c9 # noqa: E501
-        "colorLink": "#2893B3",
+        "colorPrimary": "#e62050",
+        "colorLink": "#e62050",
         "colorError": "#e04355",
         "colorWarning": "#fcc700",
         "colorSuccess": "#5ac189",
-        "colorInfo": "#66bcfe",
+        "colorInfo": "#f1839e",
         # Fonts
         "fontUrls": [],
         "fontFamily": "Inter, Helvetica, Arial, sans-serif",
@@ -2123,6 +2123,7 @@ TALISMAN_CONFIG = {
         "img-src": [
             "'self'",
             "blob:",
+            "https:",
             "data:",
             "https://apachesuperset.gateway.scarf.sh",
             "https://static.scarf.sh/",
@@ -2133,6 +2134,7 @@ TALISMAN_CONFIG = {
         "worker-src": ["'self'", "blob:"],
         "connect-src": [
             "'self'",
+            "https:",
             "https://api.mapbox.com",
             "https://events.mapbox.com",
             "https://tile.openstreetmap.org",
@@ -2149,9 +2151,8 @@ TALISMAN_CONFIG = {
             "'self'",
             *[f"https://{d}" for d in THEME_FONT_URL_ALLOWED_DOMAINS],
         ],
-        "script-src": ["'self'", "'strict-dynamic'"],
+        "script-src": ["'self'", "'unsafe-inline'", "'strict-dynamic'"],
     },
-    "content_security_policy_nonce_in": ["script-src"],
     "force_https": False,
     "session_cookie_secure": False,
 }
@@ -2163,6 +2164,7 @@ TALISMAN_DEV_CONFIG = {
         "img-src": [
             "'self'",
             "blob:",
+            "https:",
             "data:",
             "https://apachesuperset.gateway.scarf.sh",
             "https://static.scarf.sh/",
@@ -2173,6 +2175,7 @@ TALISMAN_DEV_CONFIG = {
         "worker-src": ["'self'", "blob:"],
         "connect-src": [
             "'self'",
+            "https:",
             "https://api.mapbox.com",
             "https://events.mapbox.com",
             "https://tile.openstreetmap.org",
@@ -2191,7 +2194,6 @@ TALISMAN_DEV_CONFIG = {
         ],
         "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
     },
-    "content_security_policy_nonce_in": ["script-src"],
     "force_https": False,
     "session_cookie_secure": False,
 }

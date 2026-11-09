@@ -31,7 +31,9 @@ do
   if [ $extension == "po" ]
   then
     echo "po2json --domain superset --format jed1.x $file $filename.json"
-    po2json --domain superset --format jed1.x --fuzzy $file $filename.json
+    # Fuzzy entries are unreviewed machine guesses (e.g. "Summary" -> "Неділя"),
+    # skip them like `pybabel compile` does for the backend.
+    po2json --domain superset --format jed1.x $file $filename.json
     prettier --write $filename.json
   fi
 done
